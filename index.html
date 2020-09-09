@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" name ="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="stylesheet.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <title>Home</title>
+</head>
+<body>
+
+
+
+<div class="w3-content" style="max-width:1400px;">
+
+<!-- Topbar -->
+<div class="w3-container" id="Top">
+    <div class="w3-bar w3-black">
+        <a href="index.html" class="w3-bar-item w3-button w3-grey">Home</a>
+        <a href="html/Portfolio.html" class="w3-button w3-bar-item">Portfolio</a>
+        <a href="html/Publications.html" class="w3-button w3-bar-item">Publications</a>
+        <a href="html/Resume.html" class="w3-button w3-bar-item">Curriculum Vitae</a>
+        <a href="html/Contact.html" class="w3-bar-item w3-button">Contact Me</a>
+    </div>
+</div>
+
+
+<div class="parallax1">
+    <div class="caption">
+        <span class="border">Michael Wahba</span>
+    </div>
+</div>
+<div class="main-card">
+    <h3 style="text-align: center">Who Am I?</h3>
+    <p>That question cannot be answered simply. I am a writer,
+        programmer, biologist, and designer. I have worn many hats and my interests are as diverse as my background.
+    </p>
+</div>
+
+
+
+<div class="parallax2">
+    <div class="caption">
+        <span class="border">Developer</span>
+    </div>
+</div>
+<div class="main-card">
+    <p>I am a computer science student about to graduate from the University of Calgary. Outside of building strong
+     fundamentals in data structures, algorithms and computation theory, I have directed my studies towards interactive media.
+     My degree is concentrated in Computer Game Development which means I have also taken courses related to rendering,
+    game design and development, and human-computer-interaction.
+    </p>
+</div>
+
+
+<div class="parallax3">
+    <div class="caption">
+        <span class="border">Writer</span>
+    </div>
+</div>
+<div class="main-card">
+    <p>I have always enjoyed writing but never considered it as a career until recently. My first real foray into the field was
+        coming in third place in Writerbyte.com's sci-fi short story contest in 2019. As a result, I have decided to pursue an embedded certificate
+        in creative writing at the University of Calgary. Since then, some of my accomplishments include acquiring a position as lead writer on an upcoming
+        indie game and publishing a poem in a printed anthology.</p>
+</div>
+
+<div class="parallax4">
+    <div class="caption">
+        <span class="border">Scientist</span>
+    </div>
+</div>
+<div class="main-card">
+    <p>More than anything, I am a curious mind. I want to learn more about how we can use technology to tell stories in new and exciting ways.
+    I am formally trained in the scientific method having published peer-reviewed scientific papers and presented my findings to my colleagues.</p>
+</div>
+
+<script>
+    function switchTopNav(){
+        var x = document.getElementById("myTopnav");
+        if(x.className === "topnav"){
+            x.className += " responsive";
+        }else{
+            x.className = "topnav";
+        }
+    }
+</script>
+<!--Bootstrap required packages-->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+</body>
+</html>
