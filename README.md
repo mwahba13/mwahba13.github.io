@@ -1,1 +1,1 @@
-"# MyPortfolio" 
+permalink:/index.html
