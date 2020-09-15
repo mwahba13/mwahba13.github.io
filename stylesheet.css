@@ -167,7 +167,7 @@ body,html{
     background-image: url("images/DSC_2303.jpg");
     position: relative;
     /* Set a specific height */
-    min-height: 500px;
+    min-height: 1200px;
 
     /* Create the parallax scrolling effect */
     background-attachment: fixed;
@@ -181,7 +181,7 @@ body,html{
     background-image: url("images/DSC_2379.jpg");
 
     /* Set a specific height */
-    min-height: 500px;
+    min-height: 1000px;
     position: relative;
     /* Create the parallax scrolling effect */
     background-attachment: fixed;
@@ -195,7 +195,7 @@ body,html{
     background-image: url("images/DSC_2300.jpg");
 
     /* Set a specific height */
-    min-height: 500px;
+    min-height: 1000px;
     position: relative;
     /* Create the parallax scrolling effect */
     background-attachment: fixed;
@@ -210,7 +210,7 @@ body,html{
 
     /* Set a specific height */
     padding-top: 100px;
-    min-height: 500px;
+    min-height: 1000px;
     position: relative;
     /* Create the parallax scrolling effect */
     background-attachment: fixed;
