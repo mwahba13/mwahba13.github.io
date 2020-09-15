@@ -15,19 +15,25 @@
 
 
 
-<div class="w3-content" style="max-width: 80%;">
+<div class="w3-content" style="max-width: 1000%;">
 
-<!-- Topbar -->
-<div class="w3-container" id="Top">
-    <div class="w3-bar w3-black">
-        <a href="index.html" class="w3-bar-item w3-button w3-grey">Home</a>
-        <a href="html/Portfolio.html" class="w3-button w3-bar-item">Portfolio</a>
-        <a href="html/Publications.html" class="w3-button w3-bar-item">Publications</a>
-        <a href="html/Resume.html" class="w3-button w3-bar-item">Curriculum Vitae</a>
-        <a href="html/Contact.html" class="w3-bar-item w3-button">Contact Me</a>
+
+    <!-- Topbar -->
+    <div class="w3-container" id="Top">
+        <div class="w3-bar w3-black">
+            <a href="index.html" class="w3-bar-item w3-button w3-grey">Home</a>
+            <div class="w3-dropdown-hover" >
+                <button class="w3-button" style="cursor: default">Portfolio</button>
+                <div class="w3-dropdown-content w3-bar-block w3-border">
+                    <a href="html/Portfolio.html" class="w3-button w3-bar-item">Code</a>
+                    <a href="html/Publications.html" class="w3-button w3-bar-item">Writing</a>
+                </div>
+            </div>
+
+            <a href="html/Resume.html" class="w3-button w3-bar-item">Curriculum Vitae</a>
+            <a href="html/Contact.html" class="w3-bar-item w3-button">Contact Me</a>
+        </div>
     </div>
-</div>
-
 
 <div class="parallax1">
     <div class="caption">
@@ -74,10 +80,18 @@
         <span class="border">Scientist</span>
     </div>
 </div>
+
 <div class="main-card">
     <p>More than anything, I am a curious mind. I want to learn more about how we can use technology to tell stories in new and exciting ways.
     I am formally trained in the scientific method having published peer-reviewed scientific papers and presented my findings to my colleagues.</p>
 </div>
+
+<div class="w3-container">
+    <div class="footer w3-black" style="align-content: center">
+
+        <h5><a href="#Top">Return To Top</a> </h5>
+    </div>
+</div></div>
 
 <script>
     function switchTopNav(){

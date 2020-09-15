@@ -22,7 +22,7 @@ body,html{
 }
 
 .hero-games {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url("images/index.jpg");
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url("images/DSC_2395.jpg");
     height: 50%;
     background-position: center;
     background-repeat: no-repeat;
@@ -117,8 +117,8 @@ body,html{
     width: 130px;
     position: fixed;
     z-index: 1;
-    top:300px;
-    left:10px;
+    bottom: 100px;
+    left:100px;
     background: #ffffff;
     overflow-x:hidden;
     padding:8px 0;
@@ -149,7 +149,7 @@ body,html{
 .w3-left,.w3-right,.w3-badge{cursor:pointer;}
 .w3-badge{height:13px; width:13px;padding:0}
 
-@media screen and (max-width: 1200px){
+@media screen and (max-width: 1600px){
     .column.side, .column.middle, .contact-column,.contact-container{
         width:100%;
         margin-top:0;
