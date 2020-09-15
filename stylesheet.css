@@ -31,7 +31,7 @@ body,html{
 }
 
 .hero-writings {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url("images/DSC_2300.jpg");
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url("images/DSC_2225.jpg");
     height: 50%;
 
 
@@ -206,7 +206,7 @@ body,html{
 
 .parallax4 {
 
-    background-image: url("images/49055576073_a4a61882e9_o.jpg");
+    background-image: url("images/49055509218_6e68fda557_k.jpg");
 
     /* Set a specific height */
     padding-top: 100px;
