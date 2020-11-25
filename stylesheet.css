@@ -40,6 +40,16 @@ body,html{
     background-size: cover;
     position: relative;
 }
+.hero-media{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url("images/igemPres.jpg");
+    height: 50%;
+
+
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
 
 .hero-exp {
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url("images/index.jpg");
@@ -124,6 +134,8 @@ body,html{
     padding:8px 0;
 
 }
+
+
 
 .sidenav a{
     padding:6px 8px 6px 16px;

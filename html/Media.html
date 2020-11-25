@@ -4,71 +4,105 @@
     <meta charset="UTF-8" name ="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="../stylesheet.css">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-    <title>Contact</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <title>Media</title>
 </head>
+<style>
+    * {box-sizing: border-box;}
+
+    .container {
+        position: relative;
+        width: 100%;
+
+    }
+
+    .image {
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+
+    .overlay {
+        position: absolute;
+        bottom: 0;
+        top: 0;
+        right: 0;
+        left: 0;
+        height: 100%;
+        background: rgb(0, 0, 0);
+        background: rgba(0, 0, 0, 0.49); /* Black see-through */
+        color: #f1f1f1;
+        width: 100%;
+        transition: .5s ease;
+        opacity:0;
+        color: white;
+        font-size: 48px;
+        padding: 20px;
+        text-align: center;
+
+    }
+
+    .container:hover .overlay {
+        opacity: 1;
+
+        cursor: pointer;
+    }
+</style>
 <body>
 
 
 <div class="w3-content" style="max-width: 1400px;">
-
     <!-- Topbar -->
     <div class="w3-container" id="Top">
         <div class="w3-bar w3-black">
             <a href="../index.html" class="w3-bar-item w3-button">Home</a>
-
             <div class="w3-dropdown-hover" >
                 <button class="w3-button" style="cursor: default">Portfolio</button>
                 <div class="w3-dropdown-content w3-bar-block w3-border">
                     <a href="Portfolio.html" class="w3-button w3-bar-item">Code</a>
-                    <a href="Publications.html" class="w3-button w3-bar-item">Writing</a>
+                    <a href="Publications.html" class="w3-button w3-bar-item w3-grey">Writing</a>
                 </div>
             </div>
-
             <a href="Resume.html" class="w3-button w3-bar-item">Curriculum Vitae</a>
-            <a href="Media.html" class="w3-button w3-bar-item">Media</a>
-            <a href="Contact.html" class="w3-bar-item w3-button w3-grey">Contact Me</a>
+            <a href="Media.html" class="w3-button w3-bar-item w3-grey" style="cursor: default">Media</a>
+            <a href="Contact.html" class="w3-bar-item w3-button">Contact Me</a>
         </div>
     </div>
 
-<div class="contact-container">
-    <div style="text-align: center">
-        <h1>Contact Me</h1>
-    </div>
 
-
-    <div class="row">
-
-        <div class="contact-column">
-            <img src="../images/DSC_2283.jpg" style="width: 100%;">
+    <div class="w3-card-4 w3-margin w3-white">
+        <a href="https://www.cbc.ca/news/canada/calgary/creative-writing-video-game-writer-michael-wahba-aritha-van-herk-1.5814376">
+        <div class="container" >
+            <img src="../images/DSC_2300.jpg" class="image" style="width: 100%">
+            <div class="overlay" style="padding-top: 25%">Read Article</div>
+        </div>
+        </a>
+        <div class="w3-container">
+            <a href="https://www.cbc.ca/news/canada/calgary/creative-writing-video-game-writer-michael-wahba-aritha-van-herk-1.5814376">
+                <h3 style="color:black"><b>Creative Writing Student Tapped to Moonlight as Video Game Writer | CBC News</b></h3>
+            </a>
+            <h5 style="color:black"><b>Poetry inspires Michael Wahba's dialogue for upcoming game Atrio: The Dark Wild</b></h5>
         </div>
 
-
-        <div class="contact-column">
-            <div class="w3-card-4" style="padding-left: 10px; padding-top: 10px;background-color: white; width: 100%">
-                <div class="w3-row">
-                    <p>I am always excited to meet new people for collaboration or just to share ideas. If there is anything in my portfolio
-                    that you would like to learn more about or if anything I have worked on interests you then please reach out!</p>
-                </div>
-                <div class="w3-row">
-                    <img src="../icons/email_clip.jpg" style="width: 46px; height: 36px;padding-left:10px;"><a style="padding-left: 10px">mwahba@ucalgary.ca</a>
-                </div>
-                <div class="w3-row" style="padding-top: 10px;">
-                        <img src="../icons/LI-In-Bug.png" style="width: 46px; height: 36px;padding-left:10px;"><a href="https://www.linkedin.com/in/michael-wahba/" style="padding-left: 10px;">linkedin.com/in/michael-wahba</a>
-                </div>
-                <div class="w3-row" style="padding-top: 10px;">
-                    <img src="../icons/GitHub-Mark-64px.png" style="width: 46px;height:36px;padding-left: 10px"><a href="https://github.com/mwahba13" style="padding-left: 10px;">github.com/mwahba13</a>
-                </div>
-                <div class="w3-row" style="padding-top: 10px; padding-bottom: 10px">
-                    <img src="../icons/itchio-logo-textless-black.png" style="width: 46px;height:36px;padding-left: 10px"><a href="https://mwahba13.itch.io/" style="padding-left: 10px;">mwahba13.itch.io</a>
-                </div>
+        <!--
+        <div class="w3-content w3-display-container" style="width: 100%;height: 50%">
+            <img src="../images/DSC_2300.jpg" class="image" style="width: 100%">
+            <div class="overlay">Read Article</div>
+            <div class="w3-container">
+                <h3 style="color:black"><b>Creative Writing Student Tapped to Moonlight as Video Game Writer | CBC News</b></h3>
+                <h5 style="color:black"><b>Poetry inspires Michael Wahba's dialogue for upcoming game Atrio: The Dark Wild</b></h5>
             </div>
         </div>
+        -->
     </div>
-</div>
 
+
+    <div class="w3-row" style="padding-top: 10px;">
+
+    </div>
+
+    <hr>
 
     <!--footer-->
     <div class="w3-container">
@@ -86,8 +120,10 @@
         </div>
     </div>
 
-
 </div>
+
+
+
 <script>
     function switchTopNav(){
         var x = document.getElementById("myTopnav");
