@@ -42,6 +42,7 @@
     <div id="sidenav-toggle" class="sidenav">
         <a href="#Top">Return to Top</a>
         <hr>
+        <a href="#VoxMachina">Vox Machina</a>
         <a href="#LifebrushCovid">Lifebrush: COVID-19</a>
         <a href="#LifebrushTut">Lifebrush: Tutorial</a>
         <a href="#Postal">Going Postal</a>
@@ -55,6 +56,46 @@
 
 
     <div class="w3-row">
+
+        <!--0Entry Begin-->
+        <div class="w3-card-4 w3-margin w3-white">
+            <div class="w3-content w3-display-container"  id="VoxMachina" style="max-width:100%;">
+                <img class="VoxSlides" src="../images/VoxMachina/VoxMachineCover.png" style="width:100%">
+                <img class="VoxSlides" src="../images/VoxMachina/VMscreen.png" style="width:100%">
+                <img class="VoxSlides" src="../images/VoxMachina/VMscreen1.png" style="width:100%">
+
+                <div class="w3-center w3-container w3-section w3-large w3-text-white w3-display-bottom" style="width:100%">
+                    <div class="w3-button  w3-hover-text-khaki w3-black" style="cursor:pointer" onclick="plusDivs(-1,7)">&#10094;</div>
+                    <div class="w3-button  w3-hover-text-khaki w3-black" style="cursor:pointer" onclick="plusDivs(1,7)">&#10095;</div>
+                </div>
+            </div>
+
+            <div class="w3-container">
+                <h3><b>Vox Machina</b></h3>
+                <h5>PSX-style survival horror made for Ludum Dare 48</h5>
+            </div>
+            <div class="w3-container">
+                <p>Vox Machina is a game created in Unity for the Ludum Dare 48 Game Jam. The theme was "deeper and deeper" and my collaborators
+                    and I decided to use sound as the main gameplay mechanic. We had the idea that players would use their microphone to create
+                    "spells" similarly to the gesture-based magic system found in Arx Fatalis. Over the 72 hours we decided to ditch the microphone-based
+                    input system in exchange for a more traditional one. Reception for Vox Machina has been fantastic and we are planning on continuing
+                     development on this survival horror title.
+                </p>
+                <p>Check out Vox Machina's Post-Mortem Devlog series here <a href="https://mwahba13.itch.io/vox-machina/devlog/248024/vox-machina-post-mortem-part-i-theme-and-ideation"><b>here</b></a> </p>
+                <div class="w3-row">
+                    <div class="w3-col m8 s12">
+                        <p>
+                            <a href="https://mwahba13.itch.io/vox-machina" class="w3-button"><img src="../icons/app-icon.png" style="width:64px; height:64px"> </a>
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <!--Entry End-->
+
+
         <!--0Entry Begin-->
         <div class="w3-card-4 w3-margin w3-white">
             <div class="w3-content w3-display-container"  id="LifebrushCovid" style="max-width:100%;">
@@ -393,8 +434,8 @@
     </div>
 
     <script>
-        var slideIndex = [1,1,1,1,1,1,1];
-        var slideId = ["mySlides0", "mySlides1","mySlides2","mySlides3","mySlides4","postalSlides","COVIDSlides"]
+        var slideIndex = [1,1,1,1,1,1,1,1];
+        var slideId = ["mySlides0", "mySlides1","mySlides2","mySlides3","mySlides4","postalSlides","COVIDSlides","VoxSlides"]
         showDivs(1, 0);
         showDivs(1, 1);
         showDivs(1, 2);
@@ -402,6 +443,7 @@
         showDivs(1, 4);
         showDivs(1, 5);
         showDivs(1, 6);
+        showDivs(1, 7);
 
 
 
