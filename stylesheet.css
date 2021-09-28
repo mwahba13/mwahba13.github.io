@@ -2,6 +2,7 @@
 /*HeroImage*/
 body,html{
     height: 100%;
+    background-color: #ccc0b5;
 }
 .hero-main {
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url("images/index.jpg");
@@ -276,6 +277,8 @@ body,html{
 
 }
 
-body{
-    background-color:#ccc0b5;
-    }
+
+
+
+
+

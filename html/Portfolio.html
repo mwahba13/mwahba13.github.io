@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8" name ="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
@@ -8,23 +8,175 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Portfolio</title>
 </head>
+<style>
+    * {
+        box-sizing: border-box;
+    }
 
-<!--Hero image-->
+    body {
+        background-color: rgb(204, 192, 181);
+        padding: 20px;
+    }
+
+    /* Center website */
+    .main {
+        max-width: 1000px;
+        margin: auto;
+    }
+
+    h1 {
+        font-size: 50px;
+        word-break: break-all;
+    }
+
+    .row {
+        margin: 10px -16px;
+    }
+
+    /* Add padding BETWEEN each column */
+    .row,
+    .row > .column {
+        padding: 8px;
+    }
+
+    /* Create three equal columns that floats next to each other */
+    .column {
+        float: left;
+        width: 33.33%;
+        display: none; /* Hide all elements by default */
+    }
+
+    /* Clear floats after rows */
+    .row:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+
+    /* Content */
+    .content {
+        background-color: white;
+        padding: 10px;
+    }
+
+    /* The "show" class is added to the filtered elements */
+    .show {
+        display: block;
+    }
+
+    /* Style the buttons */
+    .btn {
+        border: none;
+        outline: none;
+        padding: 12px 16px;
+        background-color: white;
+        cursor: pointer;
+    }
+
+    .btn:hover {
+        background-color: #ddd;
+    }
+
+    .btn.active {
+        background-color: #666;
+        color: white;
+    }
+
+    .myBtn_multi:hover{
+        background-color: #666666;
+    }
+
+    /* The Modal (background) */
+    .modal {
+        display: none; /* Hidden by default */
+        position: fixed; /* Stay in place */
+        z-index: 1; /* Sit on top */
+        left: 0;
+        top: 0;
+        width: 100%; /* Full width */
+        height: 100%; /* Full height */
+        overflow: auto; /* Enable scroll if needed */
+        background-color: rgb(0,0,0); /* Fallback color */
+        background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    }
+
+    /* Modal Content/Box */
+    .modal-content {
+        background-color: #fefefe;
+        margin: 15% auto; /* 15% from the top and centered */
+        padding: 20px;
+        border: 1px solid #888;
+        width: 80%; /* Could be more or less, depending on screen size */
+    }
+
+    /* The Close Button */
+    .close {
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+    }
+
+    .close:hover,
+    .close:focus {
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+    .gridRow{
+        display:flex;
+        flex-wrap: wrap;
+        padding: 0 4px;
+
+    }
+
+    .gridCol{
+        -ms-flex:25%;
+        flex:25%;
+        max-width: 50%;
+        padding: 0 4px;
+    }
+
+    .gridCol img{
+        margin-top:8px;
+        vertical-align: middle;
+        width: 100%;
+    }
+
+    @media screen and (max-width:800px)
+    {
+        .gridCol{
+            -ms-flex:50%;
+            flex:50%;
+            max-width:50%;
+        }
+    }
+
+    @media screen and(max-width:600px) {
+        .gridCol{
+            -mx-flex:100%;
+            flex:100%;
+            max-width: 100%;
+        }
+    }
+
+</style>
+</head>
+<body>
+
 <div class="hero-games st">
     <div class="hero-text">
         <h1>Portfolio</h1>
-        <p>Programming and design projects that spark my curiosity</p>
+        <p>Programming and Design Projects</p>
     </div>
 </div>
 
-<div class="w3-content" style="max-width:1100px;">
-
-
+<div class="w3-content" style="max-width: 100%">
     <!-- Topbar -->
-    <div class="w3-container w3-top" id="Top">
+    <div class="w3-container" id="Top" >
         <div class="w3-bar w3-black">
-            <a href="../index.html" class="w3-bar-item w3-button">Home</a>
-
+            <a href="../index.html" class="w3-bar-item w3-button ">Home</a>
             <div class="w3-dropdown-hover" >
                 <button class="w3-button w3-grey" style="cursor: default">Portfolio</button>
                 <div class="w3-dropdown-content w3-bar-block w3-border">
@@ -35,451 +187,815 @@
 
             <a href="Resume.html" class="w3-button w3-bar-item">Curriculum Vitae</a>
             <a href="Media.html" class="w3-button w3-bar-item">Press</a>
-            <a href="Contact.html" class="w3-bar-item w3-button ">Contact Me</a>
+            <a href="Contact.html" class="w3-bar-item w3-button">Contact Me</a>
         </div>
     </div>
 
-    <div id="sidenav-toggle" class="sidenav">
-        <a href="#Top">Return to Top</a>
-        <hr>
-        <a href="#VoxMachina">Vox Machina</a>
-        <a href="#LifebrushCovid">Lifebrush: COVID-19</a>
-        <a href="#LifebrushTut">Lifebrush: Tutorial</a>
-        <a href="#Postal">Going Postal</a>
-        <a href="#Checkered">Checkered</a>
-        <a href="#Ozymandias">Ozymandias</a>
-        <a href="#The-Red-Room">The Red Room</a>
-        <a href="#VR-Input-Logger">VR Input Logger</a>
-        <!--<a href="#Chip-8">Chip-8 Emulator</a>-->
+    <div class="w3-container" style="max-width: 100%">
+        <!-- MAIN (Center website) -->
+        <div class="main" style="padding-top: 100px">
+            <div id="myBtnContainer">
+                <button class="btn active" onclick="filterSelection('all')"> Show all</button>
+                <button class="btn" onclick="filterSelection('school')"> Course Work</button>
+                <button class="btn" onclick="filterSelection('work')"> Research/Paid Work</button>
+                <button class="btn" onclick="filterSelection('personal')"> Personal Projects</button>
+                <button class="btn" onclick="filterSelection('misc')"> Tools, Odds, and Ends</button>
+            </div>
+
+            <!-- Portfolio Gallery Grid -->
+            <div class="row">
+                <!--PORTFOLIO ENTRY START-->
+                <div class="column work">
+                    <button class="myBtn_multi">
+                        <div class="content">
+                            <img src="../images/Neo4j_Unreal.png"  style="width:100%">
+                            <h3>OPUS: Unreal Engine Neo4j Connector API</h3>
+                            <h4>An API Connecting Unreal Engine to Neo4j</h4>
+                        </div>
+                    </button>
+                </div>
+                <div class="modal modal_multi">
+                    <div class="modal-content">
+                        <span class="close close_multi">x</span>
+
+                        <div class="gridRow">
+                            <div class="gridCol">
+                                <a target="_blank" href="../images/Neo4j_Unreal.png">
+                                    <img src="../images/Neo4j_Unreal.png"style="width: 100%" >
+                                </a>
+
+                            </div>
+                            <div class="gridCol">
+                                <a target="_blank" href="../images/Neo4jPic1.png">
+                                    <img src="../images/Neo4jPic1.png"style="width: 100%">
+                                </a>
+                            </div>
+
+
+                        </div>
+                        <div class="gridRow">
+                            <h2>OPUS: Unreal Engine Neo4j Connector API</h2>
+                        </div>
+                        <div class="gridRow">
+                            <h3>An API Connecting Unreal Engine to Neo4j</h3>
+                        </div>
+                        <p>
+                            During the summer of 2021 I worked under Owen Brierley and Dr. Christian Jacob on the OPUS. The OPUS is Owen's PhD project which seeks to connect
+                            asynchronous graph database data to real-time game AI, creating persistent multi-scale simulations with real world data. I worked on a few parts of this project
+                            including helping set up the SpatialOS environment and creating tools to procedurally generate environmental meshes, but my greatest contribution was creating an API that
+                            allowed Unreal Engine to communicate with Neo4j. This API uses Unreal Enigine's HTTP library to communicate with Neo4j. I abstracted away a lot of the setup and exposed them in blueprints
+                            to make it as easy as possible for anybody to use. I also created documentation for the API to explain usage and hopefully give enough of a basis that this can be expanded further.
+                        </p>
+                        <p>
+                            This work was the basis for a presentation that was <b><a href="https://gic.gd/agenda/#13+intermediate"><u> accepted into the Game Industry Conference held in October 2021.</u> </a></b>
+                        </p>
+                        <p>
+                            At this moment, I cannot share the main part of the OPUS but I can share the <b><u><a href="https://github.com/mwahba13/UnrealNeo4jConnector">code for my Neo4j Connector Plugin</a></u></b> .
+                        </p>
+                        <a href="https://mwahba13.itch.io/wed">
+                            <img src="../icons/app-icon.png" style="width: 64px;height: 64px">
+                        </a>
+                        </p>
+
+                    </div>
+                </div>
+                <!--PORTFOLIO ENTRY END -->
+
+                <!--PORTFOLIO ENTRY START-->
+                <div class="column personal">
+                    <button class="myBtn_multi">
+                        <div class="content">
+                            <img src="../images/VoxMachina/VoxMachineCover.png"  style="width:100%">
+                            <h3>Vox Machina</h3>
+                            <h4>PSX-style Survival Horror made in Unity for Ludum Dare 48</h4>
+                        </div>
+                    </button>
+                </div>
+                <div class="modal modal_multi">
+                    <div class="modal-content">
+                        <span class="close close_multi">x</span>
+
+                        <div class="gridRow">
+                            <div class="gridCol">
+                                <a target="_blank" href="../images/VoxMachina/VMscreen.png">
+                                    <img src="../images/VoxMachina/VMscreen.png"style="width: 100%" >
+                                </a>
+                            </div>
+                            <div class="gridCol">
+                                <a target="_blank" href="../images/VoxMachina/VMscreen1.png">
+                                    <img src="../images/VoxMachina/VMscreen1.png" style="width: 100%">
+                                </a>
+                            </div>
+                            <div class="gridCol">
+                                <a target="_blank" href="../images/VoxMachina/VoxMachineCover.png">
+                                    <img src="../images/VoxMachina/VoxMachineCover.png"style="width: 100%">
+                                </a>
+                            </div>
+
+                        </div>
+                        <div class="gridRow">
+                            <h2>Vox Machina</h2>
+                        </div>
+                        <div class="gridRow">
+                            <h3>PSX-style Survival Horror Made in Unity for Ludum Dare 48</h3>
+                        </div>
+                            <p><i>Vox Machina</i> was created in Unity and I was responsible for 100% of the code and the level design.
+                                The theme for this game jam was "deeper and deeper" so my team and I decided to use sound as the main gameplay mechanic.
+                                We took inspiration from the gesture-based magic system found in <i>Arx Fatalis</i>. The reception on <i>Vox Machina</i> has been stellar
+                                with players praising the mood and setting that we created.</p>
+                        <p>Check out Vox Machina's Post-Mortem <a href="https://mwahba13.itch.io/vox-machina/devlog/248024/vox-machina-post-mortem-part-i-theme-and-ideation">
+
+                         <b><u>here</u></b></a></p>
+
+                        <p>
+                            <a href="https://mwahba13.itch.io/vox-machina">
+                                <img src="../icons/app-icon.png" style="width: 64px;height: 64px">
+                            </a>
+                            <a href="https://github.com/mwahba13/VoxMachina">
+                                <img src="../icons/GitHub-Mark-64px.png">
+                            </a>
+                        </p>
+
+                    </div>
+                </div>
+                <!--PORTFOLIO ENTRY END -->
+
+                <!--PORTFOLIO ENTRY START-->
+                <div class="column work">
+                    <button class="myBtn_multi">
+                        <div class="content">
+                            <img src="../images/COVID/COVIDGallery2.png"  style="width:100%">
+                            <h3>Lifebrush: COVID-19 Gallery</h3>
+                            <h4>Virtual Reality COVID-19 Exhibit Using Multi-Agent Systems</h4>
+                        </div>
+                    </button>
+                </div>
+                <div class="modal modal_multi">
+                    <div class="modal-content">
+                        <span class="close close_multi">x</span>
+
+                        <div class="gridRow">
+                            <div class="gridCol">
+                                <a target="_blank" href="../images/COVID/COVIDGallery2.png">
+                                    <img src="../images/COVID/COVIDGallery2.png"style="width: 100%" >
+                                </a>
+                                <a target="_blank" href="../images/COVID/COVIDGallery1.png">
+                                    <img src="../images/COVID/COVIDGallery1.png" style="width: 100%">
+                                </a>
+                            </div>
+                            <div class="gridCol">
+                                <a target="_blank" href="../images/COVID/COVIDGallery3.png">
+                                    <img src="../images/COVID/COVIDGallery3.png"style="width: 100%">
+                                </a>
+                                <a target="_blank" href="../images/COVID/COVIDGallery4.png">
+                                    <img src="../images/COVID/COVIDGallery4.png" style="width: 100%">
+                                </a>
+                            </div>
+
+                        </div>
+                        <div class="gridRow">
+                            <h2>Lifebrush: COVID-19 Gallery</h2>
+                        </div>
+                        <div class="gridRow">
+                            <h3>Virtual Reality COVID-19 Exhibit Using Multi-Agent Systems</h3>
+                        </div>
+                        <p>During the Fall 2020 semester, I undertook an independent research project under Dr. Christian Jacob
+                        in the LINDSAY Virtual Human Lab. I designed a virtual reality museum in Unreal Engine to teach users
+                        about COVID-19. The gallery consists of various representations of COVID-19 including models I created using
+                        <a href="https://github.com/LINDSAY-Universe/LifeBrush"><u><b>Lifebrush</b></u></a>, a multi-agent simulation toolkit which I
+                        had the pleasure to work with the previous summer.</p>
+                        <p><a href="https://www.youtube.com/watch?v=B5T7rZXbbRk"><u><b>This video</b></u></a> shows how the interactive community
+                        transmission model works.</p>
+                        <p>You can read my final report on this project <a href="../files/Wahba_CPSC503_Final.pdf"><u><b>here</b></u></a> </p>
+                        <p>
+                            <a class="w3-button" href="https://github.com/LINDSAY-Universe/LifeBrush/tree/feature-COVID">
+                                <img src="../icons/GitHub-Mark-64px.png">
+                            </a>
+                        </p>
+                    </div>
+                </div>
+                <!--PORTFOLIO ENTRY END -->
+                <!--PORTFOLIO ENTRY START-->
+                <div class="column school">
+                    <button class="myBtn_multi">
+                        <div class="content">
+                            <img src="../images/RichardScreenshot.png"  style="width:100%">
+                            <h3>J'Mappelle Danger</h3>
+                            <h4>A 6502 Retrogame Project Targeting the Vic-20</h4>
+                        </div>
+                    </button>
+                </div>
+                <div class="modal modal_multi">
+                    <div class="modal-content">
+                        <span class="close close_multi">x</span>
+
+                        <div class="gridRow">
+                            <div class="gridCol">
+                                <a target="_blank" href="../images/RichardScreenshot.png.png">
+                                    <img src="../images/RichardScreenshot.png"style="width: 100%" >
+                                </a>
+
+                                <a target="_blank" href="../images/RichardScreenshot1.png.png">
+                                    <img src="../images/RichardScreenshot1.png"style="width: 100%" >
+                                </a>
+
+                            </div>
+                            <div class="gridCol">
+                                <a target="_blank" href="../images/2-RichardDangerBoxArt.png">
+                                    <img src="../images/2-RichardDangerBoxArt.png"style="width: 100%">
+                                </a>
+                            </div>
+
+
+                        </div>
+                        <div class="gridRow">
+                            <h2>J'Mappelle Danger</h2>
+                        </div>
+                        <div class="gridRow">
+                            <h3>A 6502 Retrogame Project Targeting the Vic-20</h3>
+                        </div>
+                        <p>
+                            J'Mappelle Danger is the term project created by me and my teammates for CPSC 599 (Retrogames) during the
+                            Winter 2020 semester at the University of Calgary. The purpose of this course is to understand the ingenuity
+                            required to make games back in the 80s. Even though I will likely never touch assembly again this was a fun and exciting challenge
+                            to tackle in my final year of my studies. Me and my teammates had to get creative to fit as much game as possible in just 3.5 kb.
+                            J'Mappelle Danger was written in 6502 Assembly and should run on just about
+                            any Vic-20 emulator. I was responsible for implementing the enemy AI, and the player input functionalities. I also
+                            created our <a href="../images/2-RichardDangerBoxArt.png"><b><u>box art</u></b></a>, <a href="../files/RichardDangerManual.pdf"><b><u>instruction manual</u></b></a>,
+                            and <a href="https://www.youtube.com/watch?v=dVl_FHDpNiQ"><b><u>pitch video</u></b></a>.
+                        </p>
+                        <p>
+                            You can check out the source code <a href="../files/retrogame-project-master.zip"><b><u> here </u></b></a> and download a <a href="../files/danger"><b><u>precompiled .prg </u></b></a> file to play it <a href="https://pages.cpsc.ucalgary.ca/~aycock/x/vic20.html"><b><u>on an emulator</u></b></a>
+                        </p>
+                        <a href="https://mwahba13.itch.io/wed">
+                            <img src="../icons/app-icon.png" style="width: 64px;height: 64px">
+                        </a>
+                        </p>
+
+                    </div>
+                </div>
+                <!--PORTFOLIO ENTRY END -->
+
+                <!--PORTFOLIO ENTRY START-->
+                <div class="column school">
+                    <button class="myBtn_multi">
+                        <div class="content">
+                            <img src="../images/Ant_NN.png"  style="width:100%">
+                            <h3>Antymology</h3>
+                            <h4>Neural Network Agents Created for CPSC 565 - Emergent Computing</h4>
+                        </div>
+                    </button>
+                </div>
+                <div class="modal modal_multi">
+                    <div class="modal-content">
+                        <span class="close close_multi">x</span>
+
+                        <div class="gridRow">
+                            <div class="gridCol">
+                                <a target="_blank" href="../images/Ant_NN.png">
+                                    <img src="../images/Ant_NN.png"style="width: 100%" >
+                                </a>
+                            </div>
+                            <div class="gridCol">
+                                <a target="_blank" href="../images/Ant_Graph.png">
+                                    <img src="../images/Ant_Graph.png"style="width: 100%">
+                                </a>
+                            </div>
+
+                        </div>
+                        <div class="gridRow">
+                            <h2>Antymology</h2>
+                        </div>
+                        <div class="gridRow">
+                            <h3>Neural Network Agents Created for CPSC 565 - Emergent Computing</h3>
+                        </div>
+                        <p>
+                            The objective for this assignment waws to create a colony of ants that exhibit "intelligent" behavior.
+                            I chose to use an evolutionary algorithm to mutate and select for the weights of the neural network
+                            that controls each ants behavior. This was particularly exciting because I have never worked with neural
+                            networks before this assignment and building it from scratch is a great way to learn.
+                        </p>
+                        <p>We were supplied framework code by our instructor which procedurally generated a world for the ants
+                        to explore. But all the code related to the behavior of my ants are my own. I designed my system to log data
+                        for more analysis. To see more data and my analysis of it, check out the Github Repo.</p>
+
+                        <p>
+                            <a class="w3-button" href="https://github.com/mwahba13/Antymology">
+                                <img src="../icons/GitHub-Mark-64px.png" style="width: 64px;height: 64px">
+                            </a>
+                        </p>
+                    </div>
+                </div>
+                <!--PORTFOLIO ENTRY END -->
+                <!--PORTFOLIO ENTRY START-->
+                <div class="column work">
+                    <button class="myBtn_multi">
+                        <div class="content">
+                            <img src="../images/Lifebrush_1.jpg"  style="width:100%">
+                            <h3>Lifebrush: Tutorial</h3>
+                            <h4>A Tutorial for Lifebrush, A VR Molecular Modelling Tool</h4>
+                        </div>
+                    </button>
+                </div>
+                <div class="modal modal_multi">
+                    <div class="modal-content">
+                        <span class="close close_multi">x</span>
+
+                        <div class="gridRow">
+                            <div class="gridCol">
+                                <a target="_blank" href="../images/Lifebrush_1.jpg">
+                                    <img src="../images/Lifebrush_1.jpg"style="width: 100%" >
+                                </a>
+                            </div>
+                            <div class="gridCol">
+                                <a target="_blank" href="../images/Lifebrush_2.jpg">
+                                    <img src="../images/Lifebrush_2.jpg"style="width: 100%">
+                                </a>
+                            </div>
+
+                        </div>
+                        <div class="gridRow">
+                            <h2>Lifebrush: Tutorial</h2>
+                        </div>
+                        <div class="gridRow">
+                            <h3>A Tutorial for Lifebrush, A VR Molecular Modelling Tool</h3>
+                        </div>
+                        <p>
+                            Lifebrush is a virtual reality environment created in Unreal Engine which simulates molecular interactions
+                            using multi-agent systems. Lifebrush was the PhD project of Dr. Timothy Davison. In the Summer of 2020, I
+                            worked in the LINDSDAY Virtual Human Lab under Dr. Christian Jacob to expand Lifebrush. I used a combination
+                            of C++ and Blueprints to implement a tutorial to teach users how to use Lifebrush. I also created some utilities
+                            for educators such as the "info pane" which allows for easy presentation of information alongside relevant
+                            molecular models.
+                        </p>
+
+                        <p>
+                            A video playthrough of the tutorial can be found <a href="https://www.youtube.com/watch?v=fNIsAqSNVDA">
+                            <b><u>here</u></b>
+                        </a>
+                        </p>
+
+                        <p>
+                            <a class="w3-button" href="https://github.com/LINDSAY-Universe/LifeBrush/tree/feature/Tutorial">
+                                <img src="../icons/GitHub-Mark-64px.png">
+                            </a>
+                        </p>
+                    </div>
+                </div>
+                <!--PORTFOLIO ENTRY END -->
+                <!--PORTFOLIO ENTRY START-->
+                <div class="column school">
+                    <button class="myBtn_multi">
+                        <div class="content">
+                            <img src="../images/Quid_Settings.png"  style="width:100%">
+                            <h3>Quidditch Swarm</h3>
+                            <h4>Multi-Agent Swarm Created for CPSC 565 - Emergent Computing</h4>
+                        </div>
+                    </button>
+                </div>
+                <div class="modal modal_multi">
+                    <div class="modal-content">
+                        <span class="close close_multi">x</span>
+
+                        <div class="gridRow">
+                            <div class="gridCol">
+                                <a target="_blank" href="../images/Quid_Swarm.gif">
+                                    <img src="../images/Quid_Swarm.gif"style="width: 100%" >
+                                </a>
+                            </div>
+                            <div class="gridCol">
+                                <a target="_blank" href="../images/Quid_Vortex.gif">
+                                    <img src="../images/Quid_Vortex.gif"style="width: 100%">
+                                </a>
+                            </div>
+
+                        </div>
+                        <div class="gridRow">
+                            <h2>Quidditch Swarm</h2>
+                        </div>
+                        <div class="gridRow">
+                            <h3>Multi-Agent Swarm Created for CPSC 565 - Emergent Computing</h3>
+                        </div>
+                        <p>
+                            This project is a Unity implementation of a multi-agent swarm system playing Quidditch.
+                            There are a set of forces acting on each player and the magnitudes of those forces are dependent
+                            on stats set at the beginning of the simulation. Each team also has unique traits that lead to interesting
+                            emergent behavior. I did all the code for this project and created the art assets for the players. More
+                            information can be found on the Github repo.
+                        </p>
+
+                        <p>
+                            <a class="w3-button" href="https://github.com/mwahba13/QuidditchSwarm">
+                                <img src="../icons/GitHub-Mark-64px.png" style="width: 64px;height: 64px">
+                            </a>
+                        </p>
+                    </div>
+                </div>
+                <!--PORTFOLIO ENTRY END -->
+
+                <!--PORTFOLIO ENTRY START-->
+                <div class="column work">
+                    <button class="myBtn_multi">
+                        <div class="content">
+                            <img src="../images/slurpee2.png"  style="width:100%">
+                            <h3>Slurpee Day Wedding</h3>
+                            <h4>An Interactive Wedding Invitation Made in Unity</h4>
+                        </div>
+                    </button>
+                </div>
+                <div class="modal modal_multi">
+                    <div class="modal-content">
+                        <span class="close close_multi">x</span>
+
+                        <div class="gridRow">
+                            <div class="gridCol">
+                                <a target="_blank" href="../images/slurpee1.png">
+                                    <img src="../images/slurpee1.png"style="width: 100%" >
+                                </a>
+
+                            </div>
+                            <div class="gridCol">
+                                <a target="_blank" href="../images/slurpee2.png">
+                                    <img src="../images/slurpee2.png"style="width: 100%">
+                                </a>
+                            </div>
+
+
+                        </div>
+                        <div class="gridRow">
+                            <h2>Slurpee Day Wedding</h2>
+                        </div>
+                        <div class="gridRow">
+                            <h3>An Interactive Wedding Invitation Made in Unity</h3>
+                        </div>
+                        <p>
+                            In the summer of 2021 I was contracted to make an interactive wedding invitation for a friend of mine.
+                            I jumped at the opportunity since this is something I had never done before. I got to help tell the story
+                            of how they met, adopted some animals, planned a wedding, got thwarted by COVID and then finally got their dream wedding.
+                            I am particularly fond of this project because it is the perfect example of how interactive technologies can be more than just games.
+
+                        </p>
+                        <a href="https://mwahba13.itch.io/wed">
+                            <img src="../icons/app-icon.png" style="width: 64px;height: 64px">
+                        </a>
+                        </p>
+
+                    </div>
+                </div>
+                <!--PORTFOLIO ENTRY END -->
+                <!--PORTFOLIO ENTRY START-->
+                <div class="column school">
+                    <button class="myBtn_multi">
+                        <div class="content">
+                            <img src="../images/checkered-matte.png"  style="width:100%">
+                            <h3>Checkered</h3>
+                            <h4>Term Project for CPSC 585 - Games Programming</h4>
+                        </div>
+                    </button>
+                </div>
+                <div class="modal modal_multi">
+                    <div class="modal-content">
+                        <span class="close close_multi">x</span>
+
+                        <div class="gridRow">
+                            <div class="gridCol">
+                                <a target="_blank" href="../images/checkered-matte.png">
+                                    <img src="../images/checkered-matte.png"style="width: 100%" >
+                                </a>
+
+                            </div>
+                            <div class="gridCol">
+                                <a target="_blank" href="../images/Checkered_1.jpg">
+                                    <img src="../images/Checkered_1.jpg" style="width: 100%">
+                                </a>
+                            </div>
+
+                        </div>
+                        <div class="gridRow">
+                            <h2>Checkered</h2>
+                        </div>
+                        <div class="gridRow">
+                            <h3>Term Project for CPSC 585 - Games Programming</h3>
+                        </div>
+                        <p>
+                            Checkered is the term project I completed, with my group mates, for a games programming course
+                            at the University of Calgary. We didn't use any engines, we built the engine from the ground up
+                            using only the libraries at our disposal and our hard work. My main responsibilities were implementing
+                            the PhysX physics system for our game and setting up the core mechanic of picking up and dropping off passengers.
+                            Although we didn't end up getting a fantastic grade for this project, I learned so much not only about
+                            game engines but also C++ programming working on this project.
+                        </p>
+
+                        <p>
+                            <a class="w3-button" href="https://github.com/Kickass-Global/Checkered/releases/tag/m5">
+                                <img src="../icons/GitHub-Mark-64px.png" style="width: 64px;height: 64px">
+                            </a>
+                        </p>
+                    </div>
+                </div>
+                <!--PORTFOLIO ENTRY END -->
+
+
+
+                <!--PORTFOLIO ENTRY START-->
+                <div class="column personal">
+                    <button class="myBtn_multi">
+                        <div class="content">
+                            <img src="../images/dickScreenshot1.jpg"  style="width:100%">
+                            <h3>Going Postal starring Dick Danger</h3>
+                            <h4>Top Down Schmup Made in Unity for Ludum Dare 47</h4>
+                        </div>
+                    </button>
+                </div>
+                <div class="modal modal_multi">
+                    <div class="modal-content">
+                        <span class="close close_multi">x</span>
+
+                        <div class="gridRow">
+                            <div class="gridCol">
+                                <a target="_blank" href="../images/dickScreenshot1.jpg">
+                                    <img src="../images/dickScreenshot1.jpg"style="width: 100%" >
+                                </a>
+                                <a target="_blank" href="../images/dickScreenshot2.jpg">
+                                    <img src="../images/dickScreenshot2.jpg"style="width: 100%">
+                                </a>
+                            </div>
+                            <div class="gridCol">
+                                <a target="_blank" href="../images/dickScreenshot.jpg">
+                                    <img src="../images/dickScreenshot.jpg" style="width: 100%">
+                                </a>
+                            </div>
+
+                        </div>
+                        <div class="gridRow">
+                            <h2>Going Postal starring Dick Danger</h2>
+                        </div>
+                        <div class="gridRow">
+                            <h3>Top Down Schmup Made in Unity for Ludum Dare 47</h3>
+                        </div>
+                        <p>
+                            Going Postal is an arcade style shooter made in Unity for the Ludum Dare 47 Game Jam. This
+                            was my first game jam and I learned plenty about time management and product management. I
+                            was responsible for 100% of the code for this project so it was important for me to get a quick
+                            grasp of what systems we needed and how to implement them. With every project I learn something new
+                            and with this one I learned more about 2D game development in Unity using sprites.
+                        </p>
+                            <a href="https://mwahba13.itch.io/postal">
+                                <img src="../icons/app-icon.png" style="width: 64px;height: 64px">
+                            </a>
+                        </p>
+
+                    </div>
+                </div>
+                <!--PORTFOLIO ENTRY END -->
+
+                <!--PORTFOLIO ENTRY START-->
+                <div class="column personal">
+                    <button class="myBtn_multi">
+                        <div class="content">
+                            <img src="../images/ozymandias/ozy_title.jpg"  style="width:100%">
+                            <h3>Ozymandias</h3>
+                            <h4>A Short Wordless Narrative</h4>
+                        </div>
+                    </button>
+                </div>
+                <div class="modal modal_multi">
+                    <div class="modal-content">
+                        <span class="close close_multi">x</span>
+
+                        <div class="gridRow">
+                            <div class="gridCol">
+                                <a target="_blank" href="../images/ozymandias/ozy_title.jpg">
+                                    <img src="../images/ozymandias/ozy_title.jpg"style="width: 100%" >
+                                </a>
+                                <a target="_blank" href="../images/ozymandias/ozy1.jpg">
+                                    <img src="../images/ozymandias/ozy1.jpg" style="width: 100%">
+                                </a>
+
+                            </div>
+                            <div class="gridCol">
+                                <a target="_blank" href="../images/ozymandias/ozy2.jpg">
+                                    <img src="../images/ozymandias/ozy2.jpg" style="width: 100%">
+                                </a>
+                            </div>
+
+                        </div>
+                        <div class="gridRow">
+                            <h2>Ozymandias</h2>
+                        </div>
+                        <div class="gridRow">
+                            <h3>A Short Wordless Narrative</h3>
+                        </div>
+                        <p><i>I met a traveller from an antique land...</i></p>
+                        <p>
+                            So begins Percy Bysshe Shelley's immortal poem and so begins my first ever project in Unity.
+                            I set out to capture the essence of this poem using nothing but setting. This first foray
+                            into game design is as much an excercise in minimialism as it is me getting my bearings around Unity.
+                            Trigger volumes, audio, animation, all the tools of the trade that I could get my hands on.
+                            I did not create any of the art assets for this project but this was the start of my own personal journey.
+                        </p>
+
+                        <p>
+                            <a class="w3-button" href="https://mwahba13.itch.io/ozymandias">
+                                <img src="../icons/app-icon.png" style="width: 64px;height: 64px">
+                            </a>
+                        </p>
+                    </div>
+                </div>
+                <!--PORTFOLIO ENTRY END -->
+
+
+                <!--PORTFOLIO ENTRY START-->
+                <div class="column misc">
+                    <button class="myBtn_multi">
+                        <div class="content">
+                            <img src="../images/VRLogger2.jpg"  style="width:100%">
+                            <h3>VR Input Logger</h3>
+                            <h4>Utility Program To Log VR Device Input</h4>
+                        </div>
+                    </button>
+                </div>
+                <div class="modal modal_multi">
+                    <div class="modal-content">
+                        <span class="close close_multi">x</span>
+
+                        <div class="gridRow">
+                            <div class="gridCol">
+                                <a target="_blank" href="../images/VRLogger2.jpg.jpg">
+                                    <img src="../images/VRLogger2.jpg"style="width: 100%" >
+                                </a>
+                                <a target="_blank" href="../images/VRLogger2.png">
+                                    <img src="../images/VRLogger2.png" style="width: 100%">
+                                </a>
+
+                            </div>
+
+                        </div>
+                        <div class="gridRow">
+                            <h2>VR Input Logger</h2>
+                        </div>
+                        <div class="gridRow">
+                            <h3>Utility Program To Log VR Device Input</h3>
+                        </div>
+
+                        <p>
+                            This utility was created for a colleague of mine who was having a problem.
+                            She was trying to track second-to-second metrics of the position of an HTC Vive.
+                            There are many programs that do that, but they all cost money. So, I dug into the
+                            OpenVR library and wrote this tool in C++. This program tracks the positions of the hands and
+                            head and then exports the data to a CSV file for analysis. This was a fun little exercise in
+                            creating something for someone else's requirements as well as working with an API.
+                        </p>
+
+                        <p>
+                            <a class="w3-button" href="https://github.com/mwahba13/VR-Input-Logger">
+                                <img src="../icons/GitHub-Mark-64px.png" style="width: 64px;height: 64px">
+                            </a>
+                        </p>
+                    </div>
+                </div>
+                <!--PORTFOLIO ENTRY END -->
+
+                <!-- END GRID -->
+            </div>
+
+            <!-- END MAIN -->
+        </div>
     </div>
 
-
-
-    <div class="w3-row">
-
-        <!--0Entry Begin-->
-        <div class="w3-card-4 w3-margin w3-white">
-            <div class="w3-content w3-display-container"  id="VoxMachina" style="max-width:100%;">
-                <img class="VoxSlides" src="../images/VoxMachina/VoxMachineCover.png" style="width:100%">
-                <img class="VoxSlides" src="../images/VoxMachina/VMscreen.png" style="width:100%">
-                <img class="VoxSlides" src="../images/VoxMachina/VMscreen1.png" style="width:100%">
-
-                <div class="w3-center w3-container w3-section w3-large w3-text-white w3-display-bottom" style="width:100%">
-                    <div class="w3-button  w3-hover-text-khaki w3-black" style="cursor:pointer" onclick="plusDivs(-1,7)">&#10094;</div>
-                    <div class="w3-button  w3-hover-text-khaki w3-black" style="cursor:pointer" onclick="plusDivs(1,7)">&#10095;</div>
-                </div>
-            </div>
-
-            <div class="w3-container">
-                <h3><b>Vox Machina</b></h3>
-                <h5>PSX-style survival horror made for Ludum Dare 48</h5>
-            </div>
-            <div class="w3-container">
-                <p>Vox Machina is a game created in Unity for the Ludum Dare 48 Game Jam. The theme was "deeper and deeper" and my collaborators
-                    and I decided to use sound as the main gameplay mechanic. We had the idea that players would use their microphone to create
-                    "spells" similarly to the gesture-based magic system found in Arx Fatalis. Over the 72 hours we decided to ditch the microphone-based
-                    input system in exchange for a more traditional one. Reception for Vox Machina has been fantastic and we are planning on continuing
-                     development on this survival horror title.
-                </p>
-                <p>Check out Vox Machina's Post-Mortem Devlog series here <a href="https://mwahba13.itch.io/vox-machina/devlog/248024/vox-machina-post-mortem-part-i-theme-and-ideation"><b>here</b></a> </p>
-                <div class="w3-row">
-                    <div class="w3-col m8 s12">
-                        <p>
-                            <a href="https://mwahba13.itch.io/vox-machina" class="w3-button"><img src="../icons/app-icon.png" style="width:64px; height:64px"> </a>
-                        </p>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-        <hr>
-        <!--Entry End-->
-
-
-        <!--0Entry Begin-->
-        <div class="w3-card-4 w3-margin w3-white">
-            <div class="w3-content w3-display-container"  id="LifebrushCovid" style="max-width:100%;">
-                <img class="COVIDSlides" src="../images/COVID/COVIDGallery2.png" style="width:100%">
-                <img class="COVIDSlides" src="../images/COVID/COVIDGallery3.png" style="width:100%">
-                <img class="COVIDSlides" src="../images/COVID/COVIDGallery4.png" style="width:100%">
-                <img class="COVIDSlides" src="../images/COVID/COVIDGallery1.png" style="width: 100%">
-                <div class="w3-center w3-container w3-section w3-large w3-text-white w3-display-bottom" style="width:100%">
-                    <div class="w3-button  w3-hover-text-khaki w3-black" style="cursor:pointer" onclick="plusDivs(-1,6)">&#10094;</div>
-                    <div class="w3-button  w3-hover-text-khaki w3-black" style="cursor:pointer" onclick="plusDivs(1,6)">&#10095;</div>
-                </div>
-            </div>
-
-
-
-            <div class="w3-container">
-                <h3><b>Lifebrush: COVID-19</b></h3>
-                <h5> A virtual learning environment about COVID-19</h5>
-            </div>
-            <div class="w3-container">
-                <p>During the Fall 2020 semester, I have undertaken an independent research project in Computer Science to design
-                a virtual reality learning environment to teach users about COVID-19. This space consists of a gallery containing models of the
-                COVID-19 virus created within Lifebrush, as well as an interactive multi-agent simulation to show how a virus can spread through a
-                population. This project was tested on an Oculus Quest connected to the computer via a link cable, but it should work with any
-                SteamVR compatible platform.</p>
-                <p><b><a href="https://www.youtube.com/watch?v=B5T7rZXbbRk">This video</a></b> shows how to navigate the space and use the community transmission simulation.</p>
-
-                <p>If you would like to learn more about this project, you can read my final report on it <a href="../files/Wahba_CPSC503_Final.pdf"><b>here</b></a> </p>
-
-                <div class="w3-row">
-                    <div class="w3-col m8 s12">
-                        <p>
-
-                        </p>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-        <hr>
-        <!--Entry End-->
-
-
-
-
-        <!--0Entry Begin-->
-        <div class="w3-card-4 w3-margin w3-white">
-            <div class="w3-content w3-display-container"  id="LifebrushTut" style="max-width:100%;">
-                <img class="mySlides0" src="../images/Lifebrush_1.jpg" style="width:100%">
-                <img class="mySlides0" src="../images/Lifebrush_2.jpg" style="width:100%">
-                <div class="w3-center w3-container w3-section w3-large w3-text-white w3-display-bottom" style="width:100%">
-                    <div class="w3-button  w3-hover-text-khaki w3-black" style="cursor:pointer" onclick="plusDivs(-1,0)">&#10094;</div>
-                    <div class="w3-button  w3-hover-text-khaki w3-black" style="cursor:pointer" onclick="plusDivs(1,0)">&#10095;</div>
-                </div>
-            </div>
-
-
-
-            <div class="w3-container">
-                <h3><b>Lifebrush: Tutorial</b></h3>
-                <h5> A tutorial VR environment for molecular modelling created in Unreal Engine</h5>
-            </div>
-            <div class="w3-container">
-                <p>Lifebrush is a virtual reality environment created in Unreal Engine which simulates molecular interactions using multi-agent systems.
-                    Lifebrush was the PhD project of Dr. Timothy Davison. In the summer of 2020, I was fortunate enough to be given the opportunity to expand on Lifebrush, creating tools and documentation
-                    to make it more accessible to a general audience. In particular, I was interested in how we can bridge the gap between programmers and biologists and make Lifebrush user-friendly enough
-                    in the hopes that one day it could be used in a classroom. Over the summer months of 2020 i designed and developed a tutorial level for Lifebrush using Unreal Blueprints. The biggest learning
-                    curve was figuring out how to take advantage of the VR environment. Designing for VR requires a whole new way of thinking and approaching problems. You can't just use the same solution you would
-                    for a non-VR application because then you might as well just make it a non-VR application. I am thrilled to be continuing work on Lifebrush through the Fall 2020 semester by creating documentation and
-                    using Lifebrush's C++ API to create a simulation of the Covid-19 virus.</p>
-                <p>One of the features I have introduced to Lifebrush is what I call the "info pane". The info pane is a blueprint I have set up specifically for educators. All they have to do is drag the actor into the scene
-                and fill out the fields that I have provided. At run time, the information they have entered will appear in-game alongside the elements they are referencing.
-
-                <p>The documentation I am writing for the Lifebrush API
-                can be found <a href="../files/LifebrushAPI_Documentation.pdf"><b>here</b></a>, however it is still a work in progress. </p>
-                <p>A video playthrough of the tutorial level I designed and developed can be found <a href="https://www.youtube.com/watch?v=fNIsAqSNVDA"><b>here</b></a>.
-                </p>
-                <div class="w3-row">
-                    <div class="w3-col m8 s12">
-                        <p>
-                            <a href="https://github.com/LINDSAY-Universe/LifeBrush" class="w3-button"><img src="../icons/GitHub-Mark-64px.png"> </a>
-
-                        </p>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-        <hr>
-        <!--Entry End-->
-        <!--1Entry Begin-->
-        <div class="w3-card-4 w3-margin w3-white">
-            <div class="w3-content w3-display-container"  id="Postal" style="max-width:100%">
-                <img class="postalSlides" src="../images/dickScreenshot1.jpg" style="width:100%">
-                <img class="postalSlides" src="../images/dickScreenshot2.jpg" style="width:100%">
-
-                <div class="w3-center w3-container w3-section w3-large w3-text-white w3-display-bottommiddle" style="width:100%">
-                    <div class="w3-button  w3-hover-text-khaki" style="cursor:pointer" onclick="plusDivs(-1,5)">&#10094;</div>
-                    <div class="w3-button  w3-hover-text-khaki" style="cursor:pointer" onclick="plusDivs(1,5)">&#10095;</div>
-                </div>
-            </div>
-
-
-
-            <div class="w3-container">
-                <h3><b>Going Postal Starring Dick Danger</b></h3>
-                <h5>Made for Ludum Dare Game Jam (Theme: Stuck in a Loop)</h5>
-            </div>
-            <div class="w3-container">
-
-                <p> Going Postal is a top down shooter made for Ludum Dare 47 Game Jam. Me and my teammates had 72 hours to create a game and I am immensely proud of the result.
-                    This was my first ever game jam and it is amazing how much you can learn in such a short time. You can't spend too much time ruminating over design decisions and
-                    you have to be very careful which features you choose to implement. The time constraint forces you to distill down the essence of the game you are trying to make and I
-                    encourage every new developer to try out a game jam.
-                    Aliens have taken over the postal service and it is up to Dick Danger to eradicate the menace...he's got a special package for them.
-                </p>
-                <div class="w3-row">
-                    <div class="w3-col m8 s12">
-                        <p>
-
-
-                            <a href="https://mwahba13.itch.io/postal" class="w3-button"><img src="../icons/app-icon.png" style="width:64px; height:64px"> </a>
-                        </p>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-        <hr>
-        <!--Entry End-->
-
-        <!--1Entry Begin-->
-        <div class="w3-card-4 w3-margin w3-white">
-            <div class="w3-content w3-display-container"  id="Checkered" style="max-width:100%">
-                <img class="mySlides4" src="../images/checkered-matte.png" style="width:100%">
-                <img class="mySlides4" src="../images/Checkered_1.jpg" style="width:100%">
-
-                <div class="w3-center w3-container w3-section w3-large w3-text-white w3-display-bottommiddle" style="width:100%">
-                    <div class="w3-button  w3-hover-text-khaki" style="cursor:pointer" onclick="plusDivs(-1,4)">&#10094;</div>
-                    <div class="w3-button  w3-hover-text-khaki" style="cursor:pointer" onclick="plusDivs(1,4)">&#10095;</div>
-                </div>
-            </div>
-
-
-
-            <div class="w3-container">
-                <h3><b>Checkered</b></h3>
-                <h5>Term project for CPSC 585 (Games Programming)</h5>
-            </div>
-            <div class="w3-container">
-
-                <p>CPSC 585 (Games Programming) is a class offered at the University of Calgary where students are challenged to build a game from the ground up.
-                    We were not allowed to use any game engines, only the libraries at our disposal and the skills we learned in previous courses. Checkered is our take
-                    on Crazy Taxi. You must survive as an Uber driver trying to make money in a world where Taxi drivers are fed up with Uber and will try to run you off the road.
-                    My main contributions to the project was using the PhysX library to set up the physics of our world, setting up the passenger system which involves picking up, dropping off
-                    passengers and then receiving a grade based on your drive time, as well as creating some of the UI art assets. This project let me get my hands dirty working on a scrapped together
-                    C++ game engine and PhysX. What surprised me was that the most challenging aspect was fine-tuning the driving parameters of the player's car to get it feeling just right.
-                </p>
-                <div class="w3-row">
-                    <div class="w3-col m8 s12">
-                        <p>
-
-                            <a href="https://github.com/Kickass-Global/Checkered/releases/tag/m5" class="w3-button"><img src="../icons/GitHub-Mark-64px.png"> </a>
-                        </p>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-        <hr>
-        <!--Entry End-->
-        <!--1Entry Begin-->
-        <div class="w3-card-4 w3-margin w3-white">
-            <div class="w3-content w3-display-container"  id="Ozymandias" style="max-width:100%">
-                <img class="mySlides1" src="../images/ozymandias/ozy_title.jpg" style="width:100%">
-                <img class="mySlides1" src="../images/ozymandias/ozy1.jpg" style="width:100%">
-                <img class="mySlides1" src="../images/ozymandias/ozy2.jpg" style="width:100%">
-                <div class="w3-center w3-container w3-section w3-large w3-text-white w3-display-bottommiddle" style="width:100%">
-                    <div class="w3-button  w3-hover-text-khaki" style="cursor:pointer" onclick="plusDivs(-1,1)">&#10094;</div>
-                    <div class="w3-button  w3-hover-text-khaki" style="cursor:pointer" onclick="plusDivs(1,1)">&#10095;</div>
-                </div>
-            </div>
-
-
-
-            <div class="w3-container">
-                <h3><b>Ozymandias</b></h3>
-                <h5>Short narrative based on Percy Bysshe Shelley's poem</h5>
-            </div>
-            <div class="w3-container">
-                <p><i>I met a traveller from an antique land...</i></p>
-                <p>So begins Percy Bysshe Shelley's immortal poem about hubris and the tragedy of ego. For one of my first Unity projects, I set out to capture the essence of this poem
-                using nothing but setting. No dialogue, and not much action, Ozymandias is my attempt to evoke a work of art using minimalism. The result is a fantastical tableau which resurrects
-                the glory of a shattered visage among a decaying colossal wreck. This project taught me the basic use of many of Unity's systems including: Trigger Volumes, Audio and Animation. In this project,
-                I also learned how to create a portal effect where it appears as if the player is looking through a doorway into another world. It is a really fun effect as it replicates non-euclidean space, something
-                 I plan on doing more experimentation with in the future.</p>
-                    <p>
-                    I did not create any of the art assets for this project, only the design and scripting. Art assets were obtained from the
-                Unity Asset store.</p>
-                <div class="w3-row">
-                    <div class="w3-col m8 s12">
-                        <p>
-
-                            <a href="https://mwahba13.itch.io/ozymandias" class="w3-button"><img src="../icons/app-icon.png" style="width:64px; height:64px"> </a>
-                        </p>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-        <hr>
-        <!--Entry End-->
-
-        <!--2Entry Begin-->
-        <div class="w3-card-4 w3-margin w3-white">
-            <div class="w3-content w3-display-container"  id="The-Red-Room" style="max-width:100%">
-                <img class="mySlides2" src="../images/redRoomTitle.jpeg" style="width:100%">
-                <img class="mySlides2" src="../images/redRoom1.jpg" style="width:100%">
-                <div class="w3-center w3-container w3-section w3-large w3-text-white w3-display-bottommiddle" style="width:100%">
-                    <div class="w3-button  w3-hover-text-khaki" style="cursor:pointer" onclick="plusDivs(-1,2)">&#10094;</div>
-                    <div class="w3-button  w3-hover-text-khaki" style="cursor:pointer" onclick="plusDivs(1,2)">&#10095;</div>
-                </div>
-            </div>
-
-
-
-            <div class="w3-container">
-                <h3><b>The Red Room</b></h3>
-                <h5>"I have no idea where this will lead us, but I have a definite feeling it will be a place both wonderful and strange."</h5>
-            </div>
-            <div class="w3-container">
-                <p>One of my first forays into Unity development involved recreating an iconic environment from one of my favorite shows: Twin Peaks. Since this was one of my first Unity Projects I started dreadfully simple.
-                    All the player can do is look around a poorly lit room and take in the music. Although the visuals are not very pleasing, this project taught me a lot about Unity development. First, I learned that <i>EVERYTHING</i> is harder
-                than it looks when it comes to development. Second, I learned the basic Unity workflow. How to set up materials, textures, and audio in a scene. There isn't anything that is scripted or animated in this sample, as that would come a bit
-                later in my Unity development career. It is clear from this sample that there was still much for me to learn at the time, and learn I did.</p>
-                <p>I did not create any of the art assets for this project. All assets came from the Unity Asset Store.</p>
-                <div class="w3-row">
-                    <div class="w3-col m8 s12">
-                        <p>
-                            <a href="https://github.com/mwahba13/red-room" class="w3-button"><img src="../icons/GitHub-Mark-64px.png"></a>
-                            <a href="https://mwahba13.itch.io/the-red-room" class="w3-button"><img src="../icons/app-icon.png" style="width:64px; height:64px"> </a>
-                        </p>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-        <hr>
-        <!--Entry End-->
-
-        <!--3Entry Begin-->
-        <div class="w3-card-4 w3-margin w3-white">
-            <div class="w3-content w3-display-container"  id="VR-Input-Logger" style="max-width:100%">
-                <img class="mySlides3" src="../images/VRLogger2.jpg" style="width:100%">
-                <img class="mySlides3" src="../images/VRLogger2.png" style="width:100%">
-
-                <div class="w3-center w3-container w3-section w3-large w3-text-white w3-display-bottommiddle" style="width:100%">
-                    <div class="w3-button  w3-hover-text-khaki" style="cursor:pointer" onclick="plusDivs(-1,3)">&#10094;</div>
-                    <div class="w3-button  w3-hover-text-khaki" style="cursor:pointer" onclick="plusDivs(1, 3)">&#10095;</div>
-                </div>
-            </div>
-
-
-
-            <div class="w3-container">
-                <h3><b>VR Input Logger</b></h3>
-                <h5>Utility for logging VR device input</h5>
-            </div>
-            <div class="w3-container">
-                <p>This utility was developed after a friend of mine was having a problem. It was necessary for her research to track second-to-second metrics of an HTC Vive's position and controller state.
-                There are programs which do so, however they cost money. I set out to develop a tool which she could use to make her life easier. I wrote this tool in C++ to use the OpenVR library to track the position of both controllers
-                and the head-mounted display, and then output these datapoints over a period of time into a csv file for easy analysis. The interface is a simple command-line interface which allows the user to start and stop the logging of their movement.
-                Not only was this one of my early experiences developing a tool using an existing API, but it was also a great exercise in requirement engineering. The whole process started with a need that need to be fulfilled, and required me to go back and forth
-                to ensure it was a tool that could be put to good use.</p>
-                <div class="w3-row">
-                    <div class="w3-col m8 s12">
-                        <p>
-                            <a href="https://github.com/mwahba13/VR-Input-Logger" class="w3-button"><img src="../icons/GitHub-Mark-64px.png"> </a>
-                        </p>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-        <hr>
-        <!--Entry End-->
-
-        <!--3Entry Begin
-        <div class="w3-card-4 w3-margin w3-white">
-            <div class="w3-content w3-display-container"  id="Chip-8" style="max-width:100%">
-                <img class="mySlides4" src="../images/g33xQtS.jpg" style="width:100%">
-                <img class="mySlides4" src="../images/gbEYKmZ.png" style="width:100%">
-                <img class="mySlides4" src="../images/gaming-wallpaper-36.jpg" style="width:100%">
-                <div class="w3-center w3-container w3-section w3-large w3-text-white w3-display-bottommiddle" style="width:100%">
-                    <div class="w3-button  w3-hover-text-khaki" style="cursor:pointer" onclick="plusDivs(-1,4)">&#10094;</div>
-                    <div class="w3-button  w3-hover-text-khaki" style="cursor:pointer" onclick="plusDivs(1, 4)">&#10095;</div>
-                </div>
-            </div>
-
-
-
-            <div class="w3-container">
-                <h3><b>Chip-8 Emulator</b></h3>
-                <h5>Text here</h5>
-            </div>
-            <div class="w3-container">
-                <p>description text goes here</p>
-                <div class="w3-row">
-                    <div class="w3-col m8 s12">
-                        <p>
-                            <a href="https://www.google.ca" class="w3-button"><img src="../icons/GitHub-Mark-64px.png"> </a>
-                            <a href="https://www.google.ca" class="w3-button"><img src="../icons/app-icon.png" style="width:64px; height:64px"> </a>
-                        </p>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-        <hr>
-        -->
-
-
-    </div>
-
-
-    <!--footer-->
-    <div class="w3-container">
-        <div class="footer w3-black" style="align-content: center">
-
-            <h4>
-                <a href="../index.html" >Home</a>
-                <a href="Portfolio.html" style="padding-left: 10px">Code</a>
-                <a href="Publications.html" style="padding-left: 10px">Writings</a>
-                <a href="Resume.html" style="padding-left: 10px">CV</a>
-                <a href="Media.html"style="padding-left: 10px">Press</a>
-                <a href="Contact.html" style="padding-left: 10px">Contact</a>
-            </h4>
-            <h5><a href="#Top">Return To Top</a> </h5>
-        </div>
-    </div>
-
-    <script>
-        var slideIndex = [1,1,1,1,1,1,1,1];
-        var slideId = ["mySlides0", "mySlides1","mySlides2","mySlides3","mySlides4","postalSlides","COVIDSlides","VoxSlides"]
-        showDivs(1, 0);
-        showDivs(1, 1);
-        showDivs(1, 2);
-        showDivs(1, 3);
-        showDivs(1, 4);
-        showDivs(1, 5);
-        showDivs(1, 6);
-        showDivs(1, 7);
-
-
-
-        function plusDivs(n, no) {
-            showDivs(slideIndex[no] += n, no);
-        }
-
-        function showDivs(n, no) {
-            var i;
-            var x = document.getElementsByClassName(slideId[no]);
-            if (n > x.length) {slideIndex[no] = 1}
-            if (n < 1) {slideIndex[no] = x.length}
-            for (i = 0; i < x.length; i++) {
-                x[i].style.display = "none";
-            }
-            x[slideIndex[no]-1].style.display = "block";
-        }
-
-        function switchTopNav(){
-            var x = document.getElementById("myTopnav");
-            if(x.className === "topnav"){
-                x.className += " responsive";
-            }else{
-                x.className = "topnav";
-            }
-        }
-
-
-    </script>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
 
 </div>
+
+
+
+
+
+<script>
+    filterSelection("all")
+    function filterSelection(c) {
+        var x, i;
+        x = document.getElementsByClassName("column");
+        if (c == "all") c = "";
+        for (i = 0; i < x.length; i++) {
+            w3RemoveClass(x[i], "show");
+            if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+        }
+    }
+
+    function w3AddClass(element, name) {
+        var i, arr1, arr2;
+        arr1 = element.className.split(" ");
+        arr2 = name.split(" ");
+        for (i = 0; i < arr2.length; i++) {
+            if (arr1.indexOf(arr2[i]) == -1) {element.className += " " + arr2[i];}
+        }
+    }
+
+    function w3RemoveClass(element, name) {
+        var i, arr1, arr2;
+        arr1 = element.className.split(" ");
+        arr2 = name.split(" ");
+        for (i = 0; i < arr2.length; i++) {
+            while (arr1.indexOf(arr2[i]) > -1) {
+                arr1.splice(arr1.indexOf(arr2[i]), 1);
+            }
+        }
+        element.className = arr1.join(" ");
+    }
+
+
+    // Add active class to the current button (highlight it)
+    var btnContainer = document.getElementById("myBtnContainer");
+    var btns = btnContainer.getElementsByClassName("btn");
+    for (var i = 0; i < btns.length; i++) {
+        btns[i].addEventListener("click", function(){
+            var current = document.getElementsByClassName("active");
+            current[0].className = current[0].className.replace(" active", "");
+            this.className += " active";
+        });
+    }
+    // Get the modal
+
+    var modalparent = document.getElementsByClassName("modal_multi");
+
+    // Get the button that opens the modal
+
+    var modal_btn_multi = document.getElementsByClassName("myBtn_multi");
+
+    // Get the <span> element that closes the modal
+    var span_close_multi = document.getElementsByClassName("close_multi");
+
+    // When the user clicks the button, open the modal
+    function setDataIndex() {
+
+        for (i = 0; i < modal_btn_multi.length; i++)
+        {
+            modal_btn_multi[i].setAttribute('data-index', i);
+            modalparent[i].setAttribute('data-index', i);
+            span_close_multi[i].setAttribute('data-index', i);
+        }
+    }
+
+
+
+    for (i = 0; i < modal_btn_multi.length; i++)
+    {
+        modal_btn_multi[i].onclick = function() {
+            var ElementIndex = this.getAttribute('data-index');
+            modalparent[ElementIndex].style.display = "block";
+        };
+
+        // When the user clicks on <span> (x), close the modal
+        span_close_multi[i].onclick = function() {
+            var ElementIndex = this.getAttribute('data-index');
+            modalparent[ElementIndex].style.display = "none";
+        };
+
+    }
+
+    window.onload = function() {
+
+        setDataIndex();
+    };
+
+    window.onclick = function(event) {
+        if (event.target === modalparent[event.target.getAttribute('data-index')]) {
+            modalparent[event.target.getAttribute('data-index')].style.display = "none";
+        }
+
+        // OLD CODE
+        if (event.target === modal) {
+            modal.style.display = "none";
+        }
+    };
+
+    //XXXXXXXXXXXXXXXXXXXXXXX    Modified old code    XXXXXXXXXXXXXXXXXXXXXXXXXX
+
+    // Get the modal
+
+    var modal = document.getElementById('myModal');
+
+    // Get the button that opens the modal
+    var btn = document.getElementById("myBtn");
+
+    // Get the <span> element that closes the modal
+    var span = modal.getElementsByClassName("close")[0]; // Modified by dsones uk
+
+    // When the user clicks on the button, open the modal
+
+    btn.onclick = function() {
+
+        modal.style.display = "block";
+    }
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function() {
+        modal.style.display = "none";
+    }
+
+
+
+</script>
+
+</body>
 </html>
