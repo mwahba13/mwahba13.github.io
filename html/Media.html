@@ -146,8 +146,13 @@
 </div>
 
 
-
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TN9M86WYZ5"></script>
 <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-TN9M86WYZ5');
     function switchTopNav(){
         var x = document.getElementById("myTopnav");
         if(x.className === "topnav"){
