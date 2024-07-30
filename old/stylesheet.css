@@ -1,0 +1,284 @@
+
+/*HeroImage*/
+body,html{
+    height: 100%;
+    background-color: #ccc0b5;
+}
+.hero-main {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url("images/index.jpg");
+    height: 50%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.hero-contact {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url("images/index.jpg");
+    height: 50%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.hero-games {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url("images/DSC_2395.jpg");
+    height: 50%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.hero-writings {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url("images/DSC_2225.jpg");
+    height: 50%;
+
+
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+.hero-media{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url("images/igemPres.jpg");
+    height: 50%;
+
+
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.hero-exp {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url("images/index.jpg");
+    height: 50%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.hero-text {
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+}
+
+.project-card{
+    background-color:white;
+    padding:20px;
+    margin-top: 20px;
+}
+
+.fakeimg{
+    background-color: #aaa;
+    width:100%;
+    padding:20px;
+}
+
+.contact-container{
+    border-radius: 5px;
+
+    padding: 10px;
+
+}
+
+.contact-column{
+    float:left;
+    width:50%;
+    margin-top:6px;
+    padding: 20px;
+}
+
+.row:after{
+    content:"";
+    display:table;
+    clear:both;
+}
+
+.column{
+    float: left;
+    padding: 10px;
+}
+
+.column.side{
+    width:25%;
+}
+
+.column.middle{
+    width:50%;
+}
+
+.footer{
+    padding:20px;
+    text-align:center;
+    background:#dddddd;
+    margin-top: 20px;
+}
+
+
+/*side nav*/
+.sidenav{
+    width: 130px;
+    position: fixed;
+    z-index: 1;
+    bottom: 100px;
+    left:100px;
+    background: #ffffff;
+    overflow-x:hidden;
+    padding:8px 0;
+
+}
+
+
+
+.sidenav a{
+    padding:6px 8px 6px 16px;
+    text-decoration: none;
+    color: #000000;
+    display:block;
+}
+
+.sidenav title{
+    padding:8px 8px 6px 16px;
+    text-decoration: underline;
+    color: #000000;
+    display:block;
+}
+
+.sidenav a:hover{
+    color: #49413e;
+}
+
+.sidenav a:active{
+    color: #ff0000;
+}
+
+
+
+
+.html{scroll-behavior: smooth;}
+
+
+.w3-left,.w3-right,.w3-badge{cursor:pointer;}
+.w3-badge{height:13px; width:13px;padding:0}
+
+@media screen and (max-width: 1600px){
+    .column.side, .column.middle, .contact-column,.contact-container{
+        width:100%;
+        margin-top:0;
+    }
+    .sidenav{
+        display: none ;
+    }
+}
+
+
+
+
+.parallax1 {
+
+    background-image: url("images/DSC_2303.jpg");
+    position: relative;
+    /* Set a specific height */
+    min-height: 1000px;
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.parallax2 {
+
+    background-image: url("images/DSC_2379.jpg");
+
+    /* Set a specific height */
+    min-height: 720px;
+    max-width: 800px;
+    position: relative;
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: left;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.parallax3 {
+
+    background-image: url("images/DSC_2300.jpg");
+
+    /* Set a specific height */
+    min-height: 1000px;
+    position: relative;
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.parallax4 {
+
+    background-image: url("images/49055509218_6e68fda557_k.jpg");
+
+    /* Set a specific height */
+    padding-top: 100px;
+    min-height: 1000px;
+    position: relative;
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+
+/* Turn off parallax scrolling for all tablets and phones. Increase/decrease the pixels if needed */
+@media only screen and (max-device-width: 1366px) {
+    .parallax1 .parallax2 .parallax3 .parallax4{
+        background-attachment: scroll;
+    }
+}
+
+.main-card{
+    color:#ffffff;
+    background-color: black;
+    text-align: center;
+    padding: 50px 80px;
+    text-align: justify;
+}
+
+.caption span.border{
+    background-color: black;
+    color: white;
+    padding: 18px;
+
+    font-size: 25px;
+    letter-spacing: 10px;
+}
+
+
+.caption{
+    position: absolute;
+    left: 0;
+    top: 95%;
+    width: 100%;
+    color: black;
+    text-align:center;
+
+}
+
+
+
+
+
+

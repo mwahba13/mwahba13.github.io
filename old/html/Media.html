@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" name ="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="../stylesheet.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <title>Media</title>
+</head>
+<style>
+    * {box-sizing: border-box;}
+
+    .container {
+        position: relative;
+        width: 100%;
+
+    }
+
+    .image {
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+
+    .overlay {
+        position: absolute;
+        bottom: 0;
+        top: 0;
+        right: 0;
+        left: 0;
+        height: 100%;
+        background: rgb(0, 0, 0);
+        background: rgba(0, 0, 0, 0.49); /* Black see-through */
+        color: #f1f1f1;
+        width: 100%;
+        transition: .5s ease;
+        opacity:0;
+        color: white;
+        font-size: 48px;
+        padding: 20px;
+        text-align: center;
+
+    }
+
+    .container:hover .overlay {
+        opacity: 1;
+
+        cursor: pointer;
+    }
+</style>
+<body>
+
+
+<div class="w3-content" style="max-width: 1400px;">
+    <!-- Topbar -->
+    <div class="w3-container" id="Top">
+        <div class="w3-bar w3-black">
+            <a href="../index.html" class="w3-bar-item w3-button">Home</a>
+            <div class="w3-dropdown-hover" >
+                <button class="w3-button" style="cursor: default">Portfolio</button>
+                <div class="w3-dropdown-content w3-bar-block w3-border">
+                    <a href="Portfolio.html" class="w3-button w3-bar-item">Games</a>
+                    <a href="Publications.html" class="w3-button w3-bar-item">Writing</a>
+                </div>
+            </div>
+            <a href="Resume.html" class="w3-button w3-bar-item">Curriculum Vitae</a>
+            <a href="Media.html" class="w3-button w3-bar-item w3-grey" style="cursor: default">Press</a>
+            <a href="Contact.html" class="w3-bar-item w3-button">Contact Me</a>
+        </div>
+    </div>
+
+    <div class="w3-container">
+        <div class="w3-row-padding" style="background-color: #ccc0b5">
+            <div class="w3-third w3-container w3-margin-botoom w3-margin-top">
+                <img src="../images/GameIndustryConferenceGIC.jpg"style="width: 100%">
+                <div class="w3-container w3-black">
+                    <h3 style="text-align: center">Hey! You Got Graph Data in My Behavior Tree!</h3>
+                    <h4 style="text-align: center"><i>Presentation at Game Industry Conference 2021 </i></h4>
+                    <p style="text-align: center">In October 2021, I will be co-presenting alongside Owen Brierley at the Game Industry Conference.
+                    We will share some of the work I did over the summer and discuss a new paradigm for creating emotional AI characters for narrative games.</p>
+                    <p style="text-align: center"><u><b><a href="https://gic.gd/agenda/#michael-wahba-owen-brierley">
+                        Link to the talk here</a> </b></u></p>
+                </div>
+            </div>
+            <div class="w3-third w3-container w3-margin-botoom w3-margin-top">
+                <img src="../images/thelogic_prospects.jpg"style="width: 100%">
+                <div class="w3-container w3-black">
+                    <h3 style="text-align: center">Top Prospects: Leading Innovators from the of 2021</h3>
+                    <h4 style="text-align: center"><i>The Logic</i></h4>
+                    <p style="text-align: center">In July 2021, I was featured on The Logic's annual list of leading innovators
+                    emerging from Canadian Universities.</p>
+                    <p style="text-align: center">Read the feature <u><b><a href="../files/Top%20Prospects_%20Leading%20innovators%20from%20the%20Class%20of%202021%20-%20The%20Logic.pdf">
+                        here</a> </b></u></p>
+                </div>
+            </div>
+            <div class="w3-third w3-container w3-margin-botoom w3-margin-top">
+                <img src="../images/DSC_2300.jpg"style="width: 100%">
+                <div class="w3-container w3-black">
+                    <h3 style="text-align: center">Creative Writing Student Tapped to Moonlight as Video Game Writer</h3>
+                    <h4 style="text-align: center"><i>CBC News</i></h4>
+                    <p style="text-align: center">In November 2020, I was interviewed on CBC Radio along with Aritha Van Herk to discuss
+                    the role narratives play in video game development. Some of our lively discussion was highlighted in an accompanying article featuring my journey
+                    into video game development.</p>
+                    <p style="text-align: center">Read the feature <b><u><a href="https://www.cbc.ca/news/canada/calgary/creative-writing-video-game-writer-michael-wahba-aritha-van-herk-1.5814376">here</a> </u></b></p>
+                    <p style="text-align: center">Listen to the radio interview <b><u><a href="https://youtu.be/p5otbREkvvE">here</a> </u></b></p>
+                </div>
+            </div>
+        </div>
+        <div class="w3-row-padding" style="background-color: #ccc0b5">
+            <div class="w3-third w3-container w3-margin-botoom w3-margin-top">
+                <img src="../images/yycpop.png"style="width: 100%">
+                <div class="w3-container w3-black">
+                    <h3 style="text-align: center">Michael Wahba Reads During YYC POP</h3>
+                    <h4 style="text-align: center"><i>YYC POP: Portraits of People </i></h4>
+                    <p style="text-align: center">A poem I wrote was published in the YYC POP collection. I got the chance to read my poem in an online reading
+                    also featuring other notable Calgarians.</p>
+                    <p style="text-align: center">Watch the reading <u><b><a href="https://www.youtube.com/watch?v=eoAlLjmLmMY">
+                        here</a> </b></u></p>
+                </div>
+            </div>
+        </div>
+        <!--- for future entries, keep adding rows-->
+
+    </div>
+
+
+
+
+    <!--footer-->
+    <div class="w3-container">
+        <div class="footer w3-black" style="align-content: center">
+
+            <h4>
+                <a href="../index.html" >Home</a>
+                <a href="Portfolio.html" style="padding-left: 10px">Games</a>
+                <a href="Publications.html" style="padding-left: 10px">Writings</a>
+                <a href="Resume.html" style="padding-left: 10px">CV</a>
+                <a href="Media.html"style="padding-left: 10px">Press</a>
+                <a href="Contact.html" style="padding-left: 10px">Contact</a>
+            </h4>
+            <h5><a href="#Top">Return To Top</a> </h5>
+        </div>
+    </div>
+
+</div>
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TN9M86WYZ5"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-TN9M86WYZ5');
+    function switchTopNav(){
+        var x = document.getElementById("myTopnav");
+        if(x.className === "topnav"){
+            x.className += " responsive";
+        }else{
+            x.className = "topnav";
+        }
+    }
+</script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+</body>
+</html>
