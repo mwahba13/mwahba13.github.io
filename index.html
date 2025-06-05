@@ -42,6 +42,11 @@
 	          <li class="nav-item"><a href="#press-section" class="nav-link"><span>Press/Media</span></a></li>
 	          <li class="nav-item"><a href="#contact-section" class="nav-link"><span>Contact</span></a></li>
 	        </ul>
+	        <div class="d-flex align-items-center">              <a href="portfolio.html" class="btn btn-primary py-2 px-3 me-2">Portfolio</a>
+              <a href="docs/Curriculum Vitae, Wahba (May 2025).pdf" class="btn btn-primary py-2 px-3">Download Full CV</a>
+              <a href="mailto:mrswahba13@gmail.com" class="btn btn-link text-light"><span class="icon-paper-plane"></span></a>
+              <a href="https://www.linkedin.com/in/michael-wahba/" class="btn btn-link text-light"><span class="icon-linkedin-square"></span></a>
+            </div>
 	      </div>
 	    </div>
 	  </nav>
@@ -54,8 +59,10 @@
 		          <div class="one-forth d-flex  align-items-center ftco-animate" data-scrollax=" properties: { translateY: '70%' }">
 		          	<div class="text">
 			            <h1 class="mb-4 mt-3 text-primary"><span> Michael Wahba </span></h1>
-			            <h3 class="mb-4">Game Developer</h2>
-			            <h3 class="mb-4">Instructor</h2>
+			            <h3 class="mb-4">Technical Game Designer</h2>
+						<h3 class="mb-4">Gameplay Programmer</h2>
+			            <h3 class="mb-4">Game Development Instructor</h2>
+			            <p class="text-muted mb-4">I design and implement complex interactive systems to tell emotionally resonant stories.</p>
 		            </div>
 		          </div>
 	        	</div>
@@ -96,10 +103,6 @@
 		          </div>
 		        </div>
 	          <div class="counter-wrap ftco-animate d-flex mt-md-3">
-              <div class="text">
-
-                <p><a href="docs/Curriculum Vitae, Wahba (May 2025).pdf" class="btn btn-primary py-3 px-3">Download Full CV</a></p>
-              </div>
 	          </div>
 	        </div>
         </div>
@@ -108,54 +111,44 @@
 
     <section class="ftco-section ftco-no-pb" id="projects-section">
     	<div class="container">
-    		<div class="row justify-content-center pb-5">
-          <div class="col-md-10 heading-section text-center ftco-animate">
-            <h2 class="mb-4">Featured Credits</h2>
+    		<div class="row justify-content-center pb-5">          <div class="col-md-10 heading-section text-center ftco-animate">
+            <h2 class="mb-4">Selected Portfolio</h2>
+            <p><a href="portfolio.html" class="btn btn-primary">View Full Portfolio</a></p>
           </div>
 		</div>
-		<div id="projectCarousel" class="carousel slide">
-			<div class="carousel-inner">
-				<!--TODO:add rene and link to itch page, also update itch page-->
-				<!--todo: add modals for each of these-->
-
-				<div class="carousel-item active text-center">
-					<a href="https://www.ea.com/en-ca/ea-studios/maxis"><img src="images/maxis.jpg" class="w-75 mx-auto rounded img-fluid">
-					<div class="carousel-caption d-none d-md-block">
+		<div id="projectCarousel" class="carousel slide">			<div class="carousel-inner">
+				<div class="carousel-item active text-center" data-bs-toggle="modal" data-bs-target="#maxisModal" style="cursor: pointer;">
+					<img src="images/maxis.jpg" class="w-75 mx-auto rounded img-fluid" alt="Maxis">
+					<div class="carousel-caption d-none d-md-block bg-opacity-75">
 						<h5>Software Engineer <i> - Maxis (Electronic Arts)</i></h5>
-					</a>
 					</div>
 				</div>
-				<div class="carousel-item text-center">
-					<a href="https://store.steampowered.com/app/2858380/Egregore/"><img src="images/Egregore/MainCapsule.png" class="w-75 mx-auto rounded img-fluid">
-					<div class="carousel-caption d-none d-md-block">
+
+				<div class="carousel-item text-center" data-bs-toggle="modal" data-bs-target="#egregoreModal" style="cursor: pointer;">
+					<img src="images/Egregore/MainCapsule.png" class="w-75 mx-auto rounded img-fluid" alt="Egregore">
+					<div class="carousel-caption d-none d-md-block bg-opacity-75">
 						<h5>Creative Director <i> - Egregore</i></h5>
-					</a>
 					</div>
 				</div>
 
-				<div class="carousel-item text-center">
-					<a href="https://immersivearchive.org/"><img src="images/ImmersiveArchive/IA_Carousel.jpg" class="w-75 mx-auto rounded img-fluid">
-					<div class="carousel-caption d-none d-md-block">
+				<div class="carousel-item text-center" data-bs-toggle="modal" data-bs-target="#archiveModal" style="cursor: pointer;">
+					<img src="images/ImmersiveArchive/IA_Carousel.jpg" class="w-75 mx-auto rounded img-fluid" alt="Immersive Archive">
+					<div class="carousel-caption d-none d-md-block bg-opacity-75">
 						<h5><i>The Immersive Archive </i> - Technical Lead</h5>
-					</a>
 					</div>
 				</div>
 
-				
-
-				<div class="carousel-item text-center">
-						<a href="https://store.steampowered.com/app/1125390/Atrio_The_Dark_Wild/"><img src="images/Atrio/AtrioKeyArt_NoLogo (1).png" class="w-75 mx-auto rounded img-fluid" >
-					<div class="carousel-caption d-none d-md-block">
+				<div class="carousel-item text-center" data-bs-toggle="modal" data-bs-target="#atrioModal" style="cursor: pointer;">
+					<img src="images/Atrio/AtrioKeyArt_NoLogo (1).png" class="w-75 mx-auto rounded img-fluid" alt="Atrio">
+					<div class="carousel-caption d-none d-md-block bg-opacity-75">
 						<h5><i>Atrio: The Dark Wild </i> - Lead Writer</h5>
-					</a>
 					</div>
 				</div>
 
-				<div class="carousel-item text-center">
-					<a href="https://mwahba.itch.io/"><img src="images/limina.jpg" class="w-75 mx-auto rounded img-fluid">
-					<div class="carousel-caption d-none d-md-block">
-						<h5><u>Click Here To See My Older Projects</u></h5>
-					</a>
+				<div class="carousel-item text-center" data-bs-toggle="modal" data-bs-target="#indieModal" style="cursor: pointer;">
+					<img src="images/limina.jpg" class="w-75 mx-auto rounded img-fluid" alt="Indie Projects">
+					<div class="carousel-caption d-none d-md-block bg-opacity-75">
+						<h5>Indie Projects & Prototypes</h5>
 					</div>
 				</div>
 
@@ -169,6 +162,196 @@
 		</div>
     </section>
 	
+    <!-- Project Modals -->
+    <!-- Maxis Modal -->
+    <div class="modal fade" id="maxisModal" tabindex="-1" aria-labelledby="maxisModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content bg-dark text-light">
+          <div class="modal-header">
+            <h5 class="modal-title" id="maxisModalLabel">Software Engineer at Maxis (Electronic Arts)</h5>
+            <div class="text-center">
+              <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <div class="col-md-6">
+                <img src="images/maxis.jpg" class="img-fluid rounded" alt="Maxis">
+              </div>
+              <div class="col-md-6">
+                <h6 class="mb-3">Tools & Technologies</h6>
+                <div class="mb-3">
+                  <span class="badge bg-primary">C++</span>
+                  <span class="badge bg-primary">Systems Programming</span>
+                  <span class="badge bg-primary">Proprietary Engine</span>
+                </div>                <h6 class="mb-3">Key Contributions</h6>
+                <ul>
+                  <li>Developing gameplay systems and tools in C++ for an unannounced title</li>
+                  <li>Collaborating with designers to implement and optimize gameplay features</li>
+                  <li>Contributing to core engine technology and tools development</li>
+                </ul>
+                <div class="text-center">
+                  <a href="https://www.ea.com/en-ca/ea-studios/maxis" class="btn btn-primary" target="_blank" rel="noopener">Visit Studio Website</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Egregore Modal -->
+    <div class="modal fade" id="egregoreModal" tabindex="-1" aria-labelledby="egregoreModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content bg-dark text-light">
+          <div class="modal-header">
+            <h5 class="modal-title" id="egregoreModalLabel">Creative Director - Egregore</h5>
+            <div class="text-center">
+              <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <div class="col-md-6">
+                <img src="images/Egregore/MainCapsule.png" class="img-fluid rounded" alt="Egregore">
+              </div>
+              <div class="col-md-6">
+                <h6 class="mb-3">Tools & Technologies</h6>
+                <div class="mb-3">
+                  <span class="badge bg-primary">Unreal Engine 5</span>
+                  <span class="badge bg-primary">Blueprint</span>
+                  <span class="badge bg-primary">C++</span>
+                </div>
+                <h6 class="mb-3">Key Contributions</h6>
+                <ul>
+                  <li>Led development of core gameplay systems and mechanics</li>
+                  <li>Designed and implemented dynamic AI behavior systems</li>
+                  <li>Managed team workflow and technical direction</li>
+                </ul>
+                <div class="text-center">
+                  <a href="https://store.steampowered.com/app/2858380/Egregore/" class="btn btn-primary" target="_blank" rel="noopener">View on Steam</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Immersive Archive Modal -->
+    <div class="modal fade" id="archiveModal" tabindex="-1" aria-labelledby="archiveModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content bg-dark text-light">
+          <div class="modal-header">
+            <h5 class="modal-title" id="archiveModalLabel">Technical Lead - The Immersive Archive</h5>
+            <div class="text-center">
+              <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <div class="col-md-6">
+                <img src="images/ImmersiveArchive/IA_Carousel.jpg" class="img-fluid rounded" alt="Immersive Archive">
+              </div>
+              <div class="col-md-6">
+                <h6 class="mb-3">Tools & Technologies</h6>
+                <div class="mb-3">
+                  <span class="badge bg-primary">Unity</span>
+                  <span class="badge bg-primary">C#</span>
+                  <span class="badge bg-primary">VR Development</span>
+                </div>
+                <h6 class="mb-3">Key Contributions</h6>
+                <ul>
+                  <li>Architected VR interaction framework for artifact manipulation</li>
+                  <li>Developed custom shaders for artifact visualization</li>
+                  <li>Implemented cross-platform VR support</li>
+                </ul>
+                <div class="text-center">
+                  <a href="https://immersivearchive.org/" class="btn btn-primary" target="_blank" rel="noopener">Visit Project Website</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Atrio Modal -->
+    <div class="modal fade" id="atrioModal" tabindex="-1" aria-labelledby="atrioModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content bg-dark text-light">
+          <div class="modal-header">
+            <h5 class="modal-title" id="atrioModalLabel">Lead Writer - Atrio: The Dark Wild</h5>
+            <div class="text-center">
+              <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <div class="col-md-6">
+                <img src="images/Atrio/AtrioKeyArt_NoLogo (1).png" class="img-fluid rounded" alt="Atrio">
+              </div>
+              <div class="col-md-6">
+                <h6 class="mb-3">Tools & Technologies</h6>
+                <div class="mb-3">
+                  <span class="badge bg-primary">Unity</span>
+                  <span class="badge bg-primary">C#</span>
+                  <span class="badge bg-primary">Ink Script</span>
+                </div>
+                <h6 class="mb-3">Key Contributions</h6>
+                <ul>
+                  <li>Designed and implemented procedural quest generation system</li>
+                  <li>Created modular narrative framework using Ink</li>
+                  <li>Developed dynamic character interaction system</li>
+                </ul>
+                <div class="text-center">
+                  <a href="https://store.steampowered.com/app/1125390/Atrio_The_Dark_Wild/" class="btn btn-primary" target="_blank" rel="noopener">View on Steam</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Indie Projects Modal -->
+    <div class="modal fade" id="indieModal" tabindex="-1" aria-labelledby="indieModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content bg-dark text-light">
+          <div class="modal-header">
+            <h5 class="modal-title" id="indieModalLabel">Indie Projects & Prototypes</h5>
+            <div class="text-center">
+              <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <div class="col-md-6">
+                <img src="images/limina.jpg" class="img-fluid rounded" alt="Indie Projects">
+              </div>
+              <div class="col-md-6">
+                <h6 class="mb-3">Tools & Technologies</h6>
+                <div class="mb-3">
+                  <span class="badge bg-primary">Unity</span>
+                  <span class="badge bg-primary">Unreal Engine</span>
+                  <span class="badge bg-primary">Various Tools</span>
+                </div>
+                <h6 class="mb-3">Featured Projects</h6>
+                <ul>
+                  <li>Experimental gameplay prototypes</li>
+                  <li>Game jam entries and small releases</li>
+                  <li>Technical proof-of-concept projects</li>
+                </ul>
+                <div class="text-center">
+                  <a href="https://mwahba.itch.io/" class="btn btn-primary" target="_blank" rel="noopener">View on Itch.io</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <section class="ftco-section" id="press-section">
       <div class="container">
         <div class="row justify-content-center mb-5 pb-5">
