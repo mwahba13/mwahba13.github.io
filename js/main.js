@@ -284,6 +284,17 @@ $(document).ready(function() {
   loadModals();
 });
 
+// Initialize modals
+document.addEventListener('DOMContentLoaded', function() {
+    // Wait for modals to be loaded
+    setTimeout(function() {
+        const modalElements = document.querySelectorAll('.modal');
+        modalElements.forEach(modal => {
+            new bootstrap.Modal(modal);
+        });
+    }, 500); // Small delay to ensure modals are loaded
+});
+
 
 
 })(jQuery);
