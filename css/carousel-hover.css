@@ -1,0 +1,22 @@
+.carousel-item img, .card {
+    transition: outline 0.3s ease-in-out;
+    outline: 2px solid transparent;
+}
+
+.carousel-item img:hover, .card:hover {
+    outline: 2px solid #ffbd39;
+}
+
+.carousel-item:hover .carousel-caption {
+    visibility: hidden;
+}
+
+/* Portfolio card hover effect */
+.card {
+    transition: outline 0.3s ease-in-out;
+    outline: 2px solid transparent;
+}
+
+.card:hover {
+    outline: 2px solid #ffbd39;
+}

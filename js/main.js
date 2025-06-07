@@ -1,4 +1,4 @@
- AOS.init({
+AOS.init({
  	duration: 800,
  	easing: 'slide'
  });
@@ -269,7 +269,20 @@
     fixedContentPos: false
   });
 
+  // Load modals from external file
+function loadModals() {
+  fetch('modals.html')
+    .then(response => response.text())
+    .then(html => {
+      document.getElementById('modalsContainer').innerHTML = html;
+    })
+    .catch(error => console.error('Error loading modals:', error));
+}
 
+// Call loadModals when document is ready
+$(document).ready(function() {
+  loadModals();
+});
 
 
 

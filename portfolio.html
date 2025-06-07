@@ -16,8 +16,8 @@
     <link rel="stylesheet" href="css/aos.css">
     <link rel="stylesheet" href="css/ionicons.min.css">
     <link rel="stylesheet" href="css/flaticon.css">
-    <link rel="stylesheet" href="css/icomoon.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/icomoon.css">    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/carousel-hover.css">
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar ftco-navbar-light site-navbar-target" id="ftco-navbar">
@@ -36,36 +36,43 @@
           </ul>          <div class="d-flex align-items-center">
             <a href="portfolio.html" class="btn btn-primary py-2 px-3 me-2">Portfolio</a>
             <a href="docs/Curriculum Vitae, Wahba (May 2025).pdf" class="btn btn-primary py-2 px-3">Download Full CV</a>
-            <a href="mailto:mrswahba13@gmail.com" class="btn btn-link text-light" title="Email Michael Wahba"><span class="icon-paper-plane"></span></a>
+            <a href="mailto:mrswahba13@gmail.com" class="btn btn-link text-light" title="Email Michael Wahba"><span class="icon-envelope"></span></a>
             <a href="https://www.linkedin.com/in/michael-wahba/" class="btn btn-link text-light" title="Visit Michael Wahba's LinkedIn profile"><span class="icon-linkedin-square"></span></a>
           </div>
         </div>
       </div>
-    </nav>
-
-    <div class="container portfolio-container">
-      <div class="row justify-content-center mb-5 pb-3">
-
-      </div>
-
-      <!-- Full portfolio content will go here -->
+    </nav>    <div class="container portfolio-container mt-5 pt-5">
+      <div class="row justify-content-center mb-5">
+        <div class="col-12">
+          <h2 class="text-center mb-4"><b>Portfolio</b></h2>
+          <hr class="mb-5" style="border-color: #ffffff; border-width: 3px;">
+        </div>
+      </div>      <!-- Full portfolio content will go here -->
       <div class="row">
         <!-- Professional Experience -->
         <div class="col-12 mb-5">
-          <div class="row">
+          <div class="row g-4">
             <!-- Maxis -->
-            <div class="col-md-6 mb-4 text-center" data-bs-toggle="modal" data-bs-target="#maxisModal">
-              <img src="images/maxis.jpg" class="w-100 rounded img-fluid" alt="Maxis">
-              <div class="project-caption bg-dark text-light p-3 mt-2 rounded">                <h5>Software Engineer <i>- Maxis (Electronic Arts)</i></h5>
-                <p>Developing gameplay systems and tools in C++ for an unannounced title.</p>
+            <div class="col-md-6" data-bs-toggle="modal" data-bs-target="#maxisModal" style="cursor: pointer;">
+              <div class="card bg-dark text-light h-100">                <div class="card-img-container" style="height: 220px; overflow: hidden;">
+                  <img src="images/maxis.jpg" class="card-img-top" style="width: 100%; height: 100%; object-fit: cover;" alt="Maxis">
+                </div>                <div class="card-body d-flex flex-column">
+                  <h5 class="card-title">Maxis (Electronic Arts)</h5>
+                  <h6 class="text-muted mb-2">Software Engineer</h6>
+                  <p class="card-text">Developing toolchains for data-intensive experiences.</p>
+                </div>
               </div>
             </div>
             
             <!-- Egregore -->
-            <div class="col-md-6 mb-4 text-center" data-bs-toggle="modal" data-bs-target="#egregoreModal">
-              <img src="images/Egregore/MainCapsule.png" class="w-100 rounded img-fluid" alt="Egregore">
-              <div class="project-caption bg-dark text-light p-3 mt-2 rounded">                <h5>Creative Director <i>- Egregore</i></h5>
-                <p>Led development of core gameplay systems and mechanics in Unreal Engine 5.</p>
+            <div class="col-md-6" data-bs-toggle="modal" data-bs-target="#egregoreModal" style="cursor: pointer;">
+              <div class="card bg-dark text-light h-100">                <div class="card-img-container" style="height: 220px; overflow: hidden;">
+                  <img src="images/Egregore/MainCapsule.png" class="card-img-top" style="width: 100%; height: 100%; object-fit: cover;" alt="Egregore">
+                </div>                <div class="card-body d-flex flex-column">
+                  <h5 class="card-title">Egregore</h5>
+                  <h6 class="text-muted mb-2">Creative Director</h6>
+                  <p class="card-text">Led development of core gameplay systems and mechanics in Unreal Engine 5.</p>
+                </div>
               </div>
             </div>
           </div>
@@ -73,50 +80,71 @@
 
         <!-- Academic Projects -->
         <div class="col-12 mb-5">
-          <div class="row">
+          <div class="row g-4">
             <!-- Archive -->
-            <div class="col-md-6 mb-4 text-center" data-bs-toggle="modal" data-bs-target="#archiveModal">
-              <img src="images/ImmersiveArchive/IA_Carousel.jpg" class="w-100 rounded img-fluid" alt="Immersive Archive">
-              <div class="project-caption bg-dark text-light p-3 mt-2 rounded">                <h5>Technical Lead <i>- The Immersive Archive</i></h5>
-                <p>VR framework for interactive archival exploration and artifact manipulation.</p>
+            <div class="col-md-6" data-bs-toggle="modal" data-bs-target="#archiveModal" style="cursor: pointer;">
+              <div class="card bg-dark text-light h-100">                <div class="card-img-container" style="height: 220px; overflow: hidden;">
+                  <img src="images/ImmersiveArchive/IA_Carousel.jpg" class="card-img-top" style="width: 100%; height: 100%; object-fit: cover;" alt="Immersive Archive">
+                </div>                <div class="card-body d-flex flex-column">
+                  <h5 class="card-title">The Immersive Archive</h5>
+                  <h6 class="text-muted mb-2">Technical Lead</h6>
+                  <p class="card-text">VR framework for interactive archival exploration and artifact manipulation.</p>
+                </div>
               </div>
             </div>
             
             <!-- Atrio -->
-            <div class="col-md-6 mb-4 text-center" data-bs-toggle="modal" data-bs-target="#atrioModal">
-              <img src="images/Atrio/AtrioKeyArt_NoLogo (1).png" class="w-100 rounded img-fluid" alt="Atrio">
-              <div class="project-caption bg-dark text-light p-3 mt-2 rounded">                <h5>Lead Writer <i>- Atrio: The Dark Wild</i></h5>
-                <p>Procedural narrative system with dynamic character interactions.</p>
+            <div class="col-md-6" data-bs-toggle="modal" data-bs-target="#atrioModal" style="cursor: pointer;">
+              <div class="card bg-dark text-light h-100">                <div class="card-img-container" style="height: 220px; overflow: hidden;">
+                  <img src="images/Atrio/AtrioKeyArt_NoLogo (1).png" class="card-img-top" style="width: 100%; height: 100%; object-fit: cover;" alt="Atrio">
+                </div>                <div class="card-body d-flex flex-column">
+                  <h5 class="card-title">Atrio: The Dark Wild</h5>
+                  <h6 class="text-muted mb-2">Lead Writer</h6>
+                  <p class="card-text">Procedural narrative system with dynamic character interactions.</p>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-
-        <!-- Independent Projects -->
+        </div>        <!-- Independent Projects -->
         <div class="col-12 mb-5">
-          <h2 class="text-center mb-4">Independent Projects</h2>
-          <div class="row">
+          <h2 class="text-center mb-4">Interactive Experiments</h2>
+          <div class="row g-4">
             <!-- Pacman -->
-            <div class="col-md-4 mb-4 text-center" data-bs-toggle="modal" data-bs-target="#pacmanModal">
-              <img src="images/pacman.jpg" class="w-100 rounded img-fluid" alt="Pacman">
-              <div class="project-caption bg-dark text-light p-3 mt-2 rounded">                <h5>Pacman Clone</h5>
-                <p>A recreation of the classic Pacman game in Unity.</p>
+            <div class="col-md-4" data-bs-toggle="modal" data-bs-target="#pacmanModal" style="cursor: pointer;">
+              <div class="card bg-dark text-light h-100">
+                <div class="card-img-container" style="height: 200px; overflow: hidden;">
+                  <img src="images/pacman.jpg" class="card-img-top" style="width: 100%; height: 100%; object-fit: cover;" alt="Pacman">
+                </div>
+                <div class="card-body d-flex flex-column">
+                  <h5 class="card-title">Radio Exurbia</h5>
+                  <p class="card-text">A recreation of the classic Pacman game in Unity.</p>
+                </div>
               </div>
             </div>
             
             <!-- Synth -->
-            <div class="col-md-4 mb-4 text-center" data-bs-toggle="modal" data-bs-target="#synthModal">
-              <img src="images/synth.jpg" class="w-100 rounded img-fluid" alt="Synth">
-              <div class="project-caption bg-dark text-light p-3 mt-2 rounded">                <h5>Synthesizer</h5>
-                <p>A software synthesizer built with JUCE and C++.</p>
+            <div class="col-md-4" data-bs-toggle="modal" data-bs-target="#synthModal" style="cursor: pointer;">
+              <div class="card bg-dark text-light h-100">
+                <div class="card-img-container" style="height: 200px; overflow: hidden;">
+                  <img src="images/synth.jpg" class="card-img-top" style="width: 100%; height: 100%; object-fit: cover;" alt="Synth">
+                </div>
+                <div class="card-body d-flex flex-column">
+                  <h5 class="card-title">Synthesizer</h5>
+                  <p class="card-text">A software synthesizer built with JUCE and C++.</p>
+                </div>
               </div>
             </div>
             
             <!-- Dependencies -->
-            <div class="col-md-4 mb-4 text-center" data-bs-toggle="modal" data-bs-target="#dependenciesModal">
-              <img src="images/Dependencies.jpg" class="w-100 rounded img-fluid" alt="Dependencies">
-              <div class="project-caption bg-dark text-light p-3 mt-2 rounded">                <h5>Dependencies</h5>
-                <p>A local multiplayer game made in Unity.</p>
+            <div class="col-md-4" data-bs-toggle="modal" data-bs-target="#dependenciesModal" style="cursor: pointer;">
+              <div class="card bg-dark text-light h-100">
+                <div class="card-img-container" style="height: 200px; overflow: hidden;">
+                  <img src="images/Dependencies.jpg" class="card-img-top" style="width: 100%; height: 100%; object-fit: cover;" alt="Dependencies">
+                </div>
+                <div class="card-body d-flex flex-column">
+                  <h5 class="card-title">Dependencies</h5>
+                  <p class="card-text">A local multiplayer game made in Unity.</p>
+                </div>
               </div>
             </div>
           </div>
@@ -265,14 +293,12 @@
           </div>
         </div>
       </div>
-    </div>
-
-    <!-- Indie Projects Modal -->
+    </div>    <!-- Indie Projects Modal -->
     <div class="modal fade" id="indieModal" tabindex="-1" aria-labelledby="indieModalLabel" aria-hidden="true">
       <div class="modal-dialog modal-lg">
         <div class="modal-content bg-dark text-light">
           <div class="modal-header">
-            <h5 class="modal-title" id="indieModalLabel">Indie Projects & Prototypes</h5>
+            <h5 class="modal-title" id="indieModalLabel">Interactive Experiments & Prototypes</h5>
             <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
