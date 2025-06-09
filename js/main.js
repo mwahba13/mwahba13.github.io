@@ -1,4 +1,4 @@
- AOS.init({
+AOS.init({
  	duration: 800,
  	easing: 'slide'
  });
@@ -269,7 +269,31 @@
     fixedContentPos: false
   });
 
+  // Load modals from external file
+function loadModals() {
+  fetch('modals.html')
+    .then(response => response.text())
+    .then(html => {
+      document.getElementById('modalsContainer').innerHTML = html;
+    })
+    .catch(error => console.error('Error loading modals:', error));
+}
 
+// Call loadModals when document is ready
+$(document).ready(function() {
+  loadModals();
+});
+
+// Initialize modals
+document.addEventListener('DOMContentLoaded', function() {
+    // Wait for modals to be loaded
+    setTimeout(function() {
+        const modalElements = document.querySelectorAll('.modal');
+        modalElements.forEach(modal => {
+            new bootstrap.Modal(modal);
+        });
+    }, 500); // Small delay to ensure modals are loaded
+});
 
 
 
