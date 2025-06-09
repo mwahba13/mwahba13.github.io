@@ -21,7 +21,9 @@
 
   <link rel="stylesheet" href="css/ionicons.min.css">
   <link rel="stylesheet" href="css/flaticon.css">
-  <link rel="stylesheet" href="css/icomoon.css">  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/icomoon.css">  
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/hero-styles.css">
   <link rel="stylesheet" href="css/carousel-hover.css">
   <link rel="stylesheet" href="css/custom-modal.css">
 </head>
@@ -54,21 +56,22 @@
         </div>
       </div>
     </div>
-  </nav>
-  <section id="home-section" class="hero">
-    <div class="container">
-      <div class="row d-md-flex no-gutters slider-text align-items-end justify-content-end" data-scrollax-parent="true">
-        <img class="one-third img-fluid order-md-last mb-4 mt-3 pt-5" src="images/Wahba_Hero.jpg">
-        <div class="overlay"></div>
-      </div>
-      <div class="one-forth d-flex  align-items-center ftco-animate" data-scrollax=" properties: { translateY: '70%' }">
-        <div class="text">
-          <h1 class="mb-4 mt-3 text-primary"><span> Michael Wahba </span></h1>
-          <h3 class="mb-4">Technical Game Designer</h2>
-            <h3 class="mb-4">Gameplay Programmer</h2>
+  </nav>  <section id="home-section" class="hero">
+    <div class="container">      <div class="row d-flex align-items-center justify-content-between">
+        <div class="col-md-6 col-lg-5 hero-text-container ftco-animate">
+          <div class="text">
+            <h1 class="mb-4 mt-3 text-primary"><span>Michael Wahba</span></h1>
+            <h3 class="mb-4">Technical Game Designer</h3>
+            <h3 class="mb-4">Gameplay Programmer</h3>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-7">
+          <div class="hero-image-container position-relative">
+            <img class="one-third img-fluid" src="images/Wahba_Hero.jpg">
+            <div class="overlay position-absolute"></div>
+          </div>
         </div>
       </div>
-    </div>
     </div>
   </section>
 
@@ -134,47 +137,57 @@
         </div>
       </div>
       <div id="projectCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
-        <div class="carousel-inner">
-          <div class="carousel-item active text-center" data-bs-toggle="modal" data-bs-target="#maxisModal"
-            style="cursor: pointer;"> <img src="images/maxis.jpg" class="w-50 mx-auto rounded img-fluid"
-              style="object-fit: cover; height: 300px;" alt="Maxis">
-            <div class="carousel-caption d-none d-md-block bg-opacity-75" style="bottom: -20px">
-              <h5>Software Engineer <i> - Maxis (Electronic Arts)</i></h5>
-            </div>
-          </div>
-          <div class="carousel-item text-center" data-bs-toggle="modal" data-bs-target="#egregoreModal"
+        <div class="carousel-inner">          <div class="carousel-item active text-center" data-bs-toggle="modal" data-bs-target="#maxisModal"
             style="cursor: pointer;">
-            <img src="images/Egregore/MainCapsule.png" class="w-50 mx-auto rounded img-fluid"
-              style="object-fit: cover; height: 300px;" alt="Egregore">
-            <div class="carousel-caption d-none d-md-block bg-opacity-75" style="bottom: -20px">
-              <h5>Creative Director <i> - Egregore</i></h5>
+            <div class="position-relative">
+              <img src="images/maxis.jpg" class="w-50 mx-auto img-fluid"
+                style="object-fit: cover; height: 400px;" alt="Maxis">
+              <div class="carousel-caption d-none d-md-block">
+                <h5>Software Engineer <i>- Maxis (Electronic Arts)</i></h5>
+              </div>
+            </div>
+          </div>          <div class="carousel-item text-center" data-bs-toggle="modal" data-bs-target="#egregoreModal"
+            style="cursor: pointer;">
+            <div class="position-relative">
+              <img src="images/Egregore/MainCapsule.png" class="w-50 mx-auto img-fluid"
+                style="object-fit: cover; height: 400px;" alt="Egregore">
+              <div class="carousel-caption d-none d-md-block">
+                <h5>Creative Director <i>- Egregore</i></h5>
+              </div>
             </div>
           </div>
 
           <div class="carousel-item text-center" data-bs-toggle="modal" data-bs-target="#archiveModal"
             style="cursor: pointer;">
-            <img src="images/ImmersiveArchive/IA_Carousel.jpg" class="w-50 mx-auto rounded img-fluid"
-              style="object-fit: cover; height: 300px;" alt="Immersive Archive">
-            <div class="carousel-caption d-none d-md-block bg-opacity-75" style="bottom: -20px">
-              <h5>Technical Lead <i> - The Immersive Archive</i></h5>
+            <div class="position-relative">
+              <img src="images/ImmersiveArchive/IALogo.jpg" class="w-50 mx-auto img-fluid"
+                style="object-fit: cover; height: 400px;" alt="Immersive Archive">
+              <div class="carousel-caption d-none d-md-block">
+                <h5>Technical Lead <i>- The Immersive Archive</i></h5>
+              </div>
             </div>
           </div>
 
           <div class="carousel-item text-center" data-bs-toggle="modal" data-bs-target="#atrioModal"
             style="cursor: pointer;">
-            <img src="images/Atrio/AtrioKeyArt_NoLogo (1).png" class="w-50 mx-auto rounded img-fluid"
-              style="object-fit: cover; height: 300px;" alt="Atrio">
-            <div class="carousel-caption d-none d-md-block bg-opacity-75" style="bottom: -20px">
-              <h5>Lead Writer <i> - Atrio: The Dark Wild</i></h5>
+            <div class="position-relative">
+              <img src="images/Atrio/atrio.jpg" class="w-50 mx-auto img-fluid"
+                style="object-fit: cover; height: 400px;" alt="Atrio">
+              <div class="carousel-caption d-none d-md-block">
+                <h5>Lead Writer <i>- Atrio: The Dark Wild</i></h5>
+              </div>
             </div>
           </div>
 
           <div class="carousel-item text-center">
             <a href="portfolio.html" class="text-decoration-none position-relative d-block">
-              <img src="images/limina.jpg" class="w-50 mx-auto rounded img-fluid" style="object-fit: cover; height: 300px;" alt="More Projects">
-              <div class="carousel-caption d-none d-md-block bg-opacity-75" style="bottom: 0; background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);">
-                <h3 class="text-primary mb-2">View Full Portfolio</h3>
-                <p class="text-light mb-3">Explore more projects and experiments →</p>
+              <div class="position-relative">
+                <img src="images/Limina.png" class="w-50 mx-auto img-fluid" 
+                  style="object-fit: cover; height: 400px;" alt="More Projects">
+                <div class="carousel-caption d-none d-md-block">
+                  <h3 class="text-primary mb-2">View Full Portfolio</h3>
+                  <p class="text-light mb-3">Explore more projects and experiments →</p>
+                </div>
               </div>
             </a>
           </div>

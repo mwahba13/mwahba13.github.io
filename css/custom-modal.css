@@ -20,6 +20,60 @@
     color: #000 !important; /* Using !important to override Bootstrap's default */
 }
 
+/* Media Gallery Styles */
+.media-gallery .carousel {
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 0.25rem;
+}
+
+.media-gallery .carousel-item img {
+    max-height: 300px;
+    object-fit: contain;
+}
+
+.media-gallery .ratio {
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 0.25rem;
+}
+
+.media-gallery ul li {
+    margin-bottom: 0.5rem;
+}
+
+.media-gallery ul li a {
+    display: inline-flex;
+    align-items: center;
+    padding: 8px 12px;
+    margin: 4px 0;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.media-gallery ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: translateX(5px);
+    color: #fff !important;
+}
+
+.media-gallery ul li a i {
+    margin-right: 8px;
+    font-size: 1.1em;
+}
+
+/* Add a subtle arrow to indicate clickable */
+.media-gallery ul li a::after {
+    content: "→";
+    margin-left: 8px;
+    opacity: 0;
+    transition: all 0.2s ease;
+}
+
+.media-gallery ul li a:hover::after {
+    opacity: 1;
+    margin-left: 12px;
+}
+
 /* Make modal backdrop clickable for dismissal */
 .modal {
     cursor: pointer;
