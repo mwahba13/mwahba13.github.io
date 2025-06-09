@@ -1,0 +1,31 @@
+/* Custom modal styles */
+.modal-lg {
+    max-width: 1000px; /* Increased from default 800px */
+}
+
+.modal-body .col-md-5 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-body .project-image {
+    width: 100%;
+    height: auto;    max-height: 500px; /* Limit maximum height while maintaining aspect ratio */
+    object-fit: contain;
+}
+
+/* Make badge text black */
+.modal-body .badge {
+    color: #000 !important; /* Using !important to override Bootstrap's default */
+}
+
+/* Make modal backdrop clickable for dismissal */
+.modal {
+    cursor: pointer;
+}
+
+/* Keep the modal content clickable without dismissing */
+.modal-content {
+    cursor: default;
+}
