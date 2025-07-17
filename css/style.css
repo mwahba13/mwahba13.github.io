@@ -4093,6 +4093,10 @@ input[type="button"].btn-block {
   -o-transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out; }
+/* Force badge and tech-tag text to black everywhere, including modals */
+.badge, .tech-tag, .modal .badge, .modal .tech-tag {
+  color: #000 !important;
+}
   @media (prefers-reduced-motion: reduce) {
     .badge {
       -webkit-transition: none;
