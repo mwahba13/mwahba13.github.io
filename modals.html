@@ -88,6 +88,7 @@
 
               <!-- Artifacts Section -->
               <h6 class="mb-3">Artifacts</h6>
+
               <div class="d-flex flex-wrap gap-2 mb-4">
                 <a href="docs/Egregore_GDD.pdf" class="btn btn-outline-primary artifact-btn" target="_blank" rel="noopener">
                   <i class="icon-document"></i> Game Design Document
@@ -99,6 +100,7 @@
                   <i class="icon-document"></i> Video Playthrough
                 </a>
               </div>
+
             </div>
           </div>
           <div class="col-md-6">
@@ -183,6 +185,7 @@
 
               <!-- Presentations Section -->
               <h6 class="mb-3">Presentations</h6>
+
               <div class="d-flex flex-wrap gap-2 mb-4">
                 <a href="https://ieeexplore.ieee.org/document/10896116" class="btn btn-outline-primary artifact-btn" target="_blank" rel="noopener">
                   <i class="icon-document"></i> IEEE Conference Proceedings
@@ -191,6 +194,7 @@
                   <i class="icon-document"></i> SIGGRAPH 2023 Panel
                 </a>
               </div>
+
             </div>
           </div>
           <div class="col-md-6">
@@ -235,6 +239,7 @@
           <h5 class="modal-title" id="atrioModalLabel">Atrio: The Dark Wild</h5>
           <h6 class="text-muted">Lead Writer</h6>
           <small class="text-muted">2019 - 2021</small>
+
         </div>
       </div>
       <div class="modal-body">
@@ -290,23 +295,40 @@
         <h5 class="mb-3" id="indieModalLabel">Indie Projects & Prototypes</h5>
         <div class="row">
           <div class="col-md-6">
-            <img src="images/limina.jpg" class="img-fluid rounded" alt="Indie Projects">
+            <!-- Media Gallery -->
+            <div class="media-gallery">
+
+
+              <!-- Steam Trailer Embed -->
+              <div class="ratio ratio-16x9 mb-4">
+                <iframe src="https://www.youtube.com/embed/3xVobZIvnAo?si=z-cujZdMwy7NmzxL"
+                  title="Atrio: The Dark Wild Trailer" allowfullscreen></iframe>
+              </div>
+
+            </div>
           </div>
           <div class="col-md-6">
-            <h6 class="mb-3">Tools & Technologies</h6>
             <div class="mb-3">
               <span class="badge bg-primary">Unity</span>
-              <span class="badge bg-primary">Unreal Engine</span>
-              <span class="badge bg-primary">Various Tools</span>
+              <span class="badge bg-primary">Dialogue System for Unity</span>
+              <span class="badge bg-primary">Twine</span>
             </div>
-            <h6 class="mb-3">Featured Projects</h6>
-            <ul>
-              <li>Experimental gameplay prototypes</li>
-              <li>Game jam entries and small releases</li>
-              <li>Technical proof-of-concept projects</li>
+            <div class="mb-4">
+              <p><i>Atrio: The Dark Wild</i> is a survival-automation game taking place in a post-apocalyptic future
+                with a sense of humour.
+                It is also my first real job in the game industry! I came aboard and was instantly inspired by the
+                evocative and unique art style
+                which made it easy to ideate around.</p>
+            </div>
+            <h6 class="mb-3">Highlights</h6>
+            <ul class="mb-4">
+              <li>Wrote story, characters and scenarios for in-game narrative</li>
+              <li>Prototyped dialogues in Twine before being implemented in Unity</li>
+              <li>Wrote email marketing campaign using in-universe characters</li>
             </ul>
             <div class="text-center">
-              <a href="https://mwahba.itch.io/" class="btn btn-primary" target="_blank" rel="noopener">View on Itch.io</a>
+              <a href="https://store.steampowered.com/app/1125390/Atrio_The_Dark_Wild/" class="btn btn-primary"
+                target="_blank" rel="noopener">View on Steam</a>
             </div>
           </div>
         </div>
@@ -315,32 +337,61 @@
   </div>
 </div>
 
-<!-- Pacman Modal -->
+<!-- Radio Exurbia Modal -->
 <div class="modal fade" id="pacmanModal" tabindex="-1" aria-labelledby="pacmanModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg modal-dialog-centered">
     <div class="modal-content bg-dark text-light">
+
       <!-- Single modal-body -->
+
       <div class="modal-body">
         <h5 class="mb-3" id="pacmanModalLabel">Radio Exurbia</h5>
         <div class="row">
           <div class="col-md-6">
-            <img src="images/pacman.jpg" class="img-fluid rounded" alt="Pacman">
+            <!-- Media Gallery -->
+            <div class="media-gallery">
+              <h6 class="mb-3">Media Gallery</h6>              <!-- Carousel for additional images -->
+              <div id="exurbiaCarousel" class="carousel slide mb-4" data-bs-ride="carousel" data-bs-interval="3000">
+                <div class="carousel-inner rounded">
+                  <div class="carousel-item active">
+                    <img src="images/radioExurbia.jpg" class="d-block w-100" alt="Radio Exurbia Key Art">
+                  </div>
+
+                </div>
+
+              </div>
+
+              <!-- Gameplay Demo -->
+              <div class="ratio ratio-16x9 mb-4">
+                <iframe src="https://www.youtube.com/embed/Dj1ssb1B0WQ?si=_DKIfIkYvTiZVBUx" title="Radio Exurbia Gameplay Demo"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen></iframe>
+              </div>
+            </div>
           </div>
           <div class="col-md-6">
-            <h6 class="mb-3">Tools & Technologies</h6>
             <div class="mb-3">
-              <span class="badge bg-primary">Unity</span>
-              <span class="badge bg-primary">C#</span>
-              <span class="badge bg-primary">AI Pathfinding</span>
+              <span class="badge bg-primary">Unreal Engine</span>
+              <span class="badge bg-primary">C++</span>
+              <span class="badge bg-primary">Blueprints</span>
             </div>
-            <h6 class="mb-3">Key Features</h6>
-            <ul>
-              <li>Faithful recreation of classic Pacman mechanics</li>
-              <li>Custom ghost AI behavior using A* pathfinding</li>
-              <li>Power-up system and score tracking</li>
+            <div class="mb-4">
+              <p><i>Radio Exurbia</i> is a driving adventure game where the player explores alternate realities by
+                switching radio stations.
+                This game was created by me and one of my classmates, Jimi Stine, as a semester-long project at USC.</p>
+              <p>We were inspired by games like <i>Exo One</i> and <i>Art of Rally</i> that are more about moving
+                through a space with
+                expression than posting a high score.</p>
+            </div>
+            <h6 class="mb-3">Highlights</h6>
+            <ul class="mb-4">
+              <li>Driving adventure game with a reality-switching radio</li>
+              <li>A drivable playground for the player to explore</li>
+              <li>Features an original soundtrack via Berklee School of Music</li>
             </ul>
             <div class="text-center">
-              <a href="https://github.com/mwahba13/UnityPacman" class="btn btn-primary" target="_blank" rel="noopener">View on GitHub</a>
+              <a href="https://sprawlstudios.itch.io/radio-exurbia" class="btn btn-primary" target="_blank"
+                rel="noopener">Play the Game</a>
             </div>
           </div>
         </div>
@@ -349,32 +400,51 @@
   </div>
 </div>
 
-<!-- Synth Modal -->
+<!-- L Modal -->
 <div class="modal fade" id="synthModal" tabindex="-1" aria-labelledby="synthModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg modal-dialog-centered">
     <div class="modal-content bg-dark text-light">
+
       <!-- Single modal-body -->
+
       <div class="modal-body">
         <h5 class="mb-3" id="synthModalLabel">Software Synthesizer</h5>
         <div class="row">
           <div class="col-md-6">
-            <img src="images/synth.jpg" class="img-fluid rounded" alt="Synth">
+            <!-- Media Gallery -->
+            <div class="media-gallery">
+              <h6 class="mb-3">Media Gallery</h6>              <!-- Carousel for additional images -->
+              <div id="lCarousel" class="carousel slide mb-4" data-bs-ride="carousel" data-bs-interval="3000">
+                <div class="carousel-inner rounded">
+                  <div class="carousel-item active">
+                    <img src="images/L.png" class="d-block w-100" alt="L Prototype">
+                  </div>
+
+                </div>
+
+              </div>
+
+            </div>
           </div>
           <div class="col-md-6">
-            <h6 class="mb-3">Tools & Technologies</h6>
             <div class="mb-3">
-              <span class="badge bg-primary">C++</span>
-              <span class="badge bg-primary">JUCE</span>
-              <span class="badge bg-primary">DSP</span>
+              <span class="badge bg-primary">C#</span>
+              <span class="badge bg-primary">Unity</span>
+              <span class="badge bg-primary">Prototype</span>
             </div>
-            <h6 class="mb-3">Key Features</h6>
-            <ul>
-              <li>Multi-oscillator synthesis engine</li>
-              <li>MIDI input support</li>
-              <li>Real-time audio processing</li>
-            </ul>
+            <div class="mb-4">
+              <p><i>L</i> is a prototype that I find myself constantly revisiting. I am fascinated by the idea of
+                Lindenmayer systems
+                and how they could be used as a game mechanic.</p>
+              <p>The same way that <i>Case of the Golden Idol</i> gives players a grammar to solve mysteries, I wanted
+                to give players
+                a grammar to generate beautiful structures driven by an underlying mathematical logic reflective of
+                nature. Although this
+                prototype is bare, it is an idea I continue to explore...</p>
+            </div>
             <div class="text-center">
-              <a href="https://github.com/mwahba13/Synth" class="btn btn-primary" target="_blank" rel="noopener">View on GitHub</a>
+              <a href="https://mwahba.itch.io/l-prototype" class="btn btn-primary" target="_blank" rel="noopener">Play
+                the Prototype</a>
             </div>
           </div>
         </div>
@@ -388,27 +458,46 @@
   <div class="modal-dialog modal-lg modal-dialog-centered">
     <div class="modal-content bg-dark text-light">
       <!-- Single modal-body -->
+
       <div class="modal-body">
         <h5 class="mb-3" id="dependenciesModalLabel">Dependencies Game</h5>
         <div class="row">
-          <div class="col-md-6">
-            <img src="images/Dependencies.jpg" class="img-fluid rounded" alt="Dependencies">
+          <div class="col-md-6">            <!-- Media Gallery -->
+            <div class="media-gallery">
+              <h6 class="mb-3">Media Gallery</h6>
+              <img src="images/virtualGarden.jpg" class="img-fluid rounded mb-4" alt="Virtual Garden">
+
+              <!-- Artifacts Section -->
+              <h6 class="mb-3">Artifacts</h6>
+              <ul class="mb-4">
+                <li>
+                  <a href="https://github.com/mwahba13/MEMLSplatLib" class="text-light text-decoration-none" target="_blank" rel="noopener">
+                    <i class="icon-document"></i> Github Repo <i></i>
+                  </a>
+                </li>
+              </ul>
+            </div>
           </div>
           <div class="col-md-6">
-            <h6 class="mb-3">Tools & Technologies</h6>
             <div class="mb-3">
-              <span class="badge bg-primary">Unity</span>
-              <span class="badge bg-primary">C#</span>
-              <span class="badge bg-primary">Multiplayer</span>
+              <span class="badge bg-primary">Javascript/WebGL</span>
+              <span class="badge bg-primary">Gaussian Splatting</span>
+              <span class="badge bg-primary">AR/VR</span>
             </div>
-            <h6 class="mb-3">Key Features</h6>
-            <ul>
-              <li>Local multiplayer support</li>
-              <li>Dynamic gameplay mechanics</li>
-              <li>Procedural level generation</li>
+            <div class="mb-4">
+              <p><i>The Virtual Garden</i> takes advantage of the emerging technology of Gaussian Splatting to create an immersive narrative 
+                taking the viewer through photorealistic environments. This project was created as part of an independent research project at the 
+                Mobile and Environmental Media Lab at USC.</p>
+              <p>In November 2024, we presented our work and the tools we developed to create this experience 
+                in a talk "Gaussian Splatting for Immersive Storytelling" at DevFestYYC in Calgary, Alberta.</p>
+            </div>
+            <h6 class="mb-3">Highlights</h6>
+            <ul class="mb-4">
+              <li>Leveraged LumaAI's WebGL library to make a toolchain for stringing scenes together.</li>
+              <li>Presented work at a workshop at DevFestYYC 2024</li>
             </ul>
             <div class="text-center">
-              <a href="https://github.com/mwahba13/Dependencies" class="btn btn-primary" target="_blank" rel="noopener">View on GitHub</a>
+              <a href="https://mwahba.itch.io/virtual-garden" class="btn btn-primary" target="_blank" rel="noopener">Enter the Garden</a>
             </div>
           </div>
         </div>
@@ -416,6 +505,7 @@
     </div>
   </div>
 </div>
+
 
 <!-- AI Art Generator Modal -->
 <div class="modal fade" id="LModal" tabindex="-1" aria-labelledby="LModalLabel" aria-hidden="true">
@@ -484,3 +574,4 @@
     </div>
   </div>
 </div>
+

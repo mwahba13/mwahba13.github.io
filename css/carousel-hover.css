@@ -1,22 +1,66 @@
 .carousel-item img, .card {
-    transition: outline 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
     outline: 2px solid transparent;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 .carousel-item img:hover, .card:hover {
     outline: 2px solid #ffbd39;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
 }
 
-.carousel-item:hover .carousel-caption {
-    visibility: hidden;
+/* Carousel caption styling */
+.carousel-caption {
+    background: linear-gradient(to top, rgba(0,0,0,0.8), rgba(0,0,0,0.4), transparent);
+    border-radius: 0 0 12px 12px;
+    padding: 2rem 1rem 1.5rem;
+    bottom: 0;
+    left: 25%;
+    right: 25%;
+    width: 50%;
+}
+
+.carousel-caption h5 {
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    color: white;
+}
+
+.carousel-caption i {
+    font-weight: 300;
+    opacity: 0.9;
+}
+
+/* Carousel controls styling */
+.carousel-control-prev,
+.carousel-control-next {
+    width: 5%;
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+}
+
+.carousel:hover .carousel-control-prev,
+.carousel:hover .carousel-control-next {
+    opacity: 1;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 50%;
+    padding: 1.5rem;
+    background-size: 50%;
 }
 
 /* Portfolio card hover effect */
 .card {
-    transition: outline 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
     outline: 2px solid transparent;
 }
 
 .card:hover {
     outline: 2px solid #ffbd39;
+    transform: translateY(-2px);
 }
