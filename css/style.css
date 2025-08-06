@@ -1,3 +1,30 @@
+/* Artifact links as buttons in modals */
+.artifact-btn {
+  min-width: 200px;
+  font-weight: 500;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-radius: 0.5rem;
+  transition: background 0.2s, color 0.2s;
+}
+.artifact-btn i {
+  font-size: 1.2em;
+}
+/* Make project cards in 'Other Projects and Experiments' section shorter */
+.project-card {
+  min-height: 340px;
+}
+/* Make project images in 'Other Projects and Experiments' section even */
+.project-img-even {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 0.5rem;
+  background: #222;
+}
 /*!
  * Bootstrap v4.3.1 (https://getbootstrap.com/)
  * Copyright 2011-2019 The Bootstrap Authors
@@ -4093,6 +4120,10 @@ input[type="button"].btn-block {
   -o-transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out; }
+/* Force badge and tech-tag text to black everywhere, including modals */
+.badge, .tech-tag, .modal .badge, .modal .tech-tag {
+  color: #000 !important;
+}
   @media (prefers-reduced-motion: reduce) {
     .badge {
       -webkit-transition: none;

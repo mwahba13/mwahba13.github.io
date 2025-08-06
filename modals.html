@@ -37,7 +37,7 @@
 
 <!-- Egregore Modal -->
 <div class="modal fade" id="egregoreModal" tabindex="-1" aria-labelledby="egregoreModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg">
+  <div class="modal-dialog modal-xl">
     <div class="modal-content bg-dark text-light">
       <div class="modal-header">
         <div>
@@ -88,23 +88,19 @@
 
               <!-- Artifacts Section -->
               <h6 class="mb-3">Artifacts</h6>
-              <ul class="mb-4">
-                <li>
-                  <a href="docs/Egregore_GDD.pdf" class="text-light text-decoration-none">
-                    <i class="icon-document"></i> Game Design Document
-                  </a>
-                </li>
-                <li>
-                  <a href="docs/Egregore_Pitch.pdf" class="text-light text-decoration-none">
-                    <i class="icon-document"></i> Pitch Deck
-                  </a>
-                </li>
-                <li>
-                  <a href="https://www.youtube.com/watch?v=4bHGt5u-gJk" class="text-light text-decoration-none">
-                    <i class="icon-document"></i> Video Playthrough
-                  </a>
-                </li>
-              </ul>
+
+              <div class="d-flex flex-wrap gap-2 mb-4">
+                <a href="docs/Egregore_GDD.pdf" class="btn btn-outline-primary artifact-btn" target="_blank" rel="noopener">
+                  <i class="icon-document"></i> Game Design Document
+                </a>
+                <a href="docs/Egregore_Pitch.pdf" class="btn btn-outline-primary artifact-btn" target="_blank" rel="noopener">
+                  <i class="icon-document"></i> Pitch Deck
+                </a>
+                <a href="https://www.youtube.com/watch?v=4bHGt5u-gJk" class="btn btn-outline-primary artifact-btn" target="_blank" rel="noopener">
+                  <i class="icon-document"></i> Video Playthrough
+                </a>
+              </div>
+
             </div>
           </div>
           <div class="col-md-6">
@@ -144,7 +140,7 @@
 
 <!-- Immersive Archive Modal -->
 <div class="modal fade" id="archiveModal" tabindex="-1" aria-labelledby="archiveModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg">
+  <div class="modal-dialog modal-xl">
     <div class="modal-content bg-dark text-light">
       <div class="modal-header">
         <div>
@@ -189,18 +185,16 @@
 
               <!-- Presentations Section -->
               <h6 class="mb-3">Presentations</h6>
-              <ul class="mb-4">
-                <li>
-                  <a href="https://ieeexplore.ieee.org/document/10896116" class="text-light text-decoration-none">
-                    <i class="icon-document"></i> IEEE Conference Proceedings
-                  </a>
-                </li>
-                <li>
-                  <a href="https://dl.acm.org/doi/10.1145/3587422.3595554#" class="text-light text-decoration-none">
-                    <i class="icon-document"></i> SIGGRAPH 2023 Panel
-                  </a>
-                </li>
-              </ul>
+
+              <div class="d-flex flex-wrap gap-2 mb-4">
+                <a href="https://ieeexplore.ieee.org/document/10896116" class="btn btn-outline-primary artifact-btn" target="_blank" rel="noopener">
+                  <i class="icon-document"></i> IEEE Conference Proceedings
+                </a>
+                <a href="https://dl.acm.org/doi/10.1145/3587422.3595554#" class="btn btn-outline-primary artifact-btn" target="_blank" rel="noopener">
+                  <i class="icon-document"></i> SIGGRAPH 2023 Panel
+                </a>
+              </div>
+
             </div>
           </div>
           <div class="col-md-6">
@@ -245,9 +239,60 @@
           <h5 class="modal-title" id="atrioModalLabel">Atrio: The Dark Wild</h5>
           <h6 class="text-muted">Lead Writer</h6>
           <small class="text-muted">2019 - 2021</small>
+
         </div>
       </div>
       <div class="modal-body">
+        <div class="row">
+          <div class="col-md-6">
+            <!-- Media Gallery -->
+            <div class="media-gallery">
+
+              <!-- Steam Trailer Embed -->
+              <div class="ratio ratio-16x9 mb-4">
+                <iframe src="https://www.youtube.com/embed/3xVobZIvnAo?si=z-cujZdMwy7NmzxL"
+                  title="Atrio: The Dark Wild Trailer" allowfullscreen></iframe>
+              </div>
+
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="mb-3">
+              <span class="badge bg-primary">Unity</span>
+              <span class="badge bg-primary">Dialogue System for Unity</span>
+              <span class="badge bg-primary">Twine</span>
+            </div>
+            <div class="mb-4">
+              <p><i>Atrio: The Dark Wild</i> is a survival-automation game taking place in a post-apocalyptic future
+                with a sense of humour.
+                It is also my first real job in the game industry! I came aboard and was instantly inspired by the
+                evocative and unique art style
+                which made it easy to ideate around.</p>
+            </div>
+            <h6 class="mb-3">Highlights</h6>
+            <ul class="mb-4">
+              <li>Wrote story, characters and scenarios for in-game narrative</li>
+              <li>Prototyped dialogues in Twine before being implemented in Unity</li>
+              <li>Wrote email marketing campaign using in-universe characters</li>
+            </ul>
+            <div class="text-center">
+              <a href="https://store.steampowered.com/app/1125390/Atrio_The_Dark_Wild/" class="btn btn-primary"
+                target="_blank" rel="noopener">View on Steam</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Indie Projects Modal -->
+<div class="modal fade" id="indieModal" tabindex="-1" aria-labelledby="indieModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content bg-dark text-light">
+      <!-- Single modal-body -->
+      <div class="modal-body">
+        <h5 class="mb-3" id="indieModalLabel">Indie Projects & Prototypes</h5>
         <div class="row">
           <div class="col-md-6">
             <!-- Media Gallery -->
@@ -294,16 +339,13 @@
 
 <!-- Radio Exurbia Modal -->
 <div class="modal fade" id="pacmanModal" tabindex="-1" aria-labelledby="pacmanModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
     <div class="modal-content bg-dark text-light">
-      <div class="modal-header">
-        <div>
-          <h5 class="modal-title" id="pacmanModalLabel">Radio Exurbia</h5>
-          <h6 class="text-muted">Game Developer</h6>
-          <small class="text-muted">2022</small>
-        </div>
-      </div>
+
+      <!-- Single modal-body -->
+
       <div class="modal-body">
+        <h5 class="mb-3" id="pacmanModalLabel">Radio Exurbia</h5>
         <div class="row">
           <div class="col-md-6">
             <!-- Media Gallery -->
@@ -360,14 +402,13 @@
 
 <!-- L Modal -->
 <div class="modal fade" id="synthModal" tabindex="-1" aria-labelledby="synthModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
     <div class="modal-content bg-dark text-light">
-      <div class="modal-header">
-        <div>
-          <h5 class="modal-title" id="synthModalLabel">L</h5>
-        </div>
-      </div>
+
+      <!-- Single modal-body -->
+
       <div class="modal-body">
+        <h5 class="mb-3" id="synthModalLabel">Software Synthesizer</h5>
         <div class="row">
           <div class="col-md-6">
             <!-- Media Gallery -->
@@ -412,18 +453,14 @@
   </div>
 </div>
 
-<!-- Virtual Garden Modal -->
-<div class="modal fade" id="virtualGardenModal" tabindex="-1" aria-labelledby="virtualGardenModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg">
+<!-- Dependencies Modal -->
+<div class="modal fade" id="dependenciesModal" tabindex="-1" aria-labelledby="dependenciesModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
     <div class="modal-content bg-dark text-light">
-      <div class="modal-header">
-        <div>
-          <h5 class="modal-title" id="virtualGardenModalLabel">Virtual Garden</h5>
-          <h6 class="text-muted">Game Developer</h6>
-          <small class="text-muted">2023</small>
-        </div>
-      </div>
+      <!-- Single modal-body -->
+
       <div class="modal-body">
+        <h5 class="mb-3" id="dependenciesModalLabel">Dependencies Game</h5>
         <div class="row">
           <div class="col-md-6">            <!-- Media Gallery -->
             <div class="media-gallery">
@@ -469,4 +506,72 @@
   </div>
 </div>
 
+
+<!-- AI Art Generator Modal -->
+<div class="modal fade" id="LModal" tabindex="-1" aria-labelledby="LModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content bg-dark text-light">
+      <!-- Single modal-body -->
+      <div class="modal-body">
+        <h5 class="mb-3" id="LModalLabel">Neural Art Studio</h5>
+        <div class="row">
+          <div class="col-md-6">
+            <img src="images/app-icon.png" class="img-fluid rounded" alt="AI Art Generator">
+          </div>
+          <div class="col-md-6">
+            <h6 class="mb-3">Tools & Technologies</h6>
+            <div class="mb-3">
+              <span class="badge bg-primary">Python</span>
+              <span class="badge bg-primary">PyTorch</span>
+              <span class="badge bg-primary">Deep Learning</span>
+            </div>
+            <h6 class="mb-3">Key Features</h6>
+            <ul>
+              <li>Text-to-image generation</li>
+              <li>Style transfer algorithms</li>
+              <li>Real-time visualization</li>
+            </ul>
+            <div class="text-center">
+              <a href="https://github.com/mwahba13/neural-art" class="btn btn-primary" target="_blank" rel="noopener">View on GitHub</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
+
+<!-- Physics Simulator Modal -->
+<div class="modal fade" id="physicsModal" tabindex="-1" aria-labelledby="physicsModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content bg-dark text-light">
+      <!-- Single modal-body -->
+      <div class="modal-body">
+        <h5 class="mb-3" id="physicsModalLabel">Dynamic Physics Lab</h5>
+        <div class="row">
+          <div class="col-md-6">
+            <img src="images/app-icon.png" class="img-fluid rounded" alt="Physics Simulator">
+          </div>
+          <div class="col-md-6">
+            <h6 class="mb-3">Tools & Technologies</h6>
+            <div class="mb-3">
+              <span class="badge bg-primary">C++</span>
+              <span class="badge bg-primary">OpenGL</span>
+              <span class="badge bg-primary">PhysX</span>
+            </div>
+            <h6 class="mb-3">Key Features</h6>
+            <ul>
+              <li>Real-time particle systems</li>
+              <li>Rigid body dynamics</li>
+              <li>Interactive visualization</li>
+            </ul>
+            <div class="text-center">
+              <a href="https://github.com/mwahba13/physics-lab" class="btn btn-primary" target="_blank" rel="noopener">View on GitHub</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
