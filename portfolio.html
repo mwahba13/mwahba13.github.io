@@ -28,42 +28,41 @@
 </head>
 
 <body>
-  <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar ftco-navbar-light site-navbar-target" id="ftco-navbar">
-    <div class="container">
-      <a class="navbar-brand" href="index.html">Wahba</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
-        aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="oi oi-menu"></span> Menu
-      </button>
-      <div class="collapse navbar-collapse" id="ftco-nav">
-        <ul class="navbar-nav nav ml-auto">
-          <li class="nav-item"><a href="index.html#home-section" class="nav-link">Home</a></li>
-          <li class="nav-item"><a href="index.html#about-section" class="nav-link">About Me</a></li>
-          <li class="nav-item"><a href="index.html#projects-section" class="nav-link">Featured Work</a></li>
-          <li class="nav-item"><a href="index.html#press-section" class="nav-link">Press/Media</a></li>
-          <li class="nav-item"><a href="index.html#contact-section" class="nav-link">Contact</a></li>
-        </ul>
-        <div class="d-flex align-items-center">
-          <a href="portfolio.html" class="btn btn-primary py-2 px-3 me-2">Portfolio</a>
-          <a href="docs/Curriculum Vitae, Wahba (May 2025).pdf" class="btn btn-primary py-2 px-3" target="_blank"
-            rel="noopener">Download Full CV</a>
-          <a href="mailto:mrswahba13@gmail.com" class="btn btn-link text-light" title="Email Michael Wahba"><span
-              class="icon-envelope"></span></a>
-          <a href="https://www.linkedin.com/in/michael-wahba/" class="btn btn-link text-light"
-            title="Visit Michael Wahba's LinkedIn profile" target="_blank" rel="noopener"><span
-              class="icon-linkedin-square"></span></a>
-          <a href="https://github.com/mwahba13" class="btn btn-link text-light"
-            title="Visit Michael Wahba's GitHub profile" target="_blank" rel="noopener"><span
-              class="icon-github"></span></a>
-        </div>
-      </div>
-    </div>
-  </nav>
+  <!-- Navigation will be loaded here -->
+
+
   <div class="container portfolio-container mt-5 pt-5">
     <div class="row justify-content-center mb-5">
       <div class="col-12">
         <h2 class="text-center mb-4"><b>Portfolio</b></h2>
         <hr class="mb-5" style="border-color: #ffbd39; border-width: 3px;">
+      </div>
+    </div>
+
+    <!-- About Me Section -->
+    <div class="row justify-content-center mb-5">
+      <div class="col-12">
+        <h3 class="text-center mb-4 text-primary">About Me</h3>
+        <div class="row g-4">
+          <div class="col-md-6">
+            <img src="images/wahba_sims.jpg" class="img-fluid rounded mb-3" alt="Michael Wahba">
+          </div>
+          <div class="col-md-6">
+            <p class="lead text-light">Hi! I'm Mike, an engineer and designer with a passion for creating innovative and engaging experiences.</p>
+            <p class="text-light">With a unique background spanning biology, computer science, and creative writing, I bring an interdisciplinary approach to all my projects. Currently at Maxis (Electronic Arts), I work on developing the tools and systems that power the creativity of <i>The Sims</i> community.</p>
+            <p class="text-light">My journey from studying synthetic biology to crafting digital worlds has taught me the value of thinking in systems and creative exploration. Whether I'm designing gameplay mechanics, implementing AI systems, or building development tools, I focus on creating solutions that are both technically robust and intuitively usable.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Download Buttons -->
+      <div class="text-center mt-4">
+        <a href="docs/Curriculum Vitae, Wahba (May 2025).pdf" class="btn btn-primary btn-lg mx-2" target="_blank" rel="noopener">
+          <i class="icon-download me-2"></i>Download Full CV
+        </a>
+        <a href="docs/Wahba Resume 08_21_2025.pdf" class="btn btn-primary btn-lg mx-2" target="_blank" rel="noopener">
+          <i class="icon-download me-2"></i>Download Resume
+        </a>
       </div>
     </div>
 
@@ -77,8 +76,7 @@
               <div class="card-body text-center">
                 <i class="icon-gamepad display-4 mb-3 text-primary"></i>
                 <h4>Inventive Systems. Intuitive Mechanics</h4>
-                <p>I specialize in designing gameplay systems that feel natural and engaging. Whether building from
-                  scratch or iterating on existing mechanics, I focus on player experience,
+                <p>I specialize in designing gameplay systems that feel natural and engaging; focusing on player experience,
                   creative expression, and systemic depth.</p>
               </div>
             </div>
@@ -88,7 +86,7 @@
               <div class="card-body text-center">
                 <i class="icon-code display-4 mb-3 text-primary"></i>
                 <h4>Code Meets Creativity.</h4>
-                <p>Versatile in C++, Blueprints, and C#, I bring technical fluency across engines like Unreal and Unity.
+                <p>I bring together technical fluency with creative design problem-solving.
                   From gameplay scripting to tool development,
                   I bridge the gap between design vision and engineering execution.</p>
               </div>
@@ -100,8 +98,7 @@
                 <i class="icon-rocket display-4 mb-3 text-primary"></i>
                 <h4>Interdisciplinary Thinking. Practical Execution</h4>
                 <p>With a background spanning engineering, design, writing, and research, I tackle problems from
-                  multiple angles. I prototype fast, draw from diverse disciplines,
-                  and connect ideas across fields to deliver innovative, playable solutions.</p>
+                  multiple angles.</p>
               </div>
             </div>
           </div>
@@ -157,47 +154,52 @@
     <div class="row">
       <!-- Professional Experience -->
       <div class="col-12 mb-5">
+      <h3 class="text-center mb-4 text-primary">Projects</h3>
         <div class="row g-4">
           <!-- Maxis -->
-          <div class="col-md-6" data-bs-toggle="modal" data-bs-target="#maxisModal" style="cursor: pointer;">
-            <div class="card bg-dark text-light project-card">
-              <div class="project-media">
-                <img src="images/maxis.jpg" alt="Maxis">
-              </div>
-              <div class="card-body">
-                <h5 class="card-title">Maxis (Electronic Arts)</h5>
+          <div class="col-md-6">
+            <a href="maxis.html" class="text-decoration-none">
+              <div class="card bg-dark text-light project-card">
+                <div class="project-media">
+                  <img src="images/maxis.jpg" alt="Maxis">
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title">Maxis (Electronic Arts)</h5>
+                  <h6 class="card-subtitle">Software Engineer</h6>
+                  <p class="card-text">Sul sul! Developing toolchains for sims and developers alike!</p>
+                  <div class="tech-tags">
+                    <span class="tech-tag">Tools Engineering</span>
+                    <span class="tech-tag">C#</span>
+                    <span class="tech-tag">.NET/WPF</span>
+                  </div>
 
-                <h6 class="card-subtitle">Software Engineer</h6>
-                <p class="card-text">Sul sul! Developing toolchains for sims and developers alike!</p>
-                <div class="tech-tags">
-                  <span class="tech-tag">Tools Engineering</span>
-                  <span class="tech-tag">C#</span>
-                  <span class="tech-tag">.NET/WPF</span>
                 </div>
 
               </div>
-            </div>
+            </a>
           </div>
 
           <!-- Egregore -->
-          <div class="col-md-6" data-bs-toggle="modal" data-bs-target="#egregoreModal" style="cursor: pointer;">
-            <div class="card bg-dark text-light project-card">
-              <div class="project-media">
-                <img src="images/Egregore/MainCapsule.png" alt="Egregore">
-              </div>
-              <div class="card-body">
-                <h5 class="card-title">Egregore</h5>
+          <div class="col-md-6">
+            <a href="egregore.html" class="text-decoration-none">
+              <div class="card bg-dark text-light project-card">
+                <div class="project-media">
+                  <img src="images/Egregore/MainCapsule.png" alt="Egregore">
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title">Egregore</h5>
+                  <h6 class="card-subtitle">Creative Director</h6>
+                  <p class="card-text">Uncover a cult in modern day Cairo.</p>
+                  <div class="tech-tags">
+                    <span class="tech-tag">Unreal Engine 5</span>
+                    <span class="tech-tag">C++</span>
+                    <span class="tech-tag">Blueprints</span>
+                  </div>
 
-                <h6 class="card-subtitle">Creative Director</h6>
-                <p class="card-text">Uncover a cult in modern day Cairo.</p>
-                <div class="tech-tags">
-                  <span class="tech-tag">Unreal Engine 5</span>
-                  <span class="tech-tag">C++</span>
-                  <span class="tech-tag">Blueprints</span>
                 </div>
 
               </div>
-            </div>
+            </a>
           </div>
         </div>
       </div>
@@ -206,49 +208,49 @@
       <div class="col-12 mb-5">
         <div class="row g-4">
           <!-- Archive -->
-          <div class="col-md-6" data-bs-toggle="modal" data-bs-target="#archiveModal" style="cursor: pointer;">
+          <div class="col-md-6">
+            <a href="immersive-archive.html" class="text-decoration-none">
+              <div class="card bg-dark text-light project-card">
+                <div class="project-media">
+                  <img src="images/ImmersiveArchive/IA_Carousel.jpg" alt="Immersive Archive">
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title">The Immersive Archive</h5>
+                  <h6 class="card-subtitle">Technical Lead</h6>
+                  <p class="card-text">Recreating seminal XR experienecs for future generations.</p>
+                  <div class="tech-tags">
+                    <span class="tech-tag">Unity</span>
+                    <span class="tech-tag">Educational</span>
+                    <span class="tech-tag">XR Development</span>
+                  </div>
 
-            <div class="card bg-dark text-light project-card">
-              <div class="project-media">
-                <img src="images/ImmersiveArchive/IA_Carousel.jpg" alt="Immersive Archive">
-
-              </div>
-              <div class="card-body">
-                <h5 class="card-title">The Immersive Archive</h5>
-
-                <h6 class="card-subtitle">Technical Lead</h6>
-                <p class="card-text">Recreating seminal XR experienecs for future generations.</p>
-                <div class="tech-tags">
-                  <span class="tech-tag">Unity</span>
-                  <span class="tech-tag">Educational</span>
-                  <span class="tech-tag">XR Development</span>
                 </div>
 
               </div>
-            </div>
+            </a>
           </div>
 
           <!-- Atrio -->
-          <div class="col-md-6" data-bs-toggle="modal" data-bs-target="#atrioModal" style="cursor: pointer;">
+          <div class="col-md-6">
+            <a href="atrio.html" class="text-decoration-none">
+              <div class="card bg-dark text-light project-card">
+                <div class="project-media">
+                  <img src="images/Atrio/AtrioKeyArt_NoLogo (1).png" alt="Atrio">
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title">Atrio: The Dark Wild</h5>
+                  <h6 class="card-subtitle">Lead Writer</h6>
+                  <p class="card-text">Survival-automation game with a heart(box) of gold.</p>
+                  <div class="tech-tags">
+                    <span class="tech-tag">Narrative Design</span>
+                    <span class="tech-tag">Story and Dialogue Writing</span>
+                    <span class="tech-tag">Worldbuilding</span>
+                  </div>
 
-            <div class="card bg-dark text-light project-card">
-              <div class="project-media">
-                <img src="images/Atrio/AtrioKeyArt_NoLogo (1).png" alt="Atrio">
-
-              </div>
-              <div class="card-body">
-                <h5 class="card-title">Atrio: The Dark Wild</h5>
-
-                <h6 class="card-subtitle">Lead Writer</h6>
-                <p class="card-text">Survival-automation game with a heart(box) of gold.</p>
-                <div class="tech-tags">
-                  <span class="tech-tag">Narrative Design</span>
-                  <span class="tech-tag">Story and Dialogue Writing</span>
-                  <span class="tech-tag">Worldbuilding</span>
                 </div>
 
               </div>
-            </div>
+            </a>
           </div>
         </div>
       </div> <!-- Independent Projects -->
@@ -353,7 +355,7 @@
                 </div>
                 <div class="card-body">
                   <h5 class="card-title">Quidditch Swarm</h5>
-                  <p class="card-text">Multi-agent quidditch simulator</p>
+                  <p class="card-text text-white">Multi-agent quidditch simulator</p>
                   <div class="tech-tags">
                     <span class="tech-tag">Unity</span>
                     <span class="tech-tag">Multi-Agent System</span>
@@ -372,7 +374,7 @@
               </div>
               <div class="card-body">
                 <h5 class="card-title">Antymology</h5>
-                <p class="card-text">Ant colony simulation using neural networks</p>
+                <p class="card-text text-white">Ant colony simulation using neural networks</p>
                 <div class="tech-tags">
                   <span class="tech-tag">Unity</span>
                   <span class="tech-tag">Multi-Agent System</span>
@@ -380,8 +382,77 @@
                 </div>
               </div>
           </a>
+</div>
+</div>
+</div>
+</div>
+
+<!-- Game Jam Games Section -->
+<div class="row justify-content-center mb-5">
+  <div class="col-12">
+    <h2 class="text-center mb-4">Old Game Jam Games</h2>
+    <p class="text-center text-light mb-4">Quick experiments and prototypes created during game jams</p>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="card bg-dark text-light project-card">
+          <a href="https://mwahba.itch.io/fur">
+
+            <div class="project-media">
+              <img src="images/app-icon.png" alt="Game Jam Game 1" class="project-img-even">
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Fur!</h5>
+              <div class="tech-tags">
+                <span class="tech-tag">Unity</span>
+                <span class="tech-tag">Historical Game Jam</span>
+              </div>
+
+            </div>
         </div>
+        </a>
+
       </div>
+
+      <div class="col-md-4">
+        <div class="card bg-dark text-light project-card">
+          <a href="https://mwahba.itch.io/vox-machina">
+
+            <div class="project-media">
+              <img src="images/app-icon.png" alt="Game Jam Game 2" class="project-img-even">
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Vox Machina</h5>
+              <div class="tech-tags">
+                <span class="tech-tag">Unity</span>
+                <span class="tech-tag">Ludum Dare</span>
+              </div>
+            </div>
+
+        </div>
+        </a>
+
+      </div>
+
+      <div class="col-md-4">
+        <div class="card bg-dark text-light project-card">
+          <a href="https://mwahba.itch.io/postal">
+
+            <div class="project-media">
+              <img src="images/app-icon.png" alt="Game Jam Game 3" class="project-img-even">
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Going Postal with Dick Danger</h5>
+              <div class="tech-tags">
+                <span class="tech-tag">Unity</span>
+                <span class="tech-tag">Ludum Dare</span>
+              </div>
+            </div>
+        </div>
+        </a>
+
+      </div>
+    </div>
+  </div>
     </div>
   </div>
   </div>
@@ -404,6 +475,7 @@
     </div>
   </footer>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/load-navbar.js"></script>
   <script src="js/jquery.min.js"></script>
   <script src="js/jquery-migrate-3.0.1.min.js"></script>
   <script src="js/popper.min.js"></script>

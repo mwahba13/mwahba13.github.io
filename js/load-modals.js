@@ -1,17 +1,18 @@
-document.addEventListener('DOMContentLoaded', function() {
+$(document).ready(function() {
     // Get the modals container
-    const modalsContainer = document.getElementById('modalsContainer');
-    if (!modalsContainer) return;
+    const $modalsContainer = $('#modalsContainer');
+    if (!$modalsContainer.length) return;
 
-    // Fetch and inject modals
-    fetch('modals.html')
-        .then(response => response.text())
-        .then(html => {
-            modalsContainer.innerHTML = html;
-            // Re-initialize Bootstrap data attributes
-            document.querySelectorAll('[data-bs-toggle="modal"]').forEach(element => {
-                new bootstrap.Modal(document.querySelector(element.dataset.bsTarget));
-            });
-        })
-        .catch(error => console.error('Error loading modals:', error));
+    // Load modals using jQuery
+    $modalsContainer.load('modals.html', function(response, status, xhr) {
+        if (status == 'error') {
+            console.error('Error loading modals:', xhr.status, xhr.statusText);
+            return;
+        }
+
+        // Re-initialize Bootstrap data attributes
+        $('[data-bs-toggle="modal"]').each(function() {
+            new bootstrap.Modal(document.querySelector($(this).data('bs-target')));
+        });
+    });
 });
