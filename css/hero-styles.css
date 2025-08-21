@@ -1,0 +1,94 @@
+.hero {
+  padding: 7rem 0 3rem;
+  background: #000000;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.hero-text-container {
+  padding: 2rem 0;
+}
+
+.hero-text-container .text h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.hero-text-container .text h3 {
+  font-size: 1.75rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.hero-image-container {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+  background: #000000;
+  border-radius: 8px;
+}
+
+.hero-image-container img {
+  width: 100%;
+  height: 75vh;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  object-fit: cover;
+  max-height: 800px;
+  background: #000000;
+}
+
+.hero-image-container .overlay {
+  top: 2rem;
+  left: 2rem;
+  right: 2rem;
+  bottom: 2rem;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.hero-image-container:hover .overlay {
+  opacity: 1;
+}
+
+.hero-image-container:hover img {
+  transform: scale(1.02);
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding: 5rem 0 2rem;
+  }
+
+  .hero-text-container {
+    text-align: center;
+    padding: 1rem 0;
+  }
+
+  .hero-text-container .text h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero-text-container .text h3 {
+    font-size: 1.5rem;
+  }
+
+  .hero-image-container {
+    padding: 1rem;
+    margin-top: 2rem;
+  }
+
+  .hero-image-container .overlay {
+    top: 1rem;
+    left: 1rem;
+    right: 1rem;
+    bottom: 1rem;
+  }
+}
