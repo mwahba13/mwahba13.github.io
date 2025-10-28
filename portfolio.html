@@ -33,6 +33,7 @@
   <link rel="stylesheet" href="css/carousel-hover.css">
 
   <link rel="stylesheet" href="css/portfolio-cards.css">
+  <link rel="stylesheet" href="css/portfolio-filter.css">
   <link rel="stylesheet" href="css/brand.css">
 
 </head>
@@ -78,6 +79,8 @@
         <a href="docs/Wahba Resume 08_21_2025.pdf" class="btn btn-primary btn-lg mx-2" target="_blank" rel="noopener">
           <i class="icon-download me-2"></i>Download Resume
         </a>
+        <a href="https://www.github.com/mwahba13" class="btn btn-primary btn-lg mx-2" target="_blank" rel="noopener">
+          <i class="icon-github me-2"></i>GitHub Profile</a>
       </div>
     </div>
 
@@ -91,9 +94,6 @@
               <div class="card-body text-center">
                 <i class="icon-gamepad display-4 mb-3 text-primary"></i>
                 <h4>Inventive Systems. Intuitive Mechanics</h4>
-                <p>I specialize in designing gameplay systems that feel natural and engaging; focusing on player
-                  experience,
-                  creative expression, and systemic depth.</p>
               </div>
             </div>
           </div>
@@ -102,9 +102,6 @@
               <div class="card-body text-center">
                 <i class="icon-code display-4 mb-3 text-primary"></i>
                 <h4>Code Meets Creativity.</h4>
-                <p>I bring together technical fluency with creative design problem-solving.
-                  From gameplay scripting to tool development,
-                  I bridge the gap between design vision and engineering execution.</p>
               </div>
             </div>
           </div>
@@ -113,8 +110,6 @@
               <div class="card-body text-center">
                 <i class="icon-rocket display-4 mb-3 text-primary"></i>
                 <h4>Interdisciplinary Thinking. Practical Execution</h4>
-                <p>With a background spanning engineering, design, writing, and research, I tackle problems from
-                  multiple angles.</p>
               </div>
             </div>
           </div>
@@ -170,10 +165,19 @@
     <div class="row">
       <!-- Professional Experience -->
       <div class="col-12 mb-5">
-        <h3 class="text-center mb-4 text-primary">Projects</h3>
+        <h3 class="text-center mb-4 text-primary">Projects and Professional Experience</h3>
+        
+        <!-- Filter Buttons -->
+        <div class="filter-buttons mb-4">
+          <button class="filter-btn" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="unity">Unity/C#</button>
+          <button class="filter-btn" data-filter="unreal">Unreal/C++</button>
+          <button class="filter-btn" data-filter="other">Other</button>
+        </div>
+
         <div class="row g-4">
           <!-- Maxis -->
-          <div class="col-md-6">
+          <div class="col-md-6 portfolio-item" data-category="other">
             <a href="maxis.html" class="text-decoration-none">
               <div class="card bg-dark text-light project-card">
                 <div class="project-media">
@@ -196,7 +200,7 @@
           </div>
 
           <!-- Egregore -->
-          <div class="col-md-6">
+          <div class="col-md-6 portfolio-item" data-category="unreal">
             <a href="egregore.html" class="text-decoration-none">
               <div class="card bg-dark text-light project-card">
                 <div class="project-media">
@@ -224,7 +228,7 @@
       <div class="col-12 mb-5">
         <div class="row g-4">
           <!-- Archive -->
-          <div class="col-md-6">
+          <div class="col-md-6 portfolio-item" data-category="unity">
             <a href="immersive-archive.html" class="text-decoration-none">
               <div class="card bg-dark text-light project-card">
                 <div class="project-media">
@@ -247,7 +251,7 @@
           </div>
 
           <!-- Atrio -->
-          <div class="col-md-6">
+          <div class="col-md-6 portfolio-item" data-category="unity">
             <a href="atrio.html" class="text-decoration-none">
               <div class="card bg-dark text-light project-card">
                 <div class="project-media">
@@ -274,8 +278,8 @@
         <h2 class="text-center mb-4">Other Projects and Experiments</h2>
         <div class="row g-4">
 
-          <!-- Pacman -->
-          <div class="col-md-4" data-bs-toggle="modal" data-bs-target="#pacmanModal" style="cursor: pointer;">
+          <!-- Radio Exurbia -->
+          <div class="col-md-4 portfolio-item" data-category="unreal" data-bs-toggle="modal" data-bs-target="#pacmanModal" style="cursor: pointer;">
             <a href="https://sprawlstudios.itch.io/radio-exurbia">
               <div class="card bg-dark text-light project-card">
                 <div class="project-media">
@@ -297,8 +301,8 @@
 
 
 
-          <!-- Synth -->
-          <div class="col-md-4" style="cursor: pointer;">
+          <!-- Virtual Garden -->
+          <div class="col-md-4 portfolio-item" data-category="other" style="cursor: pointer;">
             <a href="https://virtual-garden.netlify.app/">
               <div class="card bg-dark text-light project-card">
                 <div class="project-media">
@@ -319,8 +323,8 @@
           </div>
 
 
-          <!-- Dependencies -->
-          <div class="col-md-4" style="cursor: pointer;">
+          <!-- L -->
+          <div class="col-md-4 portfolio-item" data-category="unity" style="cursor: pointer;">
             <a href="https://mwahba.itch.io/l-prototype">
               <div class="card bg-dark text-light project-card">
                 <div class="project-media">
@@ -341,7 +345,7 @@
           </div>
 
 
-          <div class="col-md-4" style="cursor: pointer;">
+          <div class="col-md-4 portfolio-item" data-category="unity" style="cursor: pointer;">
             <a href="https://mwahba.itch.io/limina">
               <div class="card bg-dark text-light project-card">
                 <div class="project-media">
@@ -362,8 +366,8 @@
           </div>
 
 
-          <!-- Game Physics -->
-          <div class="col-md-4" style="cursor: pointer;">
+          <!-- Quidditch Swarm -->
+          <div class="col-md-4 portfolio-item" data-category="unity" style="cursor: pointer;">
             <a href="https://github.com/mwahba13/QuidditchSwarm">
               <div class="card bg-dark text-light project-card">
                 <div class="project-media">
@@ -382,7 +386,7 @@
 
           </div>
         </div>
-        <div class="col-md-4" style="cursor: pointer;">
+        <div class="col-md-4 portfolio-item" data-category="unity" style="cursor: pointer;">
           <a href="https://github.com/mwahba13/Antymology">
             <div class="card bg-dark text-light project-card">
               <div class="project-media">
@@ -409,7 +413,7 @@
       <h2 class="text-center mb-4">Old Game Jam Games</h2>
       <p class="text-center text-light mb-4">Quick experiments and prototypes created during game jams</p>
       <div class="row g-4">
-        <div class="col-md-4">
+        <div class="col-md-4 portfolio-item" data-category="unity">
           <div class="card bg-dark text-light project-card">
             <a href="https://mwahba.itch.io/fur">
 
@@ -429,7 +433,7 @@
 
         </div>
 
-        <div class="col-md-4">
+        <div class="col-md-4 portfolio-item" data-category="unity">
           <div class="card bg-dark text-light project-card">
             <a href="https://mwahba.itch.io/vox-machina">
 
@@ -448,7 +452,7 @@
 
         </div>
 
-        <div class="col-md-4">
+        <div class="col-md-4 portfolio-item" data-category="unity">
           <div class="card bg-dark text-light project-card">
             <a href="https://mwahba.itch.io/postal">
 
@@ -504,6 +508,7 @@
   <script src="js/load-modals.js"></script>
   <script src="js/main.js"></script>
   <script src="js/load-navbar.js"></script>
+  <script src="js/portfolio-filter.js"></script>
 
   <script>
     // Initialize modals on page load
