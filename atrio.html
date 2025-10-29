@@ -10,7 +10,7 @@
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-TN9M86WYZ5"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
+    function gtag() { dataLayer.push(arguments); }
     gtag('js', new Date());
     gtag('config', 'G-TN9M86WYZ5');
   </script>
@@ -33,6 +33,7 @@
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/carousel-hover.css">
   <link rel="stylesheet" href="css/portfolio-cards.css">
+  <link rel="stylesheet" href="css/video-embed.css">
   <link rel="stylesheet" href="css/brand.css">
 </head>
 
@@ -45,7 +46,20 @@
       <div class="col-lg-8 mx-auto">
         <h1 class="display-4 text-center mb-4">Atrio: The Dark Wild</h1>
         <p class="lead text-center mb-5">A survival-automation game about finding hope in the darkness</p>
-        
+
+        <!-- Trailer Video -->
+        <div class="video-container">
+          <div class="video-wrapper">
+            <div class="ratio ratio-16x9">
+              <iframe src="https://www.youtube.com/embed/mdz83FL8OUU?si=Fs4SR1mOvyIfdMeX" title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+              </iframe>
+            </div>
+          </div>
+        </div>
+
         <!-- Project Images -->
         <div id="projectCarousel" class="carousel slide mb-5" data-bs-ride="carousel">
           <div class="carousel-inner">
@@ -68,8 +82,10 @@
         <div class="row mb-5">
           <div class="col-md-8">
             <h3>About the Project</h3>
-            <p>Atrio: The Dark Wild is a unique blend of survival, automation, and narrative storytelling. Set in a mysterious world where light itself seems to be fading, players must build automated systems to survive while uncovering the truth about their world and its inhabitants.</p>
-            
+            <p>Atrio: The Dark Wild is a unique blend of survival, automation, and narrative storytelling. Set in a
+              mysterious world where light itself seems to be fading, players must build automated systems to survive
+              while uncovering the truth about their world and its inhabitants.</p>
+
             <h3 class="mt-4">My Role</h3>
             <p>As Lead Writer, I was responsible for:</p>
             <ul>
@@ -85,32 +101,35 @@
               <li>Integrated narrative progression with automation mechanics</li>
               <li>Dynamic dialogue system based on player choices</li>
             </ul>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card bg-dark text-light">
-                  <div class="card-body">
-                    <h4>Project Details</h4>
-                    <ul class="list-unstyled">
-                      <li><strong>Role:</strong> Lead Writer</li>
-                      <li><strong>Duration:</strong> 2023-2024</li>
-                    </ul>
-            
-                    <h4 class="mt-4">Key Features</h4>
-                    <div class="tech-tags">
-                      <span class="tech-tag">Narrative Design</span>
-                      <span class="tech-tag">Dialogue Writing</span>
-                      <span class="tech-tag">Worldbuilding</span>
-                      <span class="tech-tag">Character Development</span>
-                    </div>
-            
-                    <h4 class="mt-4">Artifacts</h4>
-                    <ul class="list-unstyled">
-                  <li><a href="https://store.steampowered.com/app/1125390/Atrio_The_Dark_Wild/" target="_blank" rel="noopener"><span class="btn btn-outline-primary artifact-btn">Steam Page</span></a></li>
+          </div>
 
-                    </ul>
-                  </div>
+          <div class="col-md-4">
+            <div class="card bg-dark text-light">
+              <div class="card-body">
+                <h4>Project Details</h4>
+                <ul class="list-unstyled">
+                  <li><strong>Role:</strong> Lead Writer</li>
+                  <li><strong>Duration:</strong> 2023-2024</li>
+                </ul>
+
+                <h4 class="mt-4">Key Features</h4>
+                <div class="tech-tags">
+                  <span class="tech-tag">Narrative Design</span>
+                  <span class="tech-tag">Dialogue Writing</span>
+                  <span class="tech-tag">Worldbuilding</span>
+                  <span class="tech-tag">Character Development</span>
                 </div>
+
+                <h4 class="mt-4">Artifacts</h4>
+                <ul class="list-unstyled">
+                  <li><a href="https://www.youtube.com/watch?v=o58n_pARF6I" target="_blank" rel="noopener"><span
+                        class="btn btn-outline-primary artifact-btn">Gameplay Video</span></a></li>
+                  <li><a href="https://store.steampowered.com/app/1125390/Atrio_The_Dark_Wild/" target="_blank"
+                      rel="noopener"><span class="btn btn-outline-primary artifact-btn">Steam Page</span></a></li>
+
+                </ul>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -145,4 +164,5 @@
   <script src="js/load-navbar.js"></script>
   <script src="js/main.js"></script>
 </body>
+
 </html>
