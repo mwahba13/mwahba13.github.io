@@ -17,16 +17,19 @@ document.addEventListener('DOMContentLoaded', function() {
 
             const filter = this.getAttribute('data-filter');
 
-            // Show/hide items based on filter
+            // Show/hide items based on filter (supports multi-valued data-category: space or comma separated)
             document.querySelectorAll('.portfolio-item').forEach(item => {
                 item.classList.remove('show', 'hide');
                 
                 if (filter === 'all') {
                     item.classList.add('show');
-                } else if (item.getAttribute('data-category') === filter) {
-                    item.classList.add('show');
                 } else {
-                    item.classList.add('hide');
+                    const categories = (item.getAttribute('data-category') || '').split(/[,\s]+/).filter(Boolean);
+                    if (categories.includes(filter)) {
+                        item.classList.add('show');
+                    } else {
+                        item.classList.add('hide');
+                    }
                 }
             });
         });
