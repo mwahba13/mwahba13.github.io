@@ -12,11 +12,17 @@
     border-radius: 25px;
     transition: all 0.3s ease;
     font-weight: 500;
+    cursor: pointer;
 }
 
 .filter-btn:hover {
     background-color: #ffbd39;
     color: #000;
+}
+
+.filter-btn:focus {
+    outline: 2px solid #ffbd39;
+    outline-offset: 2px;
 }
 
 .filter-btn.active {
@@ -34,4 +40,10 @@
 
 .portfolio-item.show {
     display: block !important;
+}
+
+/* Visible focus styles for portfolio links */
+.portfolio-item a:focus {
+    outline: 2px solid #ffbd39;
+    outline-offset: 2px;
 }

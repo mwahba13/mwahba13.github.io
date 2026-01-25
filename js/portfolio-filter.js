@@ -7,13 +7,15 @@ document.addEventListener('DOMContentLoaded', function() {
     // Add click handlers to filter buttons
     document.querySelectorAll('.filter-btn').forEach(button => {
         button.addEventListener('click', function() {
-            // Remove active class from all buttons
+            // Remove active class and reset aria-pressed from all buttons
             document.querySelectorAll('.filter-btn').forEach(btn => {
                 btn.classList.remove('active');
+                btn.setAttribute('aria-pressed', 'false');
             });
 
-            // Add active class to clicked button
+            // Add active class and set aria-pressed to clicked button
             this.classList.add('active');
+            this.setAttribute('aria-pressed', 'true');
 
             const filter = this.getAttribute('data-filter');
 
@@ -36,5 +38,9 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Set "All" as active by default
-    document.querySelector('.filter-btn[data-filter="all"]').classList.add('active');
+    const allButton = document.querySelector('.filter-btn[data-filter="all"]');
+    if (allButton) {
+        allButton.classList.add('active');
+        allButton.setAttribute('aria-pressed', 'true');
+    }
 });

@@ -58,3 +58,8 @@
 .project-links {
     margin-top: auto;
 }
+/* Accessibility: Visible focus styles for portfolio card links */
+.portfolio-item a:focus {
+    outline: 2px solid #ffbd39;
+    outline-offset: 2px;
+}
