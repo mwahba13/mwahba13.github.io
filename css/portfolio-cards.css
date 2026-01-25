@@ -1,65 +1,85 @@
+/* Portfolio Cards - Enhanced for modern design
+   These styles are complementary to modern-portfolio.css */
+
 .project-card {
-    transition: transform 0.3s ease-in-out;
-    height: 100%;
+    /* Base styles now in modern-portfolio.css */
+    position: relative;
 }
 
-.project-card:hover {
-    transform: translateY(-5px);
+.project-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.1) 100%);
+    pointer-events: none;
+    border-radius: 12px;
 }
 
-.project-media {
-    height: 220px;
-    overflow: hidden;
-    border-top-left-radius: 0.375rem;
-    border-top-right-radius: 0.375rem;
-}
-
-.project-media img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
+/* Improve card spacing and typography consistency */
 .project-card .card-body {
-    height: 250px;
+    background-color: var(--color-bg-secondary, #1a1a1a);
+}
+
+.project-card .card-body p {
+    margin-bottom: 0.75rem;
+}
+
+/* Overlay on hover - View case study */
+.project-card .overlay-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.85);
     display: flex;
     flex-direction: column;
-    padding: 1.5rem;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.3s ease-out;
+    padding: var(--spacing-lg, 2rem);
+    border-radius: 12px;
+    pointer-events: none;
 }
 
-.project-card .card-title {
-    font-size: 1.25rem;
+.project-card:hover .overlay-content {
+    opacity: 1;
+}
+
+.overlay-content h3 {
+    color: #ffbd39;
     margin-bottom: 0.5rem;
-    color: #ffbd39;
+    font-size: 1.1rem;
 }
 
-.project-card .card-subtitle {
-    font-size: 1rem;
-    margin-bottom: 1rem;
-    color: #adb5bd;
+.overlay-content p {
+    color: #fff;
+    font-size: 0.95rem;
+    margin-bottom: 0;
 }
 
-.project-card .card-text {
-    font-size: 0.9rem;
-    margin-bottom: 1rem;
-    flex-grow: 1;
+/* Projects grid responsive adjustments */
+@media (max-width: 768px) {
+    .project-card {
+        min-height: 280px;
+    }
+
+    .project-media {
+        height: 180px;
+    }
+
+    .project-card .card-body {
+        padding: 1rem;
+    }
 }
 
-.tech-tag {
-    display: inline-block;
-    padding: 0.25rem 0.75rem;
-    margin: 0 0.25rem 0.5rem 0;
-    border-radius: 50px;
-    background-color: rgba(255, 189, 57, 0.15);
-    color: #ffbd39;
-    font-size: 0.85rem;
-}
-
-.project-links {
-    margin-top: auto;
-}
-/* Accessibility: Visible focus styles for portfolio card links */
-.portfolio-item a:focus {
+/* Accessibility: Visible focus styles */
+.portfolio-item a:focus-visible {
     outline: 2px solid #ffbd39;
     outline-offset: 2px;
 }

@@ -1,49 +1,54 @@
+/* Portfolio Filter Buttons - Modern Design
+   Primary styles now in modern-portfolio.css */
+
 .filter-buttons {
-    margin-bottom: 2rem;
-    text-align: center;
+    /* Primary styles in modern-portfolio.css */
 }
 
 .filter-btn {
-    margin: 0.5rem;
-    padding: 0.5rem 1.5rem;
-    border: 2px solid #ffbd39;
-    background-color: transparent;
-    color: #fff;
-    border-radius: 25px;
-    transition: all 0.3s ease;
-    font-weight: 500;
-    cursor: pointer;
+    /* Primary styles in modern-portfolio.css */
 }
 
 .filter-btn:hover {
-    background-color: #ffbd39;
-    color: #000;
+    /* Primary styles in modern-portfolio.css */
 }
 
 .filter-btn:focus {
-    outline: 2px solid #ffbd39;
-    outline-offset: 2px;
+    /* Primary styles in modern-portfolio.css */
 }
 
 .filter-btn.active {
-    background-color: #ffbd39;
-    color: #000;
+    /* Primary styles in modern-portfolio.css */
 }
 
 .portfolio-item {
-    transition: all 0.3s ease;
+    /* Primary styles in modern-portfolio.css */
 }
 
 .portfolio-item.hide {
-    display: none !important;
+    /* Primary styles in modern-portfolio.css */
 }
 
 .portfolio-item.show {
-    display: block !important;
+    /* Primary styles in modern-portfolio.css */
 }
 
-/* Visible focus styles for portfolio links */
-.portfolio-item a:focus {
+/* Keyboard navigation support */
+.filter-btn:focus-visible {
     outline: 2px solid #ffbd39;
     outline-offset: 2px;
+}
+
+/* Additional accessibility for screen readers */
+.filter-btn[aria-pressed="true"] {
+    position: relative;
+}
+
+.filter-btn[aria-pressed="true"]::after {
+    content: ' (active)';
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
 }
