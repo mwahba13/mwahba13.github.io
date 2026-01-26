@@ -2,11 +2,25 @@
  * Portfolio Page - Main JavaScript
  * 
  * This file contains essential functionality for the portfolio page:
+ * - Hide page loader spinner
  * - Navigation dropdown hover behavior
  * - Navbar scroll animations
  * 
  * Vanilla JavaScript (no jQuery dependency)
  */
+
+// Hide the loader spinner when page is ready and ensure page is visible
+document.addEventListener('DOMContentLoaded', function() {
+    const loader = document.getElementById('ftco-loader');
+    if (loader) {
+        // Use display: none instead of removing .show class
+        loader.style.display = 'none';
+    }
+    
+    // Ensure body and key elements are visible
+    document.body.style.visibility = 'visible';
+    document.body.style.opacity = '1';
+});
 
 // Navigation dropdown hover behavior
 document.addEventListener('DOMContentLoaded', function() {
@@ -63,4 +77,15 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }
     });
+});
+// Initialize AOS (Animate On Scroll) library
+document.addEventListener('DOMContentLoaded', function() {
+    if (window.AOS) {
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true,
+            offset: 100
+        });
+    }
 });

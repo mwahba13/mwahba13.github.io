@@ -14,12 +14,38 @@
   font-size: 3.5rem;
   font-weight: 700;
   line-height: 1.2;
+  color: #007bff;
+  display: block;
+  visibility: visible;
+  opacity: 1;
+}
+
+.one-forth .text h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+  color: #007bff;
+  display: block;
+  visibility: visible;
+  opacity: 1;
 }
 
 .hero-text-container .text h3 {
   font-size: 1.75rem;
   font-weight: 500;
   color: rgba(255, 255, 255, 0.9);
+  display: block;
+  visibility: visible;
+  opacity: 1;
+}
+
+.one-forth .text h3 {
+  font-size: 1.75rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.9);
+  display: block;
+  visibility: visible;
+  opacity: 1;
 }
 
 .hero-image-container {
