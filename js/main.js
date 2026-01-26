@@ -5,73 +5,62 @@
  * - Navigation dropdown hover behavior
  * - Navbar scroll animations
  * 
- * REMOVED UNUSED:
- * - jQuery Stellar (parallax) - not used on portfolio
- * - jQuery Owl Carousel - not used on portfolio
- * - jQuery Magnific Popup - not used on portfolio
- * - jQuery Waypoints - not used on portfolio
- * - jQuery Animate Number - not used on portfolio
- * - Scrollax - not used on portfolio
- * - AOS animations - preserved for other pages
- * - Full height helper - not used on portfolio
- * - Loader - not used on portfolio
- * - One page click scrolling - not used on portfolio
+ * Vanilla JavaScript (no jQuery dependency)
  */
 
-(function($) {
-	"use strict";
+// Navigation dropdown hover behavior
+document.addEventListener('DOMContentLoaded', function() {
+    const dropdowns = document.querySelectorAll('nav .dropdown');
+    
+    dropdowns.forEach(dropdown => {
+        const link = dropdown.querySelector('> a');
+        const menu = dropdown.querySelector('.dropdown-menu');
+        
+        dropdown.addEventListener('mouseenter', function() {
+            dropdown.classList.add('show');
+            if (link) link.setAttribute('aria-expanded', 'true');
+            if (menu) menu.classList.add('show');
+        });
+        
+        dropdown.addEventListener('mouseleave', function() {
+            dropdown.classList.remove('show');
+            if (link) link.setAttribute('aria-expanded', 'false');
+            if (menu) menu.classList.remove('show');
+        });
+    });
 
-	// Navigation dropdown hover behavior
-	$('nav .dropdown').hover(function(){
-		var $this = $(this);
-		$this.addClass('show');
-		$this.find('> a').attr('aria-expanded', true);
-		$this.find('.dropdown-menu').addClass('show');
-	}, function(){
-		var $this = $(this);
-		$this.removeClass('show');
-		$this.find('> a').attr('aria-expanded', false);
-		$this.find('.dropdown-menu').removeClass('show');
-	});
-
-	// Navbar scroll behavior
-	var scrollWindow = function() {
-		$(window).scroll(function(){
-			var $w = $(this),
-					st = $w.scrollTop(),
-					navbar = $('.ftco_navbar'),
-					sd = $('.js-scroll-wrap');
-
-			if (st > 150) {
-				if ( !navbar.hasClass('scrolled') ) {
-					navbar.addClass('scrolled');	
-				}
-			} 
-			if (st < 150) {
-				if ( navbar.hasClass('scrolled') ) {
-					navbar.removeClass('scrolled sleep');
-				}
-			} 
-			if ( st > 350 ) {
-				if ( !navbar.hasClass('awake') ) {
-					navbar.addClass('awake');	
-				}
-				
-				if(sd.length > 0) {
-					sd.addClass('sleep');
-				}
-			}
-			if ( st < 350 ) {
-				if ( navbar.hasClass('awake') ) {
-					navbar.removeClass('awake');
-					navbar.addClass('sleep');
-				}
-				if(sd.length > 0) {
-					sd.removeClass('sleep');
-				}
-			}
-		});
-	};
-	scrollWindow();
-
-})(jQuery);
+    // Navbar scroll behavior
+    const navbar = document.querySelector('.ftco_navbar');
+    const scrollWrap = document.querySelector('.js-scroll-wrap');
+    
+    if (!navbar) return;
+    
+    window.addEventListener('scroll', function() {
+        const scrollTop = window.scrollY || document.documentElement.scrollTop;
+        
+        if (scrollTop > 150) {
+            if (!navbar.classList.contains('scrolled')) {
+                navbar.classList.add('scrolled');
+            }
+        } else {
+            navbar.classList.remove('scrolled', 'sleep');
+        }
+        
+        if (scrollTop > 350) {
+            if (!navbar.classList.contains('awake')) {
+                navbar.classList.add('awake');
+            }
+            if (scrollWrap) {
+                scrollWrap.classList.add('sleep');
+            }
+        } else {
+            if (navbar.classList.contains('awake')) {
+                navbar.classList.remove('awake');
+                navbar.classList.add('sleep');
+            }
+            if (scrollWrap) {
+                scrollWrap.classList.remove('sleep');
+            }
+        }
+    });
+});
