@@ -533,6 +533,54 @@ a:hover {
 }
 
 /* ============================================
+   CONTACT BOXES
+============================================ */
+
+.box {
+  background-color: var(--color-bg-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  transition: var(--transition-smooth);
+  min-width: 160px;
+}
+
+.box:hover {
+  border-color: var(--color-brand);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(255, 189, 57, 0.1);
+}
+
+.box .icon {
+  width: 60px;
+  height: 60px;
+  background-color: rgba(255, 189, 57, 0.1);
+  border-radius: 50%;
+  margin: 0 auto;
+  color: var(--color-brand);
+}
+
+.box strong {
+  color: var(--color-text-primary);
+}
+
+/* ============================================
+   PROJECT PAGES
+============================================ */
+
+.artifact-btn {
+  font-size: 0.85rem;
+  margin-bottom: 0.5rem;
+  display: inline-block;
+  color: var(--color-brand);
+  border-color: var(--color-brand);
+}
+
+.artifact-btn:hover {
+  background-color: rgba(255, 189, 57, 0.1);
+  color: var(--color-brand);
+}
+
+/* ============================================
    FOOTER
 ============================================ */
 
@@ -711,4 +759,28 @@ a:focus-visible {
   :root {
     color-scheme: dark;
   }
+}
+
+/* ============================================
+   HERO PILLARS
+============================================ */
+
+.hero-pillars {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.hero-pillar {
+  font-size: 0.85rem;
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--color-brand);
+}
+
+.hero-pillar-sep {
+  color: var(--color-text-secondary);
+  font-size: 0.85rem;
 }
