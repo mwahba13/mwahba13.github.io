@@ -257,10 +257,6 @@ section:first-of-type {
   min-height: 360px;
 }
 
-.featured-project .project-card {
-  min-height: 420px;
-}
-
 .project-card:hover {
   transform: translateY(-8px);
   border-color: var(--color-brand);
@@ -291,10 +287,6 @@ section:first-of-type {
   overflow: hidden;
   position: relative;
   background-color: var(--color-bg-primary);
-}
-
-.featured-project .project-media {
-  height: 280px;
 }
 
 .project-media img {
@@ -373,13 +365,7 @@ section:first-of-type {
    PORTFOLIO ITEMS - OTHER/SMALLER
 ============================================ */
 
-.portfolio-item:not(.featured-project) .project-card {
-  min-height: 320px;
-}
 
-.portfolio-item:not(.featured-project) .project-media {
-  height: 200px;
-}
 
 /* ============================================
    FILTER BUTTONS

@@ -46,7 +46,7 @@
               <img src="images/wahba_sims.jpg" class="img-fluid rounded mb-3" alt="Michael Wahba at Maxis (Electronic Arts)">
             </div>
             <div class="col-md-6">
-              <p class="lead">Writer, designer, and software engineer working across indie games, triple-A studios, and the USC MFA program.</p>
+              <p class="lead">Writer, designer, and software engineer working across indie games, triple-A studios, and academia.</p>
               <p>I build across disciplines. At Maxis (Electronic Arts) I engineer the developer toolchain for <em>The Sims</em>. As designer and director on <em>Egregore</em> I led a 20-person team through USC's Advanced Games Program. As Lead Writer on <em>Atrio: The Dark Wild</em> I designed and wrote the narrative, lore, and dialogue for a commercially shipped Steam release. As XR Technical Lead on <em>The Immersive Archive</em>, the project won Best in Show at AWE 2024.</p>
               <p>A background in synthetic biology, computer science, and creative writing gives me an unusual angle: I think in systems, write with precision, and design for the humans using what I build.</p>
             </div>
@@ -125,11 +125,13 @@
             <button class="filter-btn" data-filter="engineering" aria-pressed="false">Engineering</button>
             <button class="filter-btn" data-filter="narrative" aria-pressed="false">Narrative</button>
             <button class="filter-btn" data-filter="xr" aria-pressed="false">XR / Immersive</button>
+            <button class="filter-btn" data-filter="unity" aria-pressed="false">Unity/C#</button>
+            <button class="filter-btn" data-filter="unreal" aria-pressed="false">Unreal/C++</button>
           </nav>
 
           <div class="row g-4">
             <!-- Maxis -->
-            <div class="col-lg-6 col-md-12 portfolio-item featured-project" data-category="engineering">
+            <div class="col-lg-4 col-md-6 portfolio-item featured-project" data-category="engineering">
               <a href="maxis.html" class="text-decoration-none">
                 <div class="card project-card">
                   <div class="project-media">
@@ -151,7 +153,7 @@
             </div>
 
             <!-- Egregore -->
-            <div class="col-lg-6 col-md-12 portfolio-item featured-project" data-category="design engineering narrative">
+            <div class="col-lg-4 col-md-6 portfolio-item featured-project" data-category="design engineering narrative unreal">
               <a href="egregore.html" class="text-decoration-none">
                 <div class="card project-card">
                   <div class="project-media">
@@ -173,7 +175,7 @@
             </div>
 
             <!-- The Immersive Archive -->
-            <div class="col-lg-6 col-md-12 portfolio-item featured-project" data-category="engineering xr">
+            <div class="col-lg-4 col-md-6 portfolio-item featured-project" data-category="engineering xr unity">
               <a href="immersive-archive.html" class="text-decoration-none">
                 <div class="card project-card">
                   <div class="project-media">
@@ -195,7 +197,7 @@
             </div>
 
             <!-- Atrio -->
-            <div class="col-lg-6 col-md-12 portfolio-item featured-project" data-category="narrative design">
+            <div class="col-lg-4 col-md-6 portfolio-item featured-project" data-category="narrative design">
               <a href="atrio.html" class="text-decoration-none">
                 <div class="card project-card">
                   <div class="project-media">
@@ -216,7 +218,7 @@
             </div>
 
             <!-- Radio Exurbia -->
-            <div class="col-md-4 portfolio-item" data-category="narrative design engineering">
+            <div class="col-lg-4 col-md-6 portfolio-item" data-category="narrative design engineering unreal">
               <a href="https://sprawlstudios.itch.io/radio-exurbia" class="text-decoration-none" target="_blank" rel="noopener">
                 <div class="card project-card">
                   <div class="project-media">
@@ -235,7 +237,7 @@
             </div>
 
             <!-- The Virtual Garden -->
-            <div class="col-md-4 portfolio-item" data-category="engineering xr">
+            <div class="col-lg-4 col-md-6 portfolio-item" data-category="engineering xr unity">
               <a href="https://virtual-garden.netlify.app/" class="text-decoration-none" target="_blank" rel="noopener">
                 <div class="card project-card">
                   <div class="project-media">
@@ -255,7 +257,7 @@
             </div>
 
             <!-- L -->
-            <div class="col-md-4 portfolio-item" data-category="engineering">
+            <div class="col-lg-4 col-md-6 portfolio-item" data-category="engineering unity">
               <a href="https://mwahba.itch.io/l-prototype" class="text-decoration-none" target="_blank" rel="noopener">
                 <div class="card project-card">
                   <div class="project-media">
@@ -275,7 +277,7 @@
             </div>
 
             <!-- Limina -->
-            <div class="col-md-4 portfolio-item" data-category="engineering">
+            <div class="col-lg-4 col-md-6 portfolio-item" data-category="engineering unity">
               <a href="https://mwahba.itch.io/limina" class="text-decoration-none" target="_blank" rel="noopener">
                 <div class="card project-card">
                   <div class="project-media">
@@ -294,7 +296,7 @@
             </div>
 
             <!-- Quidditch Swarm -->
-            <div class="col-md-4 portfolio-item" data-category="engineering">
+            <div class="col-lg-4 col-md-6 portfolio-item" data-category="engineering unity">
               <a href="https://github.com/mwahba13/QuidditchSwarm" class="text-decoration-none" target="_blank" rel="noopener">
                 <div class="card project-card">
                   <div class="project-media">
@@ -313,7 +315,7 @@
             </div>
 
             <!-- Antymology -->
-            <div class="col-md-4 portfolio-item" data-category="engineering">
+            <div class="col-lg-4 col-md-6 portfolio-item" data-category="engineering unity">
               <a href="https://github.com/mwahba13/Antymology" class="text-decoration-none" target="_blank" rel="noopener">
                 <div class="card project-card">
                   <div class="project-media">
@@ -329,66 +331,6 @@
                   </div>
                 </div>
               </a>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Other Projects Section -->
-      <section class="row justify-content-center mb-5" id="other-projects">
-        <div class="col-12">
-          <h2 class="section-title text-center mb-2">Other Projects & Experiments</h2>
-          <p class="text-center text-muted mb-5">Additional work, prototypes, and game jam entries.</p>
-          <div class="row g-4">
-            <div class="col-md-4 portfolio-item" data-category="narrative design engineering">
-              <div class="card project-card">
-                <a href="https://mwahba.itch.io/fur" class="text-decoration-none" target="_blank" rel="noopener">
-                  <div class="project-media">
-                    <img src="images/app-icon.png" alt="Fur! game jam game">
-                  </div>
-                  <div class="card-body">
-                    <h3 class="card-title">Fur!</h3>
-                    <div class="tech-tags">
-                      <span class="tech-tag">Unity</span>
-                      <span class="tech-tag">Historical Game Jam</span>
-                    </div>
-                  </div>
-                </a>
-              </div>
-            </div>
-
-            <div class="col-md-4 portfolio-item" data-category="narrative design engineering">
-              <div class="card project-card">
-                <a href="https://mwahba.itch.io/vox-machina" class="text-decoration-none" target="_blank" rel="noopener">
-                  <div class="project-media">
-                    <img src="images/app-icon.png" alt="Vox Machina game jam game">
-                  </div>
-                  <div class="card-body">
-                    <h3 class="card-title">Vox Machina</h3>
-                    <div class="tech-tags">
-                      <span class="tech-tag">Unity</span>
-                      <span class="tech-tag">Ludum Dare</span>
-                    </div>
-                  </div>
-                </a>
-              </div>
-            </div>
-
-            <div class="col-md-4 portfolio-item" data-category="narrative design engineering">
-              <div class="card project-card">
-                <a href="https://mwahba.itch.io/postal" class="text-decoration-none" target="_blank" rel="noopener">
-                  <div class="project-media">
-                    <img src="images/app-icon.png" alt="Going Postal with Dick Danger game jam game">
-                  </div>
-                  <div class="card-body">
-                    <h3 class="card-title">Going Postal with Dick Danger</h3>
-                    <div class="tech-tags">
-                      <span class="tech-tag">Unity</span>
-                      <span class="tech-tag">Ludum Dare</span>
-                    </div>
-                  </div>
-                </a>
-              </div>
             </div>
           </div>
         </div>
