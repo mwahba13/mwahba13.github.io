@@ -1,13 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <title>Michael Wahba — Creative Technologist</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="Michael Wahba — Creative Technologist. Writer, designer, and engineer across indie games, triple-A studios (EA/Maxis), and academia (USC MFA).">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Michael Wahba — Software Engineer & Game Designer</title>
+  <meta name="description" content="Software Engineer at EA Maxis · USC MFA in Interactive Media · AWE 2024 Best in Show. Shipped work across The Sims, Egregore, Atrio: The Dark Wild, and The Immersive Archive.">
 
-  <!-- Google Analytics -->
+  <!-- OG / Twitter -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Michael Wahba — Software Engineer & Game Designer">
+  <meta property="og:description" content="EA Maxis · USC MFA · AWE 2024 Best in Show. Shipped work across The Sims, Egregore, Atrio, and The Immersive Archive.">
+  <meta property="og:image" content="images/Wahba_Hero.jpg">
+  <meta property="og:url" content="https://mwahba.ca/">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-TN9M86WYZ5"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -15,219 +22,497 @@
     gtag('js', new Date());
     gtag('config', 'G-TN9M86WYZ5');
   </script>
-  <script src="js/analytics-tracking.js"></script>
 
-  <!-- Favicon -->
   <link rel="icon" type="image/png" href="images/stockController.png">
 
-  <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="css/icomoon.css">
-  <link rel="stylesheet" href="css/ionicons.min.css">
+  <link rel="stylesheet" href="css/tokens.css">
 
-  <!-- Portfolio Styles -->
-  <link rel="stylesheet" href="css/portfolio-cards.css">
-  <link rel="stylesheet" href="css/portfolio-filter.css">
-  <link rel="stylesheet" href="css/brand.css">
-  <link rel="stylesheet" href="css/modern-portfolio.css">
+  <style>
+    /* HOME-SPECIFIC */
+    .home-hero {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 5rem 2rem 4rem;
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+    .home-hero-portrait {
+      position: relative;
+      aspect-ratio: 4 / 5;
+      border-radius: 6px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+    }
+    .home-hero-portrait img { width: 100%; height: 100%; object-fit: cover; }
 
+    .home-hero-credentials {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 0;
+      margin-top: 2.5rem;
+      border-top: 1px solid var(--border);
+    }
+    .credential-row {
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      gap: 1.5rem;
+      padding: 0.95rem 0;
+      border-bottom: 1px solid var(--border);
+      align-items: baseline;
+    }
+    .credential-row .cr-label {
+      font-family: var(--sans);
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-faint);
+      min-width: 6rem;
+    }
+    .credential-row .cr-text {
+      font-family: var(--serif);
+      font-size: 17px;
+      font-weight: 400;
+      color: var(--text);
+      line-height: 1.4;
+    }
+    .credential-row .cr-text em { font-style: italic; color: var(--accent); }
+    .credential-row .cr-meta {
+      font-family: var(--sans);
+      font-size: 12px;
+      color: var(--text-faint);
+      white-space: nowrap;
+    }
+
+    .hero-actions { margin-top: 1.75rem; display: flex; gap: 0.75rem; flex-wrap: wrap; }
+
+    /* WORK */
+    .work-section {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 5rem 2rem;
+    }
+    .work-section-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 2.5rem;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .featured-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+    }
+    .featured-grid .card-media { aspect-ratio: 16 / 9; }
+
+    .secondary-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      margin-top: 3rem;
+      border-top: 1px solid var(--border);
+    }
+    .secondary-row {
+      display: grid;
+      grid-template-columns: auto 1fr auto auto;
+      gap: 2rem;
+      align-items: center;
+      padding: 1.25rem 0;
+      border-bottom: 1px solid var(--border);
+      text-decoration: none;
+      color: inherit;
+      transition: background 0.2s;
+    }
+    .secondary-row:hover { background: rgba(0,0,0,0.02); color: inherit; }
+    .secondary-row .sr-year {
+      font-family: var(--sans);
+      font-size: 12px;
+      letter-spacing: 0.08em;
+      color: var(--text-faint);
+      min-width: 3rem;
+    }
+    .secondary-row .sr-title {
+      font-family: var(--serif);
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--text);
+    }
+    .secondary-row .sr-desc {
+      font-family: var(--sans);
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-left: 0.5rem;
+    }
+    .secondary-row .sr-tag {
+      font-family: var(--sans);
+      font-size: 11px;
+      letter-spacing: 0.06em;
+      color: var(--text-faint);
+      text-transform: uppercase;
+    }
+    .secondary-row .sr-arrow {
+      font-family: var(--serif);
+      font-size: 18px;
+      color: var(--accent);
+      transition: transform 0.2s;
+    }
+    .secondary-row:hover .sr-arrow { transform: translateX(4px); }
+
+    /* ABOUT */
+    .about-block {
+      max-width: var(--measure);
+      margin: 0 auto;
+      padding: 5rem 2rem;
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 4rem;
+      align-items: start;
+    }
+    .about-aside { position: sticky; top: 6rem; }
+    .about-aside-name {
+      font-family: var(--serif);
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin: 0 0 0.25rem;
+    }
+    .about-aside-role {
+      font-family: var(--sans);
+      font-size: 13px;
+      color: var(--text-faint);
+      margin: 0 0 1.5rem;
+    }
+    .about-aside-links { display: flex; flex-direction: column; gap: 0.5rem; }
+    .about-aside-links a {
+      font-family: var(--sans);
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--accent);
+      text-decoration: none;
+    }
+    .about-aside-links a:hover { color: var(--accent-hover); }
+
+    .about-body p {
+      font-size: 16px;
+      color: var(--text-muted);
+      line-height: 1.85;
+      margin: 0 0 1.25rem;
+    }
+    .about-body strong { color: var(--text); font-weight: 500; }
+
+    /* PRESS */
+    .press-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.25rem;
+    }
+    .press-item {
+      display: grid;
+      grid-template-columns: 96px 1fr;
+      gap: 1.25rem;
+      padding: 1.25rem;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      text-decoration: none;
+      color: inherit;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .press-item:hover { border-color: var(--border-strong); box-shadow: 0 4px 24px rgba(0,0,0,0.06); color: inherit; }
+    .press-item .press-thumb {
+      width: 96px;
+      height: 96px;
+      object-fit: cover;
+      border-radius: 3px;
+    }
+    .press-item h3 {
+      font-family: var(--serif);
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin: 0 0 0.2rem;
+      color: var(--text);
+    }
+    .press-item .press-meta {
+      font-family: var(--sans);
+      font-size: 11px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-faint);
+      margin: 0 0 0.45rem;
+    }
+    .press-item p {
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    /* COACHING TEASE */
+    .coaching-tease {
+      max-width: var(--measure);
+      margin: 0 auto;
+      padding: 5rem 2rem;
+      text-align: center;
+    }
+    .coaching-tease .h-section { margin-bottom: 1rem; }
+    .coaching-tease p {
+      font-size: 16px;
+      color: var(--text-muted);
+      max-width: 560px;
+      margin: 0 auto 2rem;
+      line-height: 1.7;
+    }
+    .coaching-tease .actions { display: inline-flex; gap: 0.75rem; flex-wrap: wrap; justify-content: center; }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      .home-hero { grid-template-columns: 1fr; gap: 2.5rem; padding: 3.5rem 1.25rem; }
+      .home-hero-portrait { max-width: 320px; order: -1; }
+      .work-section { padding: 4rem 1.25rem; }
+      .featured-grid { grid-template-columns: 1fr; }
+      .press-grid { grid-template-columns: 1fr; }
+      .about-block { grid-template-columns: 1fr; gap: 2rem; padding: 4rem 1.25rem; }
+      .about-aside { position: static; }
+      .secondary-row { grid-template-columns: auto 1fr auto; gap: 1rem; }
+      .secondary-row .sr-tag { display: none; }
+      .secondary-row .sr-desc { display: none; }
+    }
+  </style>
 </head>
 
-<body>
+<body data-nav="work">
 
-  <!-- Hero Section -->
-  <section class="hero-section" id="home-section">
-    <div class="container">
-      <div class="row align-items-center g-5" style="min-height: 85vh;">
-        <div class="col-lg-6 order-lg-1 order-2">
-          <div class="hero-pillars mb-3" aria-label="Disciplines: Design, Engineer, Narrative">
-            <span class="hero-pillar">Design</span>
-            <span class="hero-pillar-sep" aria-hidden="true">·</span>
-            <span class="hero-pillar">Engineering</span>
-            <span class="hero-pillar-sep" aria-hidden="true">·</span>
-            <span class="hero-pillar">Narrative</span>
-          </div>
-          <h1 class="hero-title mb-3">Michael<br>Wahba</h1>
-          <p class="hero-tagline">I create worlds, design systems, and build the tools that bring them to life. Across indie releases, triple-A studios, and academia, I work at the intersection of craft and technology, where the art challenges the technology and technology inspires the art.</p>
-          <div class="hero-cta-buttons">
-            <a href="portfolio.html" class="btn btn-primary btn-lg">View Portfolio</a>
-            <a href="docs/Curriculum Vitae, Wahba (May 2025).pdf" class="btn btn-outline-primary btn-lg" target="_blank" rel="noopener">Download CV</a>
-          </div>
+  <div id="site-nav-slot"></div>
+
+  <!-- HERO -->
+  <section class="home-hero" id="home">
+    <div class="fade-up">
+      <p class="eyebrow">Software Engineer · Game Designer</p>
+      <h1 class="h-display">Michael<br>Wahba</h1>
+      <p class="lede">I build games and the tools that make them — at <strong>EA Maxis</strong>, in independent studios, and across XR research that's been recognized at AWE and SIGGRAPH.</p>
+
+      <div class="hero-actions">
+        <a href="#work" class="btn-primary">See the work</a>
+        <a href="docs/Wahba Resume 08_21_2025.pdf" class="btn-secondary" target="_blank" rel="noopener">Resume ↗</a>
+      </div>
+
+      <div class="home-hero-credentials" aria-label="Credentials">
+        <div class="credential-row">
+          <span class="cr-label">Now</span>
+          <span class="cr-text">Software Engineer at <em>EA Maxis</em> — The Sims tools</span>
+          <span class="cr-meta">2024 →</span>
         </div>
-        <div class="col-lg-6 order-lg-2 order-1">
-          <img src="images/Wahba_Hero.jpg" class="img-fluid rounded" alt="Michael Wahba" style="border: 1px solid var(--color-border); border-radius: 16px;">
+        <div class="credential-row">
+          <span class="cr-label">Education</span>
+          <span class="cr-text">MFA, Interactive Media — <em>USC</em></span>
+          <span class="cr-meta">2024</span>
+        </div>
+        <div class="credential-row">
+          <span class="cr-label">Awards</span>
+          <span class="cr-text"><em>AWE 2024 Best in Show</em> — The Immersive Archive</span>
+          <span class="cr-meta">2024</span>
+        </div>
+        <div class="credential-row">
+          <span class="cr-label">Shipped</span>
+          <span class="cr-text"><em>Egregore</em> · <em>Atrio: The Dark Wild</em> on Steam</span>
+          <span class="cr-meta">2023–24</span>
         </div>
       </div>
+    </div>
+
+    <div class="home-hero-portrait fade-up-2">
+      <img src="images/Wahba_Hero.jpg" alt="Michael Wahba" loading="eager">
     </div>
   </section>
 
-  <main class="portfolio-container">
-    <div class="container">
+  <hr class="divider">
 
-      <!-- About Me Section -->
-      <section class="row justify-content-center mb-5" id="about-section">
-        <div class="col-12">
-          <h2 class="section-title text-center mb-5">About Me</h2>
-          <div class="row g-4 justify-content-center">
-            <div class="col-lg-8">
-              <p class="lead">I'm a engineer, designer, and writer who builds across the full stack of game development, from the first sentence of a design document to the last merge before ship.</p>
-              <p>My work spans indie and triple-A: I was Lead Writer on <em>Atrio: The Dark Wild</em>, a commercially-released survival game on Steam, and Creative Director on <em>Egregore</em>, a USC MFA thesis game selected for the Advanced Games Program and exhibited at the Game Devs of Color Expo. As XR Technical Lead on <em>The Immersive Archive</em>, the project won Best in Show at AWE 2024 and was exhibited at SIGGRAPH 2023. At Maxis (Electronic Arts), I build the developer toolchains that empower <em>Sims</em> creators.</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Download Buttons -->
-        <div class="col-12 text-center mt-4">
-          <a href="docs/Curriculum Vitae, Wahba (May 2025).pdf" class="btn btn-primary btn-lg mx-2" target="_blank" rel="noopener">
-            <i class="icon-download me-2"></i>Download Full CV
-          </a>
-          <a href="docs/Wahba Resume 08_21_2025.pdf" class="btn btn-primary btn-lg mx-2" target="_blank" rel="noopener">
-            <i class="icon-download me-2"></i>Download Resume
-          </a>
-          <a href="https://www.github.com/mwahba13" class="btn btn-primary btn-lg mx-2" target="_blank" rel="noopener">
-            <i class="icon-github me-2"></i>GitHub Profile
-          </a>
-        </div>
-      </section>
-
-      <!-- Press/Media Section -->
-      <section class="row justify-content-center mb-5" id="press-section">
-        <div class="col-12">
-          <h2 class="section-title text-center mb-5">Press & Media</h2>
-          <div class="row g-4">
-            <div class="col-md-6">
-              <div class="card project-card">
-                <div class="project-media">
-                  <img src="images/CS_Interview.png" alt="Circuit Stream interview feature">
-                </div>
-                <div class="card-body">
-                  <h3 class="card-title">Circuit Stream</h3>
-                  <p class="text-muted">August 2025</p>
-                  <p class="card-text">From Biology to Game Design Excellence — an interview about my journey into game development and what it takes to build across disciplines.</p>
-                  <a href="https://www.circuitstream.com/blog/instructor-spotlight-michael-wahba-from-biology-to-game-design-excellence" class="btn btn-sm btn-outline-primary" target="_blank" rel="noopener">Read More</a>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-md-6">
-              <div class="card project-card">
-                <div class="project-media">
-                  <img src="images/Press/igem.jpg" alt="iGEM blog feature">
-                </div>
-                <div class="card-body">
-                  <h3 class="card-title">iGEM Blog</h3>
-                  <p class="text-muted">November 2023</p>
-                  <p class="card-text">From SynBio to Game Design — how competing in the iGEM synthetic biology competition shaped my path to an MFA in game design.</p>
-                  <a href="https://blog.igem.org/blog/2023/11/16/from-synbio-to-game-design-how-igem-shaped-my-journey-to-an-mfa" class="btn btn-sm btn-outline-primary" target="_blank" rel="noopener">Read More</a>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-md-6">
-              <div class="card project-card">
-                <div class="project-media">
-                  <img src="images/Press/thelogic_prospects.jpg" alt="The Logic Magazine feature">
-                </div>
-                <div class="card-body">
-                  <h3 class="card-title">The Logic Magazine</h3>
-                  <p class="text-muted">July 2021</p>
-                  <p class="card-text">Top Prospects: Leading Innovators from the Class of 2021 — recognized among Canada's most promising emerging tech and creative talent.</p>
-                  <a href="docs/Top Prospects_ Leading innovators from the Class of 2021 - The Logic.pdf" class="btn btn-sm btn-outline-primary" target="_blank" rel="noopener">Read More</a>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-md-6">
-              <div class="card project-card">
-                <div class="project-media">
-                  <img src="images/Press/DSC_2300.jpg" alt="CBC News interview">
-                </div>
-                <div class="card-body">
-                  <h3 class="card-title">CBC News</h3>
-                  <p class="text-muted">November 2020</p>
-                  <p class="card-text">Creative Writing Student Tapped to Moonlight as Video Game Writer — on being recruited by a professional studio while still in school.</p>
-                  <a href="https://www.cbc.ca/news/canada/calgary/creative-writing-video-game-writer-michael-wahba-aritha-van-herk-1.5814376" class="btn btn-sm btn-outline-primary" target="_blank" rel="noopener">Read More</a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Coaching Section -->
-      <section class="row justify-content-center mb-5">
-        <div class="col-12 text-center">
-          <h2 class="section-title mb-4">Wahba's Workshop</h2>
-          <p class="lead mb-3">1-on-1 game dev coaching — design, engineering, and breaking into the industry.</p>
-          <p class="text-muted mb-4" style="max-width: 600px; margin-left: auto; margin-right: auto;">I offer private coaching sessions for aspiring game developers and career switchers. Whether you want to ship your first game, debug a Blueprint, get a portfolio review, or land your first industry role — let's work on it together. First consult is free.</p>
-          <a href="coaching.html" class="btn btn-primary btn-lg me-3">Learn More</a>
-          <a href="mailto:mrswahba13@gmail.com?subject=Coaching%20Inquiry%20%E2%80%94%20Free%20Intro%20Consult" class="btn btn-outline-primary btn-lg">Book a Free Consult</a>
-        </div>
-      </section>
-
-      <!-- Contact Section -->
-      <section class="row justify-content-center" id="contact-section">
-        <div class="col-12">
-          <h2 class="section-title text-center mb-5">Contact Me</h2>
-          <div class="row justify-content-center">
-            <div class="col-auto mx-2 mb-3">
-              <a href="mailto:mrswahba13@gmail.com" class="text-decoration-none">
-                <div class="box p-4 text-center">
-                  <div class="icon d-flex align-items-center justify-content-center">
-                    <span class="icon-envelope" style="font-size: 1.75rem;"></span>
-                  </div>
-                  <p class="mt-3 mb-0"><strong>Email</strong></p>
-                  <p class="text-muted small mb-0">mrswahba13@gmail.com</p>
-                </div>
-              </a>
-            </div>
-            <div class="col-auto mx-2 mb-3">
-              <a href="https://www.linkedin.com/in/michael-wahba/" class="text-decoration-none" target="_blank" rel="noopener">
-                <div class="box p-4 text-center">
-                  <div class="icon d-flex align-items-center justify-content-center">
-                    <span class="icon-linkedin-square" style="font-size: 1.75rem;"></span>
-                  </div>
-                  <p class="mt-3 mb-0"><strong>LinkedIn</strong></p>
-                  <p class="text-muted small mb-0">Connect with me</p>
-                </div>
-              </a>
-            </div>
-            <div class="col-auto mx-2 mb-3">
-              <a href="https://www.github.com/mwahba13" class="text-decoration-none" target="_blank" rel="noopener">
-                <div class="box p-4 text-center">
-                  <div class="icon d-flex align-items-center justify-content-center">
-                    <span class="icon-github" style="font-size: 1.75rem;"></span>
-                  </div>
-                  <p class="mt-3 mb-0"><strong>GitHub</strong></p>
-                  <p class="text-muted small mb-0">View my work</p>
-                </div>
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
-
-    </div>
-  </main>
-
-  <footer class="ftco-footer ftco-section">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12 text-center">
-          <p>Copyright &copy;
-            <script>document.write(new Date().getFullYear());</script> Michael Wahba. All rights reserved.
-          </p>
-        </div>
+  <!-- FEATURED WORK -->
+  <section class="work-section" id="work">
+    <div class="work-section-head">
+      <div>
+        <p class="eyebrow" style="margin-bottom: 0.4rem;">Featured work</p>
+        <h2 class="h-section">Four projects, four disciplines.</h2>
       </div>
     </div>
+
+    <div class="featured-grid">
+      <a class="card" href="maxis.html">
+        <div class="card-media"><img src="images/maxis.jpg" alt="Maxis (Electronic Arts)"></div>
+        <div class="card-body">
+          <p class="card-eyebrow">Software Engineer · 2024 →</p>
+          <h3 class="card-title">Maxis (Electronic Arts)</h3>
+          <p class="card-text">Building the tools and content pipeline behind <em>The Sims</em> — desktop apps in WPF/C#, web tooling in React/TypeScript, used daily by the Maxis dev team.</p>
+          <div class="card-meta">
+            <span class="tag">C# / .NET</span>
+            <span class="tag">WPF</span>
+            <span class="tag">React / TS</span>
+          </div>
+        </div>
+      </a>
+
+      <a class="card" href="egregore.html">
+        <div class="card-media"><img src="images/Egregore/MainCapsule.png" alt="Egregore"></div>
+        <div class="card-body">
+          <p class="card-eyebrow">Creative Director · USC MFA Thesis</p>
+          <h3 class="card-title">Egregore</h3>
+          <p class="card-text">A graph-based adventure mystery in modern-day Cairo. I led a 20-person team through USC's Advanced Games Program; shipped on Steam, exhibited at Game Devs of Color Expo.</p>
+          <div class="card-meta">
+            <span class="tag">Unreal 5</span>
+            <span class="tag">C++ / Blueprints</span>
+            <span class="tag">Direction</span>
+          </div>
+        </div>
+      </a>
+
+      <a class="card" href="immersive-archive.html">
+        <div class="card-media"><img src="images/ImmersiveArchive/IA_Carousel.jpg" alt="The Immersive Archive"></div>
+        <div class="card-body">
+          <p class="card-eyebrow">Technical Lead · AWE 2024 Best in Show</p>
+          <h3 class="card-title">The Immersive Archive</h3>
+          <p class="card-text">XR preservation research at USC's MEML — recreating seminal VR works in Unity. Best in Show at AWE 2024, exhibited at SIGGRAPH 2023, published in IEEE.</p>
+          <div class="card-meta">
+            <span class="tag">Unity</span>
+            <span class="tag">OpenXR</span>
+            <span class="tag">Research</span>
+          </div>
+        </div>
+      </a>
+
+      <a class="card" href="atrio.html">
+        <div class="card-media"><img src="images/Atrio/AtrioKeyArt_NoLogo (1).png" alt="Atrio: The Dark Wild"></div>
+        <div class="card-body">
+          <p class="card-eyebrow">Lead Writer · Steam release</p>
+          <h3 class="card-title">Atrio: The Dark Wild</h3>
+          <p class="card-text">Survival-automation game with narrative at its core. Designed the lore, dialogue system, and branching player-reactive story for a commercial Steam release.</p>
+          <div class="card-meta">
+            <span class="tag">Narrative Design</span>
+            <span class="tag">Worldbuilding</span>
+          </div>
+        </div>
+      </a>
+    </div>
+
+    <!-- Secondary projects: lower-tier, kept short to avoid diluting the flagship four -->
+    <div class="secondary-grid" aria-label="Other projects">
+      <a class="secondary-row" href="https://sprawlstudios.itch.io/radio-exurbia" target="_blank" rel="noopener">
+        <span class="sr-year">2022</span>
+        <span><span class="sr-title">Radio Exurbia</span><span class="sr-desc">Tune in, swap worlds.</span></span>
+        <span class="sr-tag">Unreal · Narrative</span>
+        <span class="sr-arrow">→</span>
+      </a>
+      <a class="secondary-row" href="https://virtual-garden.netlify.app/" target="_blank" rel="noopener">
+        <span class="sr-year">2023</span>
+        <span><span class="sr-title">The Virtual Garden</span><span class="sr-desc">Gaussian splatting experiment in the browser.</span></span>
+        <span class="sr-tag">Three.js · Experimental</span>
+        <span class="sr-arrow">→</span>
+      </a>
+      <a class="secondary-row" href="https://github.com/mwahba13" target="_blank" rel="noopener">
+        <span class="sr-year">·</span>
+        <span><span class="sr-title">More on GitHub</span><span class="sr-desc">Prototypes, simulations, and side projects.</span></span>
+        <span class="sr-tag">Open source</span>
+        <span class="sr-arrow">→</span>
+      </a>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- ABOUT -->
+  <section class="about-block" id="about">
+    <div class="about-aside">
+      <p class="about-aside-name">Michael Wahba</p>
+      <p class="about-aside-role">Engineer · Designer · Educator</p>
+      <div class="about-aside-links">
+        <a href="docs/Wahba Resume 08_21_2025.pdf" target="_blank" rel="noopener">Resume ↗</a>
+        <a href="https://www.linkedin.com/in/michael-wahba/" target="_blank" rel="noopener">LinkedIn ↗</a>
+        <a href="https://github.com/mwahba13" target="_blank" rel="noopener">GitHub ↗</a>
+        <a href="mailto:mrswahba13@gmail.com">Email ↗</a>
+      </div>
+    </div>
+
+    <div class="about-body">
+      <p class="lede" style="margin-bottom: 1.5rem;">I build across disciplines — engineering, design, narrative — and I ship.</p>
+      <p>By day I'm a software engineer at <strong>EA Maxis</strong>, working on the toolchain behind <em>The Sims</em>: C#/WPF desktop apps, React/TypeScript web tooling, and the content pipelines that connect them.</p>
+      <p>Before EA, I was Creative Director on <strong>Egregore</strong>, my MFA thesis at USC's Advanced Games Program — leading 20 people on a paranoia-fueled adventure in modern-day Cairo, now on Steam. I was Lead Writer on <strong>Atrio: The Dark Wild</strong>, and Technical Lead on <strong>The Immersive Archive</strong>, an XR preservation project that won Best in Show at AWE 2024.</p>
+      <p>Background: BSc in Computer Science (Calgary), MFA in Interactive Media (USC), and a stint in synthetic biology that left me biased toward systems thinking. I also teach Unreal Engine and game design at <strong>Circuit Stream</strong>.</p>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- PRESS -->
+  <section class="container-narrow" id="press">
+    <p class="section-label">Press &amp; Media</p>
+    <div class="press-grid">
+      <a class="press-item" href="https://www.circuitstream.com/blog/instructor-spotlight-michael-wahba-from-biology-to-game-design-excellence" target="_blank" rel="noopener">
+        <img class="press-thumb" src="images/CS_Interview.png" alt="">
+        <div>
+          <p class="press-meta">Circuit Stream · Aug 2025</p>
+          <h3>From Biology to Game Design Excellence</h3>
+          <p>An instructor spotlight on the path from synthetic biology to shipping games.</p>
+        </div>
+      </a>
+      <a class="press-item" href="https://blog.igem.org/blog/2023/11/16/from-synbio-to-game-design-how-igem-shaped-my-journey-to-an-mfa" target="_blank" rel="noopener">
+        <img class="press-thumb" src="images/Press/igem.jpg" alt="">
+        <div>
+          <p class="press-meta">iGEM Blog · Nov 2023</p>
+          <h3>From SynBio to Game Design</h3>
+          <p>How competing in iGEM shaped my path to an MFA in Interactive Media.</p>
+        </div>
+      </a>
+      <a class="press-item" href="docs/Top Prospects_ Leading innovators from the Class of 2021 - The Logic.pdf" target="_blank" rel="noopener">
+        <img class="press-thumb" src="images/Press/thelogic_prospects.jpg" alt="">
+        <div>
+          <p class="press-meta">The Logic · Jul 2021</p>
+          <h3>Top Prospects: Class of 2021</h3>
+          <p>Among Canada's most promising emerging tech and creative talent.</p>
+        </div>
+      </a>
+      <a class="press-item" href="https://www.cbc.ca/news/canada/calgary/creative-writing-video-game-writer-michael-wahba-aritha-van-herk-1.5814376" target="_blank" rel="noopener">
+        <img class="press-thumb" src="images/Press/DSC_2300.jpg" alt="">
+        <div>
+          <p class="press-meta">CBC News · Nov 2020</p>
+          <h3>Recruited as a Game Writer in School</h3>
+          <p>Picked up by a professional studio while still completing a degree.</p>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- COACHING TEASE -->
+  <section class="coaching-tease" id="coaching">
+    <p class="eyebrow">Wahba's Workshop</p>
+    <h2 class="h-section">1-on-1 game dev <em>coaching</em></h2>
+    <p>If you want to ship your first game, untangle a Blueprint, get an honest portfolio review, or break into the industry — let's work on it together. First consult is free.</p>
+    <div class="actions">
+      <a href="coaching.html" class="btn-primary">See sessions</a>
+      <a href="mailto:mrswahba13@gmail.com?subject=Coaching%20Inquiry%20%E2%80%94%20Free%20Intro%20Consult" class="btn-secondary">Book a free consult</a>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="site-footer-links">
+      <a href="mailto:mrswahba13@gmail.com">Email</a>
+      <a href="https://www.linkedin.com/in/michael-wahba/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://github.com/mwahba13" target="_blank" rel="noopener">GitHub</a>
+      <a href="coaching.html">Coaching</a>
+    </div>
+    <p>© <script>document.write(new Date().getFullYear());</script> Michael Wahba. All rights reserved.</p>
   </footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="js/load-navbar.js"></script>
-  <script src="js/load-modals.js"></script>
-  <script src="js/main.js"></script>
-  <script src="js/accessibility.js"></script>
-
 </body>
-
 </html>

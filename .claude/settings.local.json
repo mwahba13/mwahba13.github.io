@@ -1,7 +1,8 @@
 {
   "permissions": {
     "allow": [
-      "Bash(du:*)"
+      "Bash(du:*)",
+      "PowerShell(Select-String -Pattern \"coach\" -CaseSensitive:$false)"
     ]
   }
 }

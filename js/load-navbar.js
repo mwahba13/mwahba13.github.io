@@ -1,50 +1,56 @@
-/**
- * Load navbar dynamically
- * Vanilla JavaScript replacement for jQuery version
- *
- * Note: browsers block fetch() for local file:// pages (CORS). This script
- * detects file:// and prints an actionable message instead of attempting
- * the fetch (avoids noisy stack traces when previewing from the filesystem).
- */
-
-document.addEventListener('DOMContentLoaded', function() {
-    // Friendly early-exit when running from the filesystem
-    if (location.protocol === 'file:') {
-        console.error(
-            'Navbar not loaded — fetch() is blocked when opening HTML via file://.\n' +
-            'Serve the repository over HTTP (e.g. `python -m http.server 8000` or use the VS Code Live Server).\n' +
-            'See DEVELOPMENT.md for quick commands.'
-        );
-        return; // do not attempt fetch()
+// Loads the shared navbar fragment, marks the current page link,
+// and wires the mobile toggle. No jQuery, no dependencies.
+(function () {
+  function init(host) {
+    // Mobile toggle
+    var btn  = host.querySelector('.site-nav-toggle');
+    var menu = host.querySelector('.site-nav-menu');
+    if (btn && menu) {
+      btn.addEventListener('click', function () {
+        var open = menu.classList.toggle('is-open');
+        btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
     }
 
-    // Create navbar container
-    const navContainer = document.createElement('div');
-    navContainer.id = 'navbar-container';
-    
-    // Fetch and load navbar.html
+    // Mark current section
+    var current = (document.body.dataset.nav || '').toLowerCase();
+    if (current) {
+      host.querySelectorAll('[data-nav]').forEach(function (a) {
+        if (a.dataset.nav === current) {
+          a.classList.add('is-current');
+          a.setAttribute('aria-current', 'page');
+        }
+      });
+    }
+  }
+
+  function mount() {
+    var slot = document.getElementById('site-nav-slot');
+    if (!slot) return;
     fetch('components/navbar.html')
-        .then(response => {
-            if (!response.ok) {
-                throw new Error(`Error loading navbar: ${response.status} ${response.statusText}`);
-            }
-            return response.text();
-        })
-        .then(html => {
-            navContainer.innerHTML = html;
-            // Find the first element (skip text nodes and comments)
-            let firstElement = null;
-            for (let child of document.body.childNodes) {
-                if (child.nodeType === Node.ELEMENT_NODE) {
-                    firstElement = child;
-                    break;
-                }
-            }
-            if (firstElement) {
-                document.body.insertBefore(navContainer, firstElement);
-            } else {
-                document.body.appendChild(navContainer);
-            }
-        })
-        .catch(error => console.error('Error loading navbar: (hint: do not open via file://) ', error));
-});
+      .then(function (r) { return r.text(); })
+      .then(function (html) {
+        slot.innerHTML = html;
+        init(slot);
+      })
+      .catch(function () {
+        // Static fallback so the page is still navigable when fetched via file://
+        slot.innerHTML = ''
+          + '<nav class="site-nav"><div class="site-nav-inner">'
+          + '<a class="site-nav-brand" href="index.html">Michael <em>Wahba</em></a>'
+          + '<div class="site-nav-menu"><ul class="site-nav-links">'
+          + '<li><a href="index.html#work" class="site-nav-link">Work</a></li>'
+          + '<li><a href="index.html#about" class="site-nav-link">About</a></li>'
+          + '<li><a href="coaching.html" class="site-nav-link is-coaching">Coaching</a></li>'
+          + '<li><a href="mailto:mrswahba13@gmail.com" class="site-nav-link">Contact</a></li>'
+          + '</ul></div></div></nav>';
+        init(slot);
+      });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', mount);
+  } else {
+    mount();
+  }
+})();
