@@ -9,7 +9,7 @@
   <meta property="og:type" content="article">
   <meta property="og:title" content="The Immersive Archive — Michael Wahba">
   <meta property="og:description" content="AWE 2024 Best in Show. SIGGRAPH 2023. IEEE proceedings. Technical Lead.">
-  <meta property="og:image" content="images/ImmersiveArchive/IA_Carousel.jpg">
+  <meta property="og:image" content="images/ImmersiveArchive/IA_1.jpg">
 
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-TN9M86WYZ5"></script>
   <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-TN9M86WYZ5');</script>
@@ -20,6 +20,27 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/icomoon.css">
   <link rel="stylesheet" href="css/tokens.css">
+  <style>
+    .gallery {
+      max-width: var(--measure);
+      margin: 0 auto 3rem;
+      padding: 0 2rem;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.75rem;
+    }
+    .gallery img {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+      border-radius: 4px;
+      border: 1px solid var(--border);
+    }
+    .gallery img.portrait {
+      aspect-ratio: 4 / 3;
+    }
+    @media (max-width: 700px) { .gallery { grid-template-columns: 1fr; padding: 0 1.25rem; } }
+  </style>
 </head>
 <body data-nav="work">
   <div id="site-nav-slot"></div>
@@ -40,8 +61,10 @@
     </div>
   </div>
 
-  <div class="case-media">
-    <img src="images/ImmersiveArchive/IA_Carousel.jpg" alt="The Immersive Archive installation" loading="lazy">
+  <div class="gallery">
+    <img src="images/ImmersiveArchive/IA_0.png" alt="The Immersive Archive" loading="lazy">
+    <img src="images/ImmersiveArchive/IA_1.jpg" alt="The Immersive Archive" loading="lazy">
+    <img src="images/ImmersiveArchive/IALogo.jpg" alt="The Immersive Archive logo" loading="lazy" style="aspect-ratio: auto; object-fit: contain; background: var(--bg-card);">
   </div>
 
   <div class="case-body">
