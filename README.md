@@ -16,8 +16,9 @@ Drop-in replacement for the existing `mwahba13.github.io` repo, addressing the a
 
 **Hygiene**
 - jQuery, AOS, two duplicate Bootstraps, ionicons, and the unused video-embed/carousel-hover stylesheets all removed. Each page now loads: tokens.css + icomoon.css + Google Fonts. No JS frameworks.
-- Old duplicate CV (`Curriculum Vitae, Wahba (May 2025).pdf`) not copied — site links the single 2025-08 resume.
-- `index_new.html`, `single.html`, `modals.html`, `portfolio.html` — superseded; not present in this build.
+- Old duplicate CV removed — site links the single 2025-08 resume.
+- `index_new.html`, `single.html`, `modals.html` — deleted.
+- `portfolio.html` — 5-line redirect stub to `index.html`.
 - OG / Twitter card meta on every page.
 - Sticky semi-translucent navbar, mobile toggle, `aria-current` on the active link.
 - `loading="lazy"` on every below-the-fold image and embedded video.
@@ -27,19 +28,20 @@ Drop-in replacement for the existing `mwahba13.github.io` repo, addressing the a
 ```
 site/
 ├── index.html              ← merged home (work + about + press + coaching tease)
+├── portfolio.html          ← redirect stub → index.html
 ├── maxis.html              ← case study
 ├── egregore.html
 ├── atrio.html
 ├── immersive-archive.html
-├── coaching.html           ← editorial system applied; same as before
+├── coaching.html
 ├── components/navbar.html  ← shared fragment
-├── css/
-│   ├── tokens.css          ← single source of truth for the design system
-│   └── icomoon.css         ← only kept stylesheet from the old build
-├── js/load-navbar.js       ← vanilla, ~50 lines, replaces the jQuery loader
-├── images/                 ← only the assets the new build references
-├── docs/                   ← single resume PDF
-└── fonts/icomoon/
+├── css/tokens.css          ← single source of truth for the design system
+├── js/
+│   ├── load-navbar.js
+│   ├── accessibility.js
+│   └── analytics-tracking.js
+├── images/
+└── docs/                   ← single resume PDF
 ```
 
 ## Open items

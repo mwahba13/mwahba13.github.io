@@ -1,0 +1,986 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Portfolio Audit v2 — Follow-up · mwahba13.github.io</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f4f1ec;
+    --bg-card: #ffffff;
+    --ink: #181614;
+    --ink-2: #3a3733;
+    --ink-3: #6e6960;
+    --ink-4: #a09a90;
+    --rule: rgba(24, 22, 20, 0.10);
+    --rule-strong: rgba(24, 22, 20, 0.22);
+    --accent: #b8442a;
+    --accent-soft: rgba(184, 68, 42, 0.10);
+    --good: #2f6b3a;
+    --good-soft: rgba(47, 107, 58, 0.07);
+    --warn: #b8842a;
+    --warn-soft: rgba(184, 132, 42, 0.08);
+    --bad: #a83232;
+    --bad-soft: rgba(168, 50, 50, 0.07);
+    --serif: "Fraunces", Georgia, serif;
+    --sans: "Inter", system-ui, sans-serif;
+    --mono: "JetBrains Mono", ui-monospace, monospace;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  p { color: var(--ink-2); margin: 0 0 0.8rem; }
+  p strong { color: var(--ink); font-weight: 600; }
+  a { color: var(--accent); text-decoration: none; border-bottom: 1px solid var(--accent-soft); }
+  a:hover { border-bottom-color: var(--accent); }
+  code {
+    font-family: var(--mono);
+    font-size: 0.82em;
+    background: rgba(24,22,20,0.05);
+    padding: 0.1em 0.4em;
+    border-radius: 2px;
+    color: var(--ink);
+  }
+
+  /* ============ HEADER ============ */
+  header.doc-header {
+    padding: 5rem 2rem 3.5rem;
+    border-bottom: 1px solid var(--rule);
+  }
+  .doc-header-inner { max-width: 1080px; margin: 0 auto; }
+  .eyebrow {
+    font-family: var(--mono);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 1.5rem;
+  }
+  h1.doc-title {
+    font-family: var(--serif);
+    font-size: clamp(2.4rem, 5.5vw, 4rem);
+    font-weight: 500;
+    line-height: 1.05;
+    letter-spacing: -0.01em;
+    margin: 0 0 1.5rem;
+    max-width: 22ch;
+  }
+  h1.doc-title em {
+    font-style: italic;
+    color: var(--accent);
+    font-weight: 400;
+  }
+  .doc-lede {
+    font-family: var(--serif);
+    font-size: 1.25rem;
+    line-height: 1.55;
+    color: var(--ink-2);
+    max-width: 62ch;
+    margin: 0;
+  }
+  .doc-meta {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--ink-3);
+    margin-top: 2.5rem;
+  }
+  .doc-meta strong { color: var(--ink); font-weight: 500; }
+
+  /* ============ SECTIONS ============ */
+  section.block {
+    padding: 4.5rem 2rem;
+    border-bottom: 1px solid var(--rule);
+  }
+  .block-inner { max-width: 1080px; margin: 0 auto; }
+  .section-eyebrow {
+    font-family: var(--mono);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--ink-4);
+    margin-bottom: 0.75rem;
+  }
+  h2.section {
+    font-family: var(--serif);
+    font-size: clamp(1.6rem, 3.4vw, 2.2rem);
+    font-weight: 500;
+    line-height: 1.15;
+    letter-spacing: -0.005em;
+    margin: 0 0 0.5rem;
+  }
+  .section-lede {
+    font-family: var(--serif);
+    font-size: 1.15rem;
+    line-height: 1.55;
+    color: var(--ink-2);
+    max-width: 60ch;
+    margin: 0 0 2.5rem;
+  }
+
+  /* ============ STATUS CHIPS ============ */
+  .chip {
+    display: inline-block;
+    font-family: var(--mono);
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 0.22rem 0.55rem;
+    border-radius: 2px;
+    border: 1px solid currentColor;
+    line-height: 1;
+    vertical-align: 0.12em;
+    white-space: nowrap;
+  }
+  .chip.fixed   { color: var(--good); background: var(--good-soft); border-color: var(--good); }
+  .chip.partial { color: var(--warn); background: var(--warn-soft); border-color: var(--warn); }
+  .chip.open    { color: var(--bad);  background: var(--bad-soft);  border-color: var(--bad);  }
+  .chip.new     { color: var(--accent); background: var(--accent-soft); border-color: var(--accent); }
+  .chip.crit    { color: var(--bad); }
+  .chip.major   { color: var(--accent); }
+  .chip.minor   { color: var(--warn); }
+
+  /* ============ SCORECARD ============ */
+  .scorecard {
+    background: var(--bg-card);
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  .score-row {
+    display: grid;
+    grid-template-columns: 3.5rem 1fr 7rem 7rem;
+    gap: 1rem;
+    padding: 1rem 1.5rem;
+    align-items: center;
+    border-bottom: 1px solid var(--rule);
+  }
+  .score-row:last-child { border-bottom: none; }
+  .score-row.head {
+    background: rgba(24,22,20,0.025);
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-4);
+  }
+  .score-row .sid {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--ink-4);
+    letter-spacing: 0.06em;
+  }
+  .score-row .stitle {
+    font-family: var(--serif);
+    font-size: 1.02rem;
+    font-weight: 500;
+    color: var(--ink);
+    line-height: 1.3;
+  }
+  .score-row .sseverity {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink-3);
+  }
+  @media (max-width: 720px) {
+    .score-row { grid-template-columns: 3.5rem 1fr; }
+    .score-row .sseverity { display: none; }
+    .score-row .status-cell { grid-column: 1 / -1; padding-top: 0.25rem; }
+    .score-row.head { display: none; }
+  }
+
+  /* ============ FINDING REVIEW BLOCKS ============ */
+  .review {
+    padding: 2.25rem 0;
+    border-bottom: 1px solid var(--rule);
+  }
+  .review:last-child { border-bottom: none; }
+  .review-head {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.85rem;
+    margin-bottom: 0.5rem;
+  }
+  .review-id {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--ink-4);
+    letter-spacing: 0.06em;
+  }
+  .review-title {
+    font-family: var(--serif);
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.25;
+    margin: 0;
+    flex-grow: 1;
+  }
+  .review-body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-top: 1.1rem;
+  }
+  .review-col h4 {
+    font-family: var(--mono);
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--ink-4);
+    margin: 0 0 0.55rem;
+  }
+  .review-col p { font-size: 0.93rem; margin: 0 0 0.55rem; line-height: 1.6; }
+  .review-col ul { margin: 0; padding-left: 1.15rem; font-size: 0.93rem; color: var(--ink-2); }
+  .review-col li { margin-bottom: 0.3rem; line-height: 1.55; }
+  @media (max-width: 720px) {
+    .review-body { grid-template-columns: 1fr; gap: 1.25rem; }
+  }
+
+  /* ============ ROADMAP ============ */
+  .roadmap-list {
+    counter-reset: rm;
+    list-style: none;
+    padding: 0;
+    margin: 2rem 0 0;
+    display: grid;
+    gap: 0.5rem;
+  }
+  .roadmap-list li {
+    counter-increment: rm;
+    display: grid;
+    grid-template-columns: 3rem 1fr auto;
+    gap: 1.25rem;
+    padding: 1.25rem 1.5rem;
+    align-items: baseline;
+    background: var(--bg-card);
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+  }
+  .roadmap-list li::before {
+    content: counter(rm, decimal-leading-zero);
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 1.5rem;
+    color: var(--accent);
+    line-height: 1;
+  }
+  .roadmap-body strong {
+    display: block;
+    font-family: var(--sans);
+    font-weight: 600;
+    color: var(--ink);
+    font-size: 1rem;
+    margin-bottom: 0.2rem;
+  }
+  .roadmap-body span {
+    font-size: 0.9rem;
+    color: var(--ink-2);
+    line-height: 1.55;
+  }
+  .roadmap-time {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-4);
+    white-space: nowrap;
+    align-self: center;
+  }
+  @media (max-width: 720px) {
+    .roadmap-list li { grid-template-columns: 2.25rem 1fr; gap: 0.85rem; padding: 1rem 1.1rem; }
+    .roadmap-time { grid-column: 2; padding-top: 0.4rem; }
+  }
+
+  /* ============ VERDICT CARDS ============ */
+  .verdict-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+  .verdict-col {
+    background: var(--bg-card);
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    padding: 1.5rem 1.5rem 1.75rem;
+  }
+  .verdict-num {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 2.4rem;
+    font-weight: 400;
+    color: var(--accent);
+    line-height: 1;
+    margin-bottom: 0.4rem;
+  }
+  .verdict-col h4 {
+    font-family: var(--serif);
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin: 0 0 0.4rem;
+    color: var(--ink);
+  }
+  .verdict-col p {
+    font-size: 0.9rem;
+    color: var(--ink-2);
+    margin: 0;
+    line-height: 1.55;
+  }
+  @media (max-width: 720px) {
+    .verdict-grid { grid-template-columns: 1fr; }
+  }
+
+  /* ============ QUOTE ============ */
+  .pullquote {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 1.4rem;
+    line-height: 1.4;
+    color: var(--ink);
+    max-width: 50ch;
+    margin: 2rem 0 0;
+    padding-left: 1.5rem;
+    border-left: 2px solid var(--accent);
+  }
+  .pullquote-attr {
+    display: block;
+    margin-top: 0.6rem;
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-4);
+    font-style: normal;
+  }
+</style>
+</head>
+<body>
+
+<!-- ===================== HEADER ===================== -->
+<header class="doc-header">
+  <div class="doc-header-inner">
+    <p class="eyebrow">Portfolio Audit · v2 · Follow-up</p>
+    <h1 class="doc-title">The site is now <em>doing the work</em>.</h1>
+    <p class="doc-lede">A pass over the changes against the original 12 findings. The redesign lands the big editorial moves and the headline IA fixes. What's left is mostly cleanup, a few content gaps in the case studies, and a stack-hygiene sweep that hasn't happened yet.</p>
+    <div class="doc-meta">
+      <span><strong>Reviewed</strong> · index, portfolio, maxis, egregore, immersive-archive, atrio, coaching, components/navbar, css/tokens</span>
+    </div>
+    <div class="doc-meta" style="margin-top: 0.75rem;">
+      <span><strong>Date</strong> · May 2026</span>
+      <span><strong>Against</strong> · Portfolio Audit v1 (F-01 … F-12)</span>
+    </div>
+  </div>
+</header>
+
+<!-- ===================== HEADLINE VERDICT ===================== -->
+<section class="block">
+  <div class="block-inner">
+    <p class="section-eyebrow">01 · Headline</p>
+    <h2 class="section">Big editorial moves: landed. Repo hygiene: still pending.</h2>
+    <p class="section-lede">8 of 12 findings are fully resolved. 3 are partially addressed. 1 (stack/dependency cleanup) hasn't been touched in the source tree even though the live pages no longer reference any of it.</p>
+
+    <div class="verdict-grid">
+      <div class="verdict-col">
+        <div class="verdict-num">8</div>
+        <h4>Fully resolved</h4>
+        <p>F-01 hero credentials · F-02 single front door · F-03 editorial system · F-04 flagship-first hierarchy · F-05 Problem/Approach/Outcome blocks · F-07 job-mappable title · F-08 type system · F-11 OG meta.</p>
+      </div>
+      <div class="verdict-col">
+        <div class="verdict-num">3</div>
+        <h4>Partial</h4>
+        <p>F-06 IA still has duplicated <code>portfolio.html</code> + dead <code>modals.html</code> · F-09 thumbnails inconsistent · F-12 accessibility close but missing skip-to-content.</p>
+      </div>
+      <div class="verdict-col">
+        <div class="verdict-num">1</div>
+        <h4>Untouched</h4>
+        <p>F-10 stack hygiene. The pages no longer load jQuery / Bootstrap 4 / Owl / AOS / Magnific / Stellar / etc., but every file is still sitting in <code>/css</code> and <code>/js</code>. Delete the dead weight from the repo.</p>
+      </div>
+    </div>
+
+    <blockquote class="pullquote">
+      The redesign reads as senior. The content is finally pulling its weight. The remaining work is half a weekend.
+      <span class="pullquote-attr">— Net read</span>
+    </blockquote>
+  </div>
+</section>
+
+<!-- ===================== SCORECARD ===================== -->
+<section class="block">
+  <div class="block-inner">
+    <p class="section-eyebrow">02 · Scorecard</p>
+    <h2 class="section">Twelve findings, twelve verdicts.</h2>
+    <p class="section-lede">Status at a glance. Detailed notes follow below.</p>
+
+    <div class="scorecard">
+      <div class="score-row head">
+        <span>ID</span><span>Finding</span><span>Severity</span><span class="status-cell">Status</span>
+      </div>
+      <div class="score-row">
+        <span class="sid">F-01</span>
+        <span class="stitle">Hero buries the proof under abstract pillars</span>
+        <span class="sseverity">Critical</span>
+        <span class="status-cell"><span class="chip fixed">Fixed</span></span>
+      </div>
+      <div class="score-row">
+        <span class="sid">F-02</span>
+        <span class="stitle">Two audiences, two front doors</span>
+        <span class="sseverity">Critical</span>
+        <span class="status-cell"><span class="chip fixed">Fixed</span></span>
+      </div>
+      <div class="score-row">
+        <span class="sid">F-03</span>
+        <span class="stitle">Dark portfolio template fights the work</span>
+        <span class="sseverity">Major</span>
+        <span class="status-cell"><span class="chip fixed">Fixed</span></span>
+      </div>
+      <div class="score-row">
+        <span class="sid">F-04</span>
+        <span class="stitle">Featured + experiments share visual weight</span>
+        <span class="sseverity">Major</span>
+        <span class="status-cell"><span class="chip fixed">Fixed</span></span>
+      </div>
+      <div class="score-row">
+        <span class="sid">F-05</span>
+        <span class="stitle">Case studies don't have outcomes</span>
+        <span class="sseverity">Major</span>
+        <span class="status-cell"><span class="chip fixed">Fixed</span></span>
+      </div>
+      <div class="score-row">
+        <span class="sid">F-06</span>
+        <span class="stitle">IA duplication and dead ends</span>
+        <span class="sseverity">Major</span>
+        <span class="status-cell"><span class="chip partial">Partial</span></span>
+      </div>
+      <div class="score-row">
+        <span class="sid">F-07</span>
+        <span class="stitle">"Creative Technologist" framing</span>
+        <span class="sseverity">Major</span>
+        <span class="status-cell"><span class="chip fixed">Fixed</span></span>
+      </div>
+      <div class="score-row">
+        <span class="sid">F-08</span>
+        <span class="stitle">Typography hierarchy is flat</span>
+        <span class="sseverity">Minor</span>
+        <span class="status-cell"><span class="chip fixed">Fixed</span></span>
+      </div>
+      <div class="score-row">
+        <span class="sid">F-09</span>
+        <span class="stitle">Image quality and presentation</span>
+        <span class="sseverity">Minor</span>
+        <span class="status-cell"><span class="chip partial">Partial</span></span>
+      </div>
+      <div class="score-row">
+        <span class="sid">F-10</span>
+        <span class="stitle">Performance and stack hygiene</span>
+        <span class="sseverity">Minor</span>
+        <span class="status-cell"><span class="chip open">Open</span></span>
+      </div>
+      <div class="score-row">
+        <span class="sid">F-11</span>
+        <span class="stitle">SEO &amp; meta</span>
+        <span class="sseverity">Minor</span>
+        <span class="status-cell"><span class="chip fixed">Fixed</span></span>
+      </div>
+      <div class="score-row">
+        <span class="sid">F-12</span>
+        <span class="stitle">Accessibility gaps</span>
+        <span class="sseverity">Minor</span>
+        <span class="status-cell"><span class="chip partial">Partial</span></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== WHAT GOT BETTER ===================== -->
+<section class="block">
+  <div class="block-inner">
+    <p class="section-eyebrow">03 · What got better</p>
+    <h2 class="section">The wins, in order of impact.</h2>
+    <p class="section-lede">These are the changes a recruiter will feel in the first 30 seconds.</p>
+
+    <!-- F-01 -->
+    <article class="review">
+      <div class="review-head">
+        <span class="review-id">F-01</span>
+        <h3 class="review-title">Hero now leads with proof, not pillars</h3>
+        <span class="chip fixed">Fixed</span>
+      </div>
+      <p style="max-width: 75ch;">The abstract "Design · Engineering · Narrative" eyebrow is gone, replaced with the credential ledger the audit asked for. A recruiter sees Maxis, USC MFA, AWE Best in Show, and the two shipped Steam titles inside the first viewport. CTAs are de-escalated to one primary ("See the work") plus a single Resume secondary, which is the exact funnel the audit recommended.</p>
+      <div class="review-body">
+        <div class="review-col">
+          <h4>What landed</h4>
+          <ul>
+            <li>Credential ledger: <em>Now · Education · Awards · Shipped</em> as a typed table.</li>
+            <li>Italic accent on the proper nouns (EA Maxis, USC, AWE, Egregore) does the visual work the original 60-word lede was trying to do.</li>
+            <li>"Software Engineer · Game Designer" eyebrow maps cleanly to a job rec.</li>
+            <li>One primary CTA, one secondary, no more six-button hero.</li>
+          </ul>
+        </div>
+        <div class="review-col">
+          <h4>One small tweak</h4>
+          <p>The audit recommended a role line <em>under</em> the H1. Currently the role sits in the eyebrow <em>above</em> it. Both work, but a sub-display line (<em>"Software engineer and game designer."</em> directly under the name, in serif italic) would give the hero a stronger first beat. Low priority, but worth trying — the eyebrow can stay as the credential marquee.</p>
+        </div>
+      </div>
+    </article>
+
+    <!-- F-02 -->
+    <article class="review">
+      <div class="review-head">
+        <span class="review-id">F-02</span>
+        <h3 class="review-title">Single front door for hiring traffic</h3>
+        <span class="chip fixed">Fixed</span>
+      </div>
+      <p style="max-width: 75ch;">Index and portfolio have collapsed into one document. Featured work, About, and Press all live on <code>index.html</code>. The coaching tease has been commented out of the homepage, sending coaching prospects to their own page via the navbar only when relevant. Nav trims to Work · About · Press · Contact + Resume CTA — exactly the four-link spec.</p>
+      <div class="review-body">
+        <div class="review-col">
+          <h4>Notable</h4>
+          <ul>
+            <li>The press section is now on the hiring page, not buried on a separate homepage. Social proof in the right room.</li>
+            <li>Email is the contact CTA, both in nav and in the about-aside.</li>
+            <li>Coaching CTA card is preserved in source as a commented block so it can come back as a footer mention without retyping.</li>
+          </ul>
+        </div>
+        <div class="review-col">
+          <h4>Open follow-up</h4>
+          <p>The audit also suggested a "now" line in the footer (<em>"Currently at Maxis · open to chats"</em>). Footer is still link-row + copyright only. Adding a one-sentence "now" line above the link row would close the loop with the hero credential.</p>
+        </div>
+      </div>
+    </article>
+
+    <!-- F-03 / F-08 grouped -->
+    <article class="review">
+      <div class="review-head">
+        <span class="review-id">F-03 / F-08</span>
+        <h3 class="review-title">Editorial system is now site-wide</h3>
+        <span class="chip fixed">Fixed</span>
+      </div>
+      <p style="max-width: 75ch;">The dark slab + amber template is gone. Every page (index, maxis, egregore, immersive-archive, atrio, coaching) now pulls from <code>css/tokens.css</code> — warm cream <code>#f7f4ee</code>, single rust accent <code>#c4541a</code>, Playfair Display display + Poppins body. Italic-accent emphasis used as the only chrome flourish. This is the most decisive upgrade in the redesign: the site reads senior now.</p>
+      <div class="review-body">
+        <div class="review-col">
+          <h4>What's strong</h4>
+          <ul>
+            <li>One canonical token file. Cards, asides, tags, buttons all share variables.</li>
+            <li>Tags rendered as outlined mono-style labels, not filled pills. Audit ask, delivered.</li>
+            <li>Hover treatment on cards is restrained: lift + border + image scale. No glow, no overlay gradient, no title color flip.</li>
+            <li>Italic <em>accent emphasis</em> on proper nouns is the single best move — it gives every page a consistent voice.</li>
+          </ul>
+        </div>
+        <div class="review-col">
+          <h4>One typographic gap</h4>
+          <p>The audit proposed a three-family system: serif display + sans body + <em>mono for metadata</em>. The current tokens stop at two — Playfair + Poppins — with eyebrows rendered in tracked-uppercase Poppins doing the mono role. It works, but adding JetBrains Mono (or similar) for eyebrows, file labels, and stat numbers would make "this is metadata" visually unmistakable. Optional but cheap.</p>
+        </div>
+      </div>
+    </article>
+
+    <!-- F-04 -->
+    <article class="review">
+      <div class="review-head">
+        <span class="review-id">F-04</span>
+        <h3 class="review-title">Flagship-first hierarchy is clear</h3>
+        <span class="chip fixed">Fixed</span>
+      </div>
+      <p style="max-width: 75ch;">The featured grid is now exactly the four projects the audit recommended: Maxis, Egregore, Immersive Archive, Atrio. Everything else (Quidditch Swarm, Antymology, L, Limina) has been pulled off the page. The secondary tier is a four-row link list: Virtual Garden, Radio Exurbia, "More on itch.io," "More on GitHub." This is the right shape.</p>
+      <div class="review-body">
+        <div class="review-col">
+          <h4>Why it works</h4>
+          <ul>
+            <li>The four-card grid uses identical 16:9 framing, which gives the flagships consistent visual weight.</li>
+            <li>The secondary list reads as <em>"there's more if you want it"</em>, not as competing portfolio entries.</li>
+            <li>External links (itch, GitHub) handle the long tail without bloating the page.</li>
+          </ul>
+        </div>
+        <div class="review-col">
+          <h4>One thumbnail still off</h4>
+          <p>The Maxis card uses the office/studio photo — fine as a case-study hero, but the audit specifically flagged it as a poor portfolio thumbnail. A tool screenshot or in-game capture would land harder in the grid. See F-09 below.</p>
+        </div>
+      </div>
+    </article>
+
+    <!-- F-05 -->
+    <article class="review">
+      <div class="review-head">
+        <span class="review-id">F-05</span>
+        <h3 class="review-title">Case studies now have outcomes</h3>
+        <span class="chip fixed">Fixed</span>
+      </div>
+      <p style="max-width: 75ch;">Every project page has been rebuilt around a Problem / Approach / Outcome (PAO) block, exactly as the audit requested. The outcomes are concrete: <em>"Best in Show, AWE 2024"</em>, <em>"Mostly Positive on Steam"</em>, <em>"co-authored IEEE paper"</em>, <em>"shipped tools used daily by the Maxis dev team"</em>. The aside on each page lists Role, Stack, Recognition, and Artifacts as scannable rows.</p>
+      <div class="review-body">
+        <div class="review-col">
+          <h4>Standouts</h4>
+          <ul>
+            <li><strong>Immersive Archive</strong> — outcome line now reads as a literal CV bullet: Best in Show + SIGGRAPH + IEEE in one sentence.</li>
+            <li><strong>Egregore</strong> — Pitch Deck and Design Doc are promoted into the aside as artifact links. That's the audit ask.</li>
+            <li><strong>Maxis</strong> — finally describes Sims Maker Suite and Creator Program as a concrete shipped surface.</li>
+          </ul>
+        </div>
+        <div class="review-col">
+          <h4>Still missing one artifact per page</h4>
+          <p>The audit asked for <em>one artifact beyond a video</em> — a code snippet, a system diagram, a Blueprint screenshot, a design-doc page. The case studies have trailers and key art but no <em>showing</em> of the work itself. The Egregore graph-system is described in two paragraphs that beg for a diagram. Maxis is asking for a tool screenshot. Atrio could use a Twine-prototype capture. One concrete artifact per case study is the next 80/20 lift.</p>
+        </div>
+      </div>
+    </article>
+
+    <!-- F-07 -->
+    <article class="review">
+      <div class="review-head">
+        <span class="review-id">F-07</span>
+        <h3 class="review-title">Title maps to a job rec</h3>
+        <span class="chip fixed">Fixed</span>
+      </div>
+      <p style="max-width: 75ch;">"Creative Technologist" is gone. Everywhere it appeared, the framing is now "Software Engineer · Game Designer," and the about-aside subhead is "Engineer · Designer · Educator" — three nouns that map to three real job categories. The hero's role line also opens with <em>"I build games and the systems and tools that run them"</em>, which reads as a tools/gameplay engineer talking about their work, not an agency creative.</p>
+    </article>
+
+    <!-- F-11 -->
+    <article class="review">
+      <div class="review-head">
+        <span class="review-id">F-11</span>
+        <h3 class="review-title">OG / Twitter meta now per-page</h3>
+        <span class="chip fixed">Fixed</span>
+      </div>
+      <p style="max-width: 75ch;">Every page now has <code>og:type</code>, <code>og:title</code>, <code>og:description</code>, and <code>og:image</code>. The homepage adds <code>twitter:card</code>. Each case study points at its own hero image as the OG card. Sharing the site in Slack or LinkedIn will now produce a usable preview.</p>
+      <div class="review-body">
+        <div class="review-col">
+          <h4>Still worth adding</h4>
+          <ul>
+            <li><code>twitter:card</code> on the case-study pages (only index has it).</li>
+            <li>A purpose-built OG card image for the homepage — currently <code>Wahba_Hero.jpg</code>, the portrait. A wider 1200×630 with the credential line baked in would push harder.</li>
+            <li><code>JSON-LD Person</code> schema for "Michael Wahba" search results. 10-minute win.</li>
+            <li>Favicon is still <code>stockController.png</code>. Audit hinted at this; still worth a custom monogram.</li>
+          </ul>
+        </div>
+        <div class="review-col">
+          <h4>Bonus</h4>
+          <p>Google Analytics (G-TN9M86WYZ5) is wired into every page now. Once the cleanup lands, it'll be worth checking which entry pages get the most hiring-funnel traffic and tuning copy to that audience.</p>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ===================== STILL OPEN ===================== -->
+<section class="block">
+  <div class="block-inner">
+    <p class="section-eyebrow">04 · Still open</p>
+    <h2 class="section">The remaining work, by severity.</h2>
+    <p class="section-lede">A short list. The biggest item is repo hygiene — invisible to a recruiter, but it's keeping the codebase looking 2019.</p>
+
+    <!-- F-06 -->
+    <article class="review">
+      <div class="review-head">
+        <span class="review-id">F-06</span>
+        <h3 class="review-title">Stale files in the repo</h3>
+        <span class="chip partial">Partial</span>
+        <span class="chip major">Major</span>
+      </div>
+      <p style="max-width: 75ch;">The README claims <code>index_new.html</code>, <code>single.html</code>, <code>modals.html</code>, and <code>portfolio.html</code> are "not present in this build." Two of the four are still in the repo:</p>
+      <div class="review-body">
+        <div class="review-col">
+          <h4>What's still there</h4>
+          <ul>
+            <li><code>portfolio.html</code> — does a <code>&lt;meta http-equiv="refresh"&gt;</code> to index.html, but has 200 lines of duplicate hero + featured grid markup below the redirect. If a crawler indexes it before the refresh fires, you'll have two URLs competing on the same content.</li>
+            <li><code>modals.html</code> — 580+ lines of Bootstrap modal markup for projects that have been demoted off the page. Nothing references it.</li>
+            <li><code>docs/Curriculum Vitae, Wahba (May 2025).pdf</code> — older CV. The site only links the August 2025 resume; the May file is dead weight (and a privacy risk if it has older contact info).</li>
+          </ul>
+        </div>
+        <div class="review-col">
+          <h4>Fix</h4>
+          <ul>
+            <li>Delete <code>modals.html</code>.</li>
+            <li>Replace <code>portfolio.html</code> with a 5-line stub (or a real HTTP 301 via <code>_config.yml</code> redirects if you keep Jekyll). Don't leave duplicate markup in the file.</li>
+            <li>Delete the May 2025 CV from <code>docs/</code>.</li>
+            <li>Update <code>README.md</code> so its "not present" claim matches reality, or remove the section.</li>
+          </ul>
+        </div>
+      </div>
+    </article>
+
+    <!-- F-10 -->
+    <article class="review">
+      <div class="review-head">
+        <span class="review-id">F-10</span>
+        <h3 class="review-title">Dead dependencies still in the repo</h3>
+        <span class="chip open">Open</span>
+        <span class="chip minor">Minor</span>
+      </div>
+      <p style="max-width: 75ch;">Live pages no longer load any of it, which is the right outcome — but every file is still sitting in the tree. Anyone forking the repo or auditing the codebase sees ~50 files of 2019-era Bootstrap-template scaffolding.</p>
+      <div class="review-body">
+        <div class="review-col">
+          <h4>Safe to delete</h4>
+          <ul>
+            <li><strong>JS</strong> — <code>jquery*.js</code>, <code>jquery-migrate*</code>, <code>bootstrap.min.js</code>, <code>popper.min.js</code>, <code>aos.js</code>, <code>owl.carousel.min.js</code>, <code>jquery.magnific-popup.min.js</code>, <code>jquery.stellar.min.js</code>, <code>jquery.waypoints.min.js</code>, <code>jquery.animateNumber.min.js</code>, <code>jquery.easing.1.3.js</code>, <code>scrollax.min.js</code>, <code>google-map.js</code>, <code>main.js</code>, <code>load-modals.js</code>.</li>
+            <li><strong>CSS</strong> — <code>bootstrap*.css</code> and the <code>css/bootstrap/</code> + <code>css/css/</code> folders, <code>animate.css</code>, <code>aos.css</code>, <code>owl.carousel.min.css</code>, <code>owl.theme.default.min.css</code>, <code>magnific-popup.css</code>, <code>carousel-hover.css</code>, <code>custom-modal.css</code>, <code>hero-styles.css</code>, <code>modern-portfolio.css</code>, <code>portfolio-cards.css</code>, <code>portfolio-filter.css</code>, <code>video-embed.css</code>, <code>style.css</code>, <code>brand.css</code>, <code>ajax-loader.gif</code>.</li>
+            <li><strong>Fonts</strong> — <code>fonts/flaticon</code>, <code>fonts/ionicons</code>, <code>fonts/open-iconic</code>. Keep only <code>fonts/icomoon</code> if you still use those glyphs anywhere; otherwise drop it too and switch to a single Lucide / Heroicons set via CDN.</li>
+            <li><strong>SCSS</strong> — <code>scss/</code> folder, <code>prepros-6.config</code>. The site is hand-authored CSS now.</li>
+          </ul>
+        </div>
+        <div class="review-col">
+          <h4>Keep</h4>
+          <ul>
+            <li><code>css/tokens.css</code> — the canonical system.</li>
+            <li><code>css/icomoon.css</code> + <code>fonts/icomoon</code> — only if any icon glyphs are still in use. (Quick check: <code>grep icon-</code> across HTML.)</li>
+            <li><code>js/load-navbar.js</code> — actively used.</li>
+            <li><code>js/accessibility.js</code> and <code>js/analytics-tracking.js</code> — verify they're wired in; if so, keep.</li>
+          </ul>
+          <p style="margin-top: 0.6rem;">Expected outcome: repo file count drops by ~60%, Lighthouse perf jumps 20+ points, and the project reads as a hand-authored site rather than a Bootstrap remix.</p>
+        </div>
+      </div>
+    </article>
+
+    <!-- F-09 -->
+    <article class="review">
+      <div class="review-head">
+        <span class="review-id">F-09</span>
+        <h3 class="review-title">Thumbnails are mixed quality</h3>
+        <span class="chip partial">Partial</span>
+        <span class="chip minor">Minor</span>
+      </div>
+      <div class="review-body">
+        <div class="review-col">
+          <h4>Improved</h4>
+          <ul>
+            <li>The bad placeholder thumbs (Antymology, Quidditch Swarm using the favicon image) are gone — those projects are off the page.</li>
+            <li>The featured grid is consistent 16:9, so the four flagships read as one set.</li>
+            <li>Egregore now uses <code>MainCapsule.png</code> and crops cleanly.</li>
+          </ul>
+        </div>
+        <div class="review-col">
+          <h4>Still off</h4>
+          <ul>
+            <li><strong>Maxis card</strong> — still the office/studio photo. A tool screenshot or in-game capture would do more work in the grid. If a screenshot isn't shareable, a typeset card (<em>"The Sims · Tools Engineering"</em> on a flat ground) would be better than the studio shot.</li>
+            <li><strong>Immersive Archive card</strong> — uses <code>IALogo.jpg</code>, which is a logo on a ground rather than an in-headset capture. The case study itself has stronger imagery; promote one to the card.</li>
+            <li><strong>No image treatment unification</strong> — the audit suggested a subtle desaturation + contrast pass across all thumbs to smooth the source-variation. Currently each card has whatever the source image gives. Optional polish.</li>
+          </ul>
+        </div>
+      </div>
+    </article>
+
+    <!-- F-12 -->
+    <article class="review">
+      <div class="review-head">
+        <span class="review-id">F-12</span>
+        <h3 class="review-title">Accessibility — close, two gaps left</h3>
+        <span class="chip partial">Partial</span>
+        <span class="chip minor">Minor</span>
+      </div>
+      <div class="review-body">
+        <div class="review-col">
+          <h4>Doing well</h4>
+          <ul>
+            <li>Contrast on cream + ink is comfortable across the board.</li>
+            <li>Navbar has <code>role="navigation"</code> and <code>aria-label="Primary"</code>; toggle has <code>aria-label</code>, <code>aria-expanded</code>, <code>aria-controls</code>.</li>
+            <li>Hero credentials block has <code>aria-label="Credentials"</code>.</li>
+            <li>Alt text on every press and gallery image checked out.</li>
+          </ul>
+        </div>
+        <div class="review-col">
+          <h4>To fix</h4>
+          <ul>
+            <li><strong>No skip-to-content link.</strong> Add a visually-hidden <code>&lt;a href="#work"&gt;</code> as the first child of <code>&lt;body&gt;</code> on every page. Five minutes.</li>
+            <li><strong>Heading order on the home page.</strong> The page has H1 in the hero, then H2 ("Four projects, four disciplines"), then H3 in each card. The Press section uses <code>.section-label</code> as a styled paragraph rather than an <code>&lt;h2&gt;</code>, which means screen-reader users won't find Press in the heading outline. Switch the press-label to an <code>&lt;h2&gt;</code> styled with that class.</li>
+          </ul>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ===================== NEW ISSUES ===================== -->
+<section class="block">
+  <div class="block-inner">
+    <p class="section-eyebrow">05 · New since v1</p>
+    <h2 class="section">Things the redesign introduced.</h2>
+    <p class="section-lede">Small, but they're real. Catch them now before they bake in.</p>
+
+    <!-- NEW-01 -->
+    <article class="review">
+      <div class="review-head">
+        <span class="review-id">NEW-01</span>
+        <h3 class="review-title">Em-dashes throughout the case studies — your own style guide forbids them</h3>
+        <span class="chip new">New</span>
+        <span class="chip minor">Minor</span>
+      </div>
+      <p style="max-width: 75ch;"><code>CLAUDE.md</code> is explicit: <em>"No em-dashes. Use commas, periods, or restructure the sentence instead."</em> The new case studies are full of them. A quick scan:</p>
+      <div class="review-body">
+        <div class="review-col">
+          <h4>Examples</h4>
+          <ul>
+            <li><code>immersive-archive.html</code> — <em>"The challenge wasn't just technical — the originals no longer run"</em>; <em>"Preservation isn't nostalgia — it's the difference…"</em>; <em>"technical roadmap for a 10-person team, working under XR pioneer Scott Fisher — how recreations should be structured…"</em></li>
+            <li><code>atrio.html</code> — <em>"a setting where light is currency and the dark is something you negotiate with"</em> (clean); but <em>"Build lore that hooks into the survival loop — light as scarce, hope as scarce — and a dialogue system…"</em>; <em>"That cycle — write, review, test, revise — drove most of the final shape…"</em></li>
+            <li><code>index.html</code> hero credentials — <em>"Software Engineer at EA Maxis — The Sims tools"</em>, <em>"MFA, Interactive Media — USC"</em>, etc. (Could be replaced with a comma or restructured row.)</li>
+          </ul>
+        </div>
+        <div class="review-col">
+          <h4>Fix</h4>
+          <p>Find/replace <code>—</code> across <code>*.html</code>. Most cases are happy as a period, comma, or restructured clause; a few credential lines read more cleanly with <code>·</code> or simply a comma. Worth doing in one batched pass before the next external share.</p>
+          <p style="margin-top: 0.5rem;">Set aside <em>file titles</em> and <em>OG meta titles</em> (<em>"Egregore — Michael Wahba"</em>) — those use em-dashes by convention and don't need to change.</p>
+        </div>
+      </div>
+    </article>
+
+    <!-- NEW-02 -->
+    <article class="review">
+      <div class="review-head">
+        <span class="review-id">NEW-02</span>
+        <h3 class="review-title">Coaching tease is commented-out, not deleted</h3>
+        <span class="chip new">New</span>
+        <span class="chip minor">Minor</span>
+      </div>
+      <p style="max-width: 75ch;">The coaching CTA card on the homepage is wrapped in <code>&lt;!-- … --&gt;</code>. That's a fine staging state, but if it's not coming back, delete it. If it <em>is</em> coming back as a footer mention (which the audit recommended), commit to that placement now so the source is honest about intent.</p>
+    </article>
+
+    <!-- NEW-03 -->
+    <article class="review">
+      <div class="review-head">
+        <span class="review-id">NEW-03</span>
+        <h3 class="review-title">README is out of date with the actual repo</h3>
+        <span class="chip new">New</span>
+        <span class="chip minor">Minor</span>
+      </div>
+      <p style="max-width: 75ch;"><code>README.md</code> claims <code>portfolio.html</code> and <code>modals.html</code> are "superseded; not present in this build." Both are still on disk. Either delete the files and the claim becomes true, or update the README to reflect what shipped. (Worth doing alongside the F-10 cleanup so the next reader trusts the README.)</p>
+    </article>
+
+    <!-- NEW-04 -->
+    <article class="review">
+      <div class="review-head">
+        <span class="review-id">NEW-04</span>
+        <h3 class="review-title">Hero credential ledger is long</h3>
+        <span class="chip new">New</span>
+        <span class="chip minor">Minor</span>
+      </div>
+      <p style="max-width: 75ch;">Nine credential rows in the hero (Now / Education ×2 / Awards ×4 / Shipped ×2) is more than the audit anticipated. It's not wrong, but on a tall viewport it competes with the portrait and pushes the four featured cards below the second fold. Worth considering:</p>
+      <div class="review-body">
+        <div class="review-col">
+          <h4>Options</h4>
+          <ul>
+            <li>Keep only the <em>Now / Education (USC) / Award (AWE) / Shipped (Egregore + Atrio)</em> top 5. Move the rest to a dedicated <em>"Honors &amp; recognition"</em> strip lower on the page.</li>
+            <li>Or: group the four scholar/award rows under a single <em>Honors</em> label with the names inline, comma-separated. Fewer rows, same density of proof.</li>
+            <li>Or: keep all nine but tighten <code>padding</code> on <code>.credential-row</code> from <code>0.95rem 0</code> to <code>0.7rem 0</code> so the block doesn't push the work below the fold.</li>
+          </ul>
+        </div>
+        <div class="review-col">
+          <h4>Why it matters</h4>
+          <p>The audit's whole F-01 thesis is that the proof should appear above the fold. Right now the proof is there, but it's <em>everything</em> in the first viewport. The work itself should still be visible (even partially) on a 1080p desktop. Currently it's not.</p>
+        </div>
+      </div>
+    </article>
+
+    <!-- NEW-05 -->
+    <article class="review">
+      <div class="review-head">
+        <span class="review-id">NEW-05</span>
+        <h3 class="review-title">Footer is bare</h3>
+        <span class="chip new">New</span>
+        <span class="chip minor">Minor</span>
+      </div>
+      <p style="max-width: 75ch;">It has the four social links and a copyright line. The audit's IA recommendation was to add: contact, a "now" line, and a small sitemap. The "now" line in particular (<em>"Currently at EA Maxis · Open to chats."</em>) bookends the hero's credential ledger nicely and gives a hiring manager the takeaway sentence to remember.</p>
+    </article>
+
+  </div>
+</section>
+
+<!-- ===================== ROADMAP ===================== -->
+<section class="block">
+  <div class="block-inner">
+    <p class="section-eyebrow">06 · Roadmap</p>
+    <h2 class="section">If you had four hours this weekend, do these in order.</h2>
+    <p class="section-lede">Sequenced so each step keeps the site shippable. None of these require new design work — they're all execution.</p>
+
+    <ol class="roadmap-list">
+      <li>
+        <div class="roadmap-body">
+          <strong>Delete stale files.</strong>
+          <span>Remove <code>modals.html</code>, the duplicate markup in <code>portfolio.html</code> (leave the meta-refresh), and <code>docs/Curriculum Vitae, Wahba (May 2025).pdf</code>. Update <code>README.md</code> to match.</span>
+        </div>
+        <span class="roadmap-time">~20 min</span>
+      </li>
+      <li>
+        <div class="roadmap-body">
+          <strong>Em-dash sweep.</strong>
+          <span>Find/replace <code>—</code> across HTML bodies (skip <code>&lt;title&gt;</code> and OG metas). Most become periods, commas, or middle-dot separators. Reread the affected paragraphs once for flow.</span>
+        </div>
+        <span class="roadmap-time">~30 min</span>
+      </li>
+      <li>
+        <div class="roadmap-body">
+          <strong>Repo hygiene sweep (F-10).</strong>
+          <span>Delete the dead CSS / JS / SCSS / fonts directories enumerated in §04. Keep only <code>tokens.css</code>, <code>load-navbar.js</code>, and any icon set still referenced. Verify each page in a browser; commit. This is the single biggest credibility win in the codebase.</span>
+        </div>
+        <span class="roadmap-time">~45 min</span>
+      </li>
+      <li>
+        <div class="roadmap-body">
+          <strong>Add one artifact per case study.</strong>
+          <span>One concrete <em>showing</em>: a screenshot, a Blueprint capture, a system diagram, a Twine map, a code snippet styled in mono. Egregore's graph mechanic and Atrio's Twine prototyping are the strongest candidates.</span>
+        </div>
+        <span class="roadmap-time">~90 min</span>
+      </li>
+      <li>
+        <div class="roadmap-body">
+          <strong>Trim hero credentials, add footer "now" line.</strong>
+          <span>Drop from nine rows to five or six (per NEW-04). Add <em>"Currently at EA Maxis · Open to chats."</em> above the footer link row. Bookends the page.</span>
+        </div>
+        <span class="roadmap-time">~20 min</span>
+      </li>
+      <li>
+        <div class="roadmap-body">
+          <strong>Accessibility close-outs.</strong>
+          <span>Skip-to-content link at the top of <code>&lt;body&gt;</code>. Promote the Press <code>.section-label</code> paragraph to an <code>&lt;h2&gt;</code>. Five minutes each.</span>
+        </div>
+        <span class="roadmap-time">~15 min</span>
+      </li>
+      <li>
+        <div class="roadmap-body">
+          <strong>Better Maxis card thumbnail.</strong>
+          <span>Replace the office photo with a tool screenshot, an in-game capture from a shipped Sims surface, or a clean typeset card. Same crop, same ratio, so the four flagships keep their visual unity.</span>
+        </div>
+        <span class="roadmap-time">~30 min</span>
+      </li>
+      <li>
+        <div class="roadmap-body">
+          <strong>OG card image + favicon (optional polish).</strong>
+          <span>Generate a 1200×630 OG card for the homepage with the credential line baked in. Replace <code>stockController.png</code> favicon with a custom monogram. Add <code>JSON-LD Person</code> schema to the homepage <code>&lt;head&gt;</code>.</span>
+        </div>
+        <span class="roadmap-time">~45 min</span>
+      </li>
+    </ol>
+
+    <p style="margin-top: 2rem; max-width: 60ch;">Total: roughly four hours. After that, the site is finished against the original audit and ready to share with no asterisks.</p>
+  </div>
+</section>
+
+<!-- ===================== CLOSING ===================== -->
+<section class="block" style="border-bottom: none;">
+  <div class="block-inner" style="max-width: 760px;">
+    <p class="section-eyebrow">In closing</p>
+    <h2 class="section">The hard part is done.</h2>
+    <p style="font-family: var(--serif); font-size: 1.2rem; line-height: 1.6; color: var(--ink-2); max-width: 60ch; margin-top: 1rem;">
+      The v1 audit was, at its core, a critique of <em>how</em> the site was selling the work. The redesign answered that. The credential ledger, the editorial system, the four-flagship grid, the PAO blocks — these are the moves that turn a personal site into a hiring portfolio.
+    </p>
+    <p style="font-family: var(--serif); font-size: 1.2rem; line-height: 1.6; color: var(--ink-2); max-width: 60ch;">
+      What's left is mostly subtraction, not addition. Delete the dead files. Strip the dead deps. Add one artifact per case study, one "now" line in the footer, and a few accessibility close-outs. The portfolio is a strong working draft today. After a half-day pass it's done.
+    </p>
+  </div>
+</section>
+
+</body>
+</html>
