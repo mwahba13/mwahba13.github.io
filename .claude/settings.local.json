@@ -1,7 +1,26 @@
 {
   "permissions": {
     "allow": [
-      "Bash(du:*)"
+      "Bash(du:*)",
+      "PowerShell(Select-String -Pattern \"coach\" -CaseSensitive:$false)",
+      "Skill(update-config)",
+      "Skill(update-config:*)",
+      "Bash(claude mcp *)",
+      "PowerShell(claude mcp add obsidian -s user -- npx -y mcp-obsidian \"G:\\\\My Drive\\\\Obsidian Vaults\\\\ClaudeBrain\" 2>&1)",
+      "Bash(Get-ChildItem \"E:\\\\Documents\\\\CodeProjects\\\\mwahba13.github.io\\\\css\")",
+      "Bash(Select-Object Name)",
+      "Bash(Write-Host \"---JS---\")",
+      "Bash(Get-ChildItem \"E:\\\\Documents\\\\CodeProjects\\\\mwahba13.github.io\\\\js\")",
+      "Bash(Write-Host \"---FONTS---\")",
+      "Bash(Get-ChildItem \"E:\\\\Documents\\\\CodeProjects\\\\mwahba13.github.io\\\\fonts\" -Recurse)",
+      "Bash(Select-Object FullName)",
+      "Bash(Write-Host \"---DOCS---\")",
+      "Bash(Get-ChildItem \"E:\\\\Documents\\\\CodeProjects\\\\mwahba13.github.io\\\\docs\")",
+      "Bash(Write-Host \"---SCSS---\")",
+      "Bash(Get-ChildItem \"E:\\\\Documents\\\\CodeProjects\\\\mwahba13.github.io\" -Filter \"*.scss\" -Recurse)",
+      "Bash(Write-Host \"---PREPROS---\")",
+      "Bash(Get-ChildItem \"E:\\\\Documents\\\\CodeProjects\\\\mwahba13.github.io\" -Filter \"prepros*\")",
+      "PowerShell(Get-ChildItem -Path \"E:\\\\Documents\\\\CodeProjects\\\\mwahba13.github.io\" -Recurse | Where-Object { !$_.PSIsContainer } | Select-Object -ExpandProperty FullName)"
     ]
   }
 }
