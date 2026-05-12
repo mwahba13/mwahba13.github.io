@@ -2,7 +2,11 @@
   "permissions": {
     "allow": [
       "Bash(du:*)",
-      "PowerShell(Select-String -Pattern \"coach\" -CaseSensitive:$false)"
+      "PowerShell(Select-String -Pattern \"coach\" -CaseSensitive:$false)",
+      "Skill(update-config)",
+      "Skill(update-config:*)",
+      "Bash(claude mcp *)",
+      "PowerShell(claude mcp add obsidian -s user -- npx -y mcp-obsidian \"G:\\\\My Drive\\\\Obsidian Vaults\\\\ClaudeBrain\" 2>&1)"
     ]
   }
 }

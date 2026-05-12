@@ -7,20 +7,20 @@
 ### Maxis (Electronic Arts)
 **Role:** Software Engineer
 **Duration:** 2024 – Present
-**Tags:** Tools Engineering, C#/.NET, WPF/XAML, React/TypeScript
+**Tags:** Tools Engineering, C#/.NET, WPF/XAML, React/TypeScript, Python
 
 Building the toolchain that powers The Sims — developer and player-facing tools used by hundreds of developers and millions of players worldwide.
 
 **Responsibilities:**
-- Designing and building WPF/XAML desktop applications for content creation workflows
-- Developing React/TypeScript tooling for web-based developer dashboards
-- Optimizing asset pipeline systems for improved build and validation performance
+- Designing and building WPF/XAML desktop applications for internal tooling on unreleased projects
+- Developing React/TypeScript web tooling released to the community via the Sims Maker Suite and Creator Program
+- Writing Python scripts for automating data migration and asset pipelines
 - Partnering with game designers and artists to translate creative requirements into engineering specs
 
 **Achievements:**
 - Shipped multiple production tools now integrated into the daily workflow of the Maxis dev team
-- Built automated asset verification systems that reduced manual validation overhead
-- Extended the content creation pipeline with new toolchain features for The Sims community
+- Released community-facing tooling as part of the Sims Maker Suite and Creator Program
+- Built automated asset verification and data migration systems that reduced manual pipeline overhead
 - Developed internal documentation and onboarding resources for tools engineers
 
 ---
