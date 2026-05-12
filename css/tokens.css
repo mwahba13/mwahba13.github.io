@@ -56,6 +56,21 @@ img { max-width: 100%; display: block; }
 a   { color: var(--accent); text-decoration: none; }
 a:hover { color: var(--accent-hover); }
 
+.skip-to-content {
+  position: absolute;
+  top: -100%;
+  left: 1rem;
+  padding: 0.5rem 1rem;
+  background: var(--bg);
+  color: var(--accent);
+  font-size: 13px;
+  font-weight: 500;
+  border: 1px solid var(--accent);
+  border-radius: 2px;
+  z-index: 1000;
+}
+.skip-to-content:focus { top: 1rem; }
+
 /* ============================================================
    Type primitives
 ============================================================ */
