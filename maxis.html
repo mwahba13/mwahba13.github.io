@@ -17,8 +17,20 @@
   <link rel="icon" type="image/png" href="images/stockController.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/tokens.css">
+  <style>
+    .case-gallery {
+      max-width: var(--measure);
+      margin: 0 auto 3rem;
+      padding: 0 2rem;
+    }
+    .case-gallery .shot-grid { grid-template-columns: repeat(2, 1fr); }
+    @media (max-width: 700px) {
+      .case-gallery { padding: 0 1.25rem; }
+      .case-gallery .shot-grid { grid-template-columns: 1fr; }
+    }
+  </style>
 </head>
 <body data-nav="work">
   <div id="site-nav-slot"></div>
@@ -31,6 +43,21 @@
 
   <div class="case-media fade-up-1">
     <img src="images/maxis.jpg" alt="Maxis studio">
+  </div>
+
+  <div class="case-gallery fade-up-2">
+    <div class="shot-grid">
+      <figure class="shot" tabindex="0" role="button" aria-label="Open image: on the couch with The Sims"
+              data-label="Maxis (Electronic Arts)" data-title="On the couch with The Sims">
+        <img src="images/wahba_sims.jpg" alt="Michael Wahba sitting on a green couch among life-size Sims statues" loading="lazy">
+        <figcaption class="shot-caption"><span class="sc-title">On the couch with The Sims</span></figcaption>
+      </figure>
+      <figure class="shot" tabindex="0" role="button" aria-label="Open image: Maxis"
+              data-label="Maxis (Electronic Arts)" data-title="Maxis">
+        <img src="images/maxis.jpg" alt="Maxis, Electronic Arts" loading="lazy">
+        <figcaption class="shot-caption"><span class="sc-title">Maxis</span></figcaption>
+      </figure>
+    </div>
   </div>
 
   <div class="case-body">
@@ -96,6 +123,19 @@
     <p>© <script>document.write(new Date().getFullYear());</script> Michael Wahba.</p>
   </footer>
 
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer">
+    <button class="lightbox-btn lightbox-close" type="button" aria-label="Close viewer">✕</button>
+    <button class="lightbox-btn lightbox-prev" type="button" aria-label="Previous image">‹</button>
+    <button class="lightbox-btn lightbox-next" type="button" aria-label="Next image">›</button>
+    <img src="" alt="">
+    <div class="lightbox-bar">
+      <span class="lb-title"></span>
+      <span class="lb-project"></span>
+    </div>
+  </div>
+
   <script src="js/load-navbar.js"></script>
+  <script src="js/lightbox.js"></script>
 </body>
 </html>

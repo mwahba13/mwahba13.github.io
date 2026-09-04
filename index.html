@@ -27,7 +27,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="css/tokens.css">
 
@@ -45,9 +45,19 @@
     .home-hero-portrait {
       position: relative;
       aspect-ratio: 4 / 5;
-      border-radius: 6px;
+      border-radius: 3px;
       overflow: hidden;
       border: 1px solid var(--border);
+      background: var(--bg-inset);
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.5);
+    }
+    /* thin sand rule anchoring the portrait, a small authored detail */
+    .home-hero-portrait::after {
+      content: "";
+      position: absolute;
+      left: 0; right: 0; bottom: 0;
+      height: 3px;
+      background: var(--hilite);
     }
     .home-hero-portrait img { width: 100%; height: 100%; object-fit: cover; }
 
@@ -67,25 +77,27 @@
       align-items: baseline;
     }
     .credential-row .cr-label {
-      font-family: var(--sans);
-      font-size: 11px;
+      font-family: var(--mono);
+      font-size: 10.5px;
       font-weight: 500;
-      letter-spacing: 0.12em;
+      letter-spacing: 0.14em;
       text-transform: uppercase;
       color: var(--text-faint);
-      min-width: 6rem;
+      min-width: 5.25rem;
+      padding-top: 0.15rem;
     }
     .credential-row .cr-text {
-      font-family: var(--serif);
-      font-size: 17px;
+      font-family: var(--mono);
+      font-size: 12.5px;
       font-weight: 400;
-      color: var(--text);
-      line-height: 1.4;
+      letter-spacing: -0.015em;
+      color: var(--text-muted);
+      line-height: 1.55;
     }
-    .credential-row .cr-text em { font-style: italic; color: var(--accent); }
+    .credential-row .cr-text em { font-style: normal; font-weight: 500; color: var(--hilite); }
     .credential-row .cr-meta {
-      font-family: var(--sans);
-      font-size: 12px;
+      font-family: var(--mono);
+      font-size: 11px;
       color: var(--text-faint);
       white-space: nowrap;
     }
@@ -106,6 +118,16 @@
       gap: 2rem;
       flex-wrap: wrap;
     }
+
+    .work-scan {
+      font-family: var(--mono);
+      font-size: 11.5px;
+      letter-spacing: 0.03em;
+      color: var(--text-faint);
+      margin: 0.9rem 0 0;
+    }
+    .work-scan a { color: var(--text-muted); border-bottom: 1px solid var(--border-strong); }
+    .work-scan a:hover { color: var(--hilite); }
 
     .featured-grid {
       display: grid;
@@ -131,44 +153,46 @@
       color: inherit;
       transition: background 0.2s;
     }
-    .secondary-row:hover { background: rgba(0,0,0,0.02); color: inherit; }
+    .secondary-row:hover { background: rgba(236,234,228,0.04); color: inherit; }
     .secondary-row .sr-year {
-      font-family: var(--sans);
-      font-size: 12px;
-      letter-spacing: 0.08em;
+      font-family: var(--mono);
+      font-size: 11.5px;
+      letter-spacing: 0.06em;
       color: var(--text-faint);
       min-width: 3rem;
     }
     .secondary-row .sr-title {
-      font-family: var(--serif);
-      font-size: 18px;
-      font-weight: 600;
+      font-family: var(--mono);
+      font-size: 14px;
+      font-weight: 500;
+      letter-spacing: -0.01em;
       color: var(--text);
     }
     .secondary-row .sr-desc {
       font-family: var(--sans);
       font-size: 13px;
+      font-weight: 300;
       color: var(--text-muted);
       margin-left: 0.5rem;
     }
     .secondary-row .sr-tag {
-      font-family: var(--sans);
-      font-size: 11px;
-      letter-spacing: 0.06em;
+      font-family: var(--mono);
+      font-size: 10.5px;
+      letter-spacing: 0.08em;
       color: var(--text-faint);
       text-transform: uppercase;
     }
     .secondary-row .sr-arrow {
-      font-family: var(--serif);
-      font-size: 18px;
-      color: var(--accent);
+      font-family: var(--mono);
+      font-size: 16px;
+      color: var(--hilite);
       transition: transform 0.2s;
     }
     .secondary-row:hover .sr-arrow { transform: translateX(4px); }
 
     /* ABOUT */
     .about-block {
-      max-width: var(--measure);
+      max-width: 1100px;
       margin: 0 auto;
       padding: 5rem 2rem;
       display: grid;
@@ -184,16 +208,17 @@
       margin: 0 0 0.25rem;
     }
     .about-aside-role {
-      font-family: var(--sans);
-      font-size: 13px;
+      font-family: var(--mono);
+      font-size: 11.5px;
+      letter-spacing: 0.06em;
       color: var(--text-faint);
       margin: 0 0 1.5rem;
     }
     .about-aside-links { display: flex; flex-direction: column; gap: 0.5rem; }
     .about-aside-links a {
-      font-family: var(--sans);
-      font-size: 12px;
-      font-weight: 500;
+      font-family: var(--mono);
+      font-size: 11.5px;
+      font-weight: 400;
       letter-spacing: 0.06em;
       text-transform: uppercase;
       color: var(--accent);
@@ -203,6 +228,7 @@
 
     .about-body p {
       font-size: 16px;
+      font-weight: 300;
       color: var(--text-muted);
       line-height: 1.85;
       margin: 0 0 1.25rem;
@@ -210,6 +236,7 @@
     .about-body strong { color: var(--text); font-weight: 500; }
 
     /* PRESS */
+    #press.container-narrow { max-width: 1100px; }
     .press-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -227,7 +254,7 @@
       color: inherit;
       transition: border-color 0.2s, box-shadow 0.2s;
     }
-    .press-item:hover { border-color: var(--border-strong); box-shadow: 0 4px 24px rgba(0,0,0,0.06); color: inherit; }
+    .press-item:hover { border-color: var(--border-strong); box-shadow: 0 12px 32px rgba(0,0,0,0.42); color: inherit; }
     .press-item .press-thumb {
       width: 96px;
       height: 96px;
@@ -242,15 +269,16 @@
       color: var(--text);
     }
     .press-item .press-meta {
-      font-family: var(--sans);
-      font-size: 11px;
-      letter-spacing: 0.08em;
+      font-family: var(--mono);
+      font-size: 10.5px;
+      letter-spacing: 0.1em;
       text-transform: uppercase;
-      color: var(--text-faint);
+      color: var(--hilite);
       margin: 0 0 0.45rem;
     }
     .press-item p {
       font-size: 13px;
+      font-weight: 300;
       color: var(--text-muted);
       line-height: 1.6;
       margin: 0;
@@ -278,7 +306,17 @@
       .home-hero { grid-template-columns: 1fr; gap: 2.5rem; padding: 3.5rem 1.25rem; }
       .home-hero-portrait { max-width: 320px; order: -1; }
       .work-section { padding: 4rem 1.25rem; }
-      .featured-grid { grid-template-columns: 1fr; }
+      .work-scan {
+      font-family: var(--mono);
+      font-size: 11.5px;
+      letter-spacing: 0.03em;
+      color: var(--text-faint);
+      margin: 0.9rem 0 0;
+    }
+    .work-scan a { color: var(--text-muted); border-bottom: 1px solid var(--border-strong); }
+    .work-scan a:hover { color: var(--hilite); }
+
+    .featured-grid { grid-template-columns: 1fr; }
       .press-grid { grid-template-columns: 1fr; }
       .about-block { grid-template-columns: 1fr; gap: 2rem; padding: 4rem 1.25rem; }
       .about-aside { position: static; }
@@ -298,14 +336,13 @@
   <!-- HERO -->
   <section class="home-hero" id="home">
     <div class="fade-up">
-      <p class="eyebrow">Software Engineer · Game Designer</p>
+      <p class="eyebrow">Game Designer · Software Engineer</p>
       <h1 class="h-display">Michael<br>Wahba</h1>
-      <p class="lede">Engineer, designer, writer. I make games and the systems and tools that run them, at <strong>EA Maxis</strong>, 
-        in independent studios, and across academic projects recognized at Augmented World Expo, SIGGRAPH and the Game Devs of Color Expo.</p>
+      <p class="lede">Game designer who ships the code. I direct and write games, and I build the tools and systems they run on, currently at <strong>EA Maxis</strong>. My work has been recognized at Augmented World Expo, SIGGRAPH, and the Game Devs of Color Expo.</p>
 
       <div class="hero-actions">
         <a href="#work" class="btn-primary">See the work</a>
-        <a href="docs/Wahba Resume 08_21_2025.pdf" class="btn-secondary" target="_blank" rel="noopener">Resume ↗</a>
+        <a href="docs/Wahba-Resume-2025-08.pdf" class="btn-secondary" target="_blank" rel="noopener">Resume ↗</a>
       </div>
 
       <div class="home-hero-credentials" aria-label="Credentials">
@@ -313,6 +350,11 @@
           <span class="cr-label">Now</span>
           <span class="cr-text">Software Engineer at <em>EA Maxis</em> · The Sims tools</span>
           <span class="cr-meta">2024 →</span>
+        </div>
+        <div class="credential-row">
+          <span class="cr-label">Based</span>
+          <span class="cr-text">Calgary, Alberta</span>
+          <span class="cr-meta">Canada</span>
         </div>
         <div class="credential-row">
           <span class="cr-label">Education</span>
@@ -354,7 +396,7 @@
     </div>
   </section>
 
-  <hr class="divider">
+  <hr class="divider" style="max-width:1100px;">
 
   <!-- FEATURED WORK -->
   <section class="work-section" id="work">
@@ -362,12 +404,13 @@
       <div>
         <p class="eyebrow" style="margin-bottom: 0.4rem;">Featured work</p>
         <h2 class="h-section">Four projects, four disciplines.</h2>
+        <p class="work-scan">Design and narrative proof: <a href="egregore.html">Egregore</a>, <a href="atrio.html">Atrio</a>. Engineering proof: <a href="maxis.html">Maxis</a>, <a href="immersive-archive.html">The Immersive Archive</a>.</p>
       </div>
     </div>
 
     <div class="featured-grid">
       <a class="card" href="maxis.html">
-        <div class="card-media"><img src="images/maxis.jpg" alt="Maxis (Electronic Arts)"></div>
+        <div class="card-media" data-shots="images/wahba_sims.jpg"><img src="images/maxis.jpg" alt="Maxis (Electronic Arts)"><span class="card-shot-count">2 shots</span></div>
         <div class="card-body">
           <p class="card-eyebrow">Software Engineer · 2024 →</p>
           <h3 class="card-title">Maxis (Electronic Arts)</h3>
@@ -381,21 +424,22 @@
       </a>
 
       <a class="card" href="egregore.html">
-        <div class="card-media"><img src="images/Egregore/MainCapsule.png" alt="Egregore"></div>
+        <div class="card-media" data-shots="images/Egregore/Gallery/EG_Market.jpg|images/Egregore/Gallery/EG_Courtyard_Night.jpg|images/Egregore/Gallery/EG_DiningTurn.jpg|images/Egregore/Gallery/EG_Graphing_Lounge.jpg"><img src="images/Egregore/MainCapsule.jpg" alt="Egregore"><span class="card-shot-count">5 shots</span></div>
         <div class="card-body">
           <p class="card-eyebrow">Creative Director · USC MFA Thesis</p>
           <h3 class="card-title">Egregore</h3>
-          <p class="card-text">A graph-based adventure mystery in modern-day Cairo. I led a 20-person team through USC's Advanced Games Program; shipped on Steam, exhibited at Game Devs of Color Expo.</p>
+          <p class="card-text">A graph-based adventure mystery in modern-day Cairo. I directed a 20-person team and extended an open-source Unreal dialogue plugin in C++ into a custom graph-driven narrative system. Shipped on Steam, exhibited at Game Devs of Color Expo.</p>
           <div class="card-meta">
             <span class="tag">Unreal 5</span>
             <span class="tag">C++ / Blueprints</span>
-            <span class="tag">Direction</span>
+            <span class="tag">Dialogue Systems</span>
+            <span class="tag">Team Direction</span>
           </div>
         </div>
       </a>
 
       <a class="card" href="immersive-archive.html">
-        <div class="card-media"><img src="images/ImmersiveArchive/IALogo.jpg" alt="The Immersive Archive"></div>
+        <div class="card-media" data-shots="images/ImmersiveArchive/IA_0.jpg|images/ImmersiveArchive/IA_1.jpg"><img src="images/ImmersiveArchive/IALogo.jpg" alt="The Immersive Archive"><span class="card-shot-count">3 shots</span></div>
         <div class="card-body">
           <p class="card-eyebrow">Technical Lead · AWE 2024 Best in Show</p>
           <h3 class="card-title">The Immersive Archive</h3>
@@ -409,13 +453,14 @@
       </a>
 
       <a class="card" href="atrio.html">
-        <div class="card-media"><img src="images/Atrio/atrio.jpg" alt="Atrio: The Dark Wild"></div>
+        <div class="card-media" data-shots="images/Atrio/AtrioKeyArt.jpg"><img src="images/Atrio/atrio.jpg" alt="Atrio: The Dark Wild"><span class="card-shot-count">2 shots</span></div>
         <div class="card-body">
-          <p class="card-eyebrow">Lead Writer · Steam release</p>
+          <p class="card-eyebrow">Lead Writer · Shipped on Steam</p>
           <h3 class="card-title">Atrio: The Dark Wild</h3>
           <p class="card-text">Survival-automation game with narrative at its core. Designed the lore, dialogue system, and branching player-reactive story for a commercial Steam release.</p>
           <div class="card-meta">
             <span class="tag">Narrative Design</span>
+            <span class="tag">Branching Dialogue</span>
             <span class="tag">Worldbuilding</span>
           </div>
         </div>
@@ -432,8 +477,8 @@
       </a>
       <a class="secondary-row" href="https://sprawlstudios.itch.io/radio-exurbia" target="_blank" rel="noopener">
         <span class="sr-year">2022</span>
-        <span><span class="sr-title">Radio Exurbia</span><span class="sr-desc">Tune in, swap worlds.</span></span>
-        <span class="sr-tag">Unreal · Narrative</span>
+        <span><span class="sr-title">Radio Exurbia</span><span class="sr-desc">Driving game with a world-swapping radio. Core gameplay systems and narrative triggers built from scratch.</span></span>
+        <span class="sr-tag">Unreal · C++ / Blueprints</span>
         <span class="sr-arrow">→</span>
       </a>
       <a class="secondary-row" href="https://mwahba.itch.io/" target="_blank" rel="noopener">
@@ -451,7 +496,7 @@
     </div>
   </section>
 
-  <hr class="divider">
+  <hr class="divider" style="max-width:1100px;">
 
   <!-- ABOUT -->
   <section class="about-block" id="about">
@@ -459,7 +504,7 @@
       <p class="about-aside-name">Michael Wahba</p>
       <p class="about-aside-role">Engineer · Designer · Educator</p>
       <div class="about-aside-links">
-        <a href="docs/Wahba Resume 08_21_2025.pdf" target="_blank" rel="noopener">Resume ↗</a>
+        <a href="docs/Wahba-Resume-2025-08.pdf" target="_blank" rel="noopener">Resume ↗</a>
         <a href="https://www.linkedin.com/in/michael-wahba/" target="_blank" rel="noopener">LinkedIn ↗</a>
         <a href="https://github.com/mwahba13" target="_blank" rel="noopener">GitHub ↗</a>
         <a href="https://mwahba.itch.io/" target="_blank" rel="noopener">Itch.Io</a>
@@ -468,15 +513,14 @@
     </div>
 
     <div class="about-body">
-      <p class="lede" style="margin-bottom: 1.5rem;">I build games across disciplines engineering, design, narrative and see them across the finish line.</p>
+      <p class="lede" style="margin-bottom: 1.5rem;">I work across engineering, design, and narrative, and I see games across the finish line.</p>
       <p>By day I'm a software engineer at <strong>EA Maxis</strong>, working on the toolchain behind <em>The Sims</em> creating tools for developers and Simmers alike.</p>
-      <p>Before EA, I was Creative Director on <strong>Egregore</strong>, my MFA thesis at USC's Advanced Games Program, one of 10 projects selected from 50+ pitches by a panel of industry veterans where I led 20+ students to develop a paranoia-fueled adventure in modern-day Cairo, now on Steam. I was the Technical Lead on <strong>The Immersive Archive</strong>, an XR preservation project that won Best in Show at AWE (Augmented World Expo) 2024 and Lead Writer on <strong>Atrio: The Dark Wild</strong>, a survival-meets-automation sim praised for its funny yet sincere story.
-        
+      <p>Before EA, I was Creative Director on <strong>Egregore</strong>, my MFA thesis at USC's Advanced Games Program, one of 10 projects selected from 50+ pitches by a panel of industry veterans where I led 20+ students to develop a paranoia-fueled adventure in modern-day Cairo, now on Steam. I was the Technical Lead on <strong>The Immersive Archive</strong>, an XR preservation project that won Best in Show at AWE (Augmented World Expo) 2024 and Lead Writer on <strong>Atrio: The Dark Wild</strong> at IstoInc, a survival-meets-automation sim praised for its funny yet sincere story.</p>
       <p>Background: BSc in Computer Science with a concentration in Game Development and an Embedded Certificate in Creative Writing (Calgary), MFA in Interactive Media (USC), and a stint in synthetic biology that left me biased toward systems thinking. I also teach Unreal Engine and game design at <strong>Circuit Stream</strong>.</p>
     </div>
   </section>
 
-  <hr class="divider">
+  <hr class="divider" style="max-width:1100px;">
 
   <!-- PRESS -->
   <section class="container-narrow" id="press">
@@ -498,7 +542,7 @@
           <p>How competing in iGEM shaped my path to an MFA in Interactive Media.</p>
         </div>
       </a>
-      <a class="press-item" href="docs/Top Prospects_ Leading innovators from the Class of 2021 - The Logic.pdf" target="_blank" rel="noopener">
+      <a class="press-item" href="docs/The-Logic-Top-Prospects-2021.pdf" target="_blank" rel="noopener">
         <img class="press-thumb" src="images/Press/thelogic_prospects.jpg" alt="">
         <div>
           <p class="press-meta">The Logic · Jul 2021</p>
@@ -538,5 +582,6 @@
   </footer>
 
   <script src="js/load-navbar.js"></script>
+  <script src="js/card-preview.js"></script>
 </body>
 </html>

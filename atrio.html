@@ -4,12 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Atrio: The Dark Wild — Michael Wahba</title>
-  <meta name="description" content="Atrio: The Dark Wild — survival-automation game on Steam. Lead Writer Michael Wahba designed the lore, dialogue system, and player-reactive narrative.">
+  <meta name="description" content="Atrio: The Dark Wild — survival-automation game shipped on Steam by IstoInc. Lead Writer Michael Wahba designed the lore, dialogue system, and player-reactive narrative.">
 
   <meta property="og:type" content="article">
   <meta property="og:title" content="Atrio: The Dark Wild — Michael Wahba">
   <meta property="og:description" content="Lead Writer on a commercially shipped survival-automation game on Steam.">
-  <meta property="og:image" content="images/Atrio/AtrioKeyArt_NoLogo (1).png">
+  <meta property="og:image" content="images/Atrio/AtrioKeyArt.jpg">
 
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-TN9M86WYZ5"></script>
   <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-TN9M86WYZ5');</script>
@@ -17,14 +17,26 @@
   <link rel="icon" type="image/png" href="images/stockController.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/tokens.css">
+  <style>
+    .case-gallery {
+      max-width: var(--measure);
+      margin: 0 auto 3rem;
+      padding: 0 2rem;
+    }
+    .case-gallery .shot-grid { grid-template-columns: 1fr; }
+    @media (max-width: 700px) {
+      .case-gallery { padding: 0 1.25rem; }
+      .case-gallery .shot-grid { grid-template-columns: 1fr; }
+    }
+  </style>
 </head>
 <body data-nav="work">
   <div id="site-nav-slot"></div>
 
   <section class="case-hero fade-up">
-    <p class="case-hero-eyebrow">Lead Writer · 2023–2024</p>
+    <p class="case-hero-eyebrow">Lead Writer · IstoInc · 2019–2021</p>
     <h1 class="case-hero-title">Atrio: <em>The Dark Wild</em></h1>
     <p class="case-hero-sub">A survival-automation game about scarcity, light, and the people you build alongside. Commercially shipped on Steam.</p>
   </section>
@@ -40,8 +52,14 @@
     </div>
   </div>
 
-  <div class="case-media">
-    <img src="images/Atrio/AtrioKeyArt_NoLogo (1).png" alt="Atrio: The Dark Wild key art" loading="lazy">
+  <div class="case-gallery fade-up-2">
+    <div class="shot-grid">
+      <figure class="shot" tabindex="0" role="button" aria-label="Open image: Atrio key art"
+              data-label="Atrio: The Dark Wild" data-title="Key art">
+        <img src="images/Atrio/AtrioKeyArt.jpg" alt="Atrio: The Dark Wild key art" loading="lazy">
+        <figcaption class="shot-caption"><span class="sc-title">Key art</span></figcaption>
+      </figure>
+    </div>
   </div>
 
   <div class="case-body">
@@ -68,7 +86,8 @@
       <h4>Role</h4>
       <ul>
         <li><strong>Lead Writer</strong></li>
-        <li>Steam release · 2023</li>
+        <li>IstoInc</li>
+        <li>2019–2021 · shipped Jan 2023</li>
       </ul>
       <h4>Disciplines</h4>
       <div class="aside-tags">
@@ -92,6 +111,19 @@
     </div>
     <p>© <script>document.write(new Date().getFullYear());</script> Michael Wahba.</p>
   </footer>
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer">
+    <button class="lightbox-btn lightbox-close" type="button" aria-label="Close viewer">✕</button>
+    <button class="lightbox-btn lightbox-prev" type="button" aria-label="Previous image">‹</button>
+    <button class="lightbox-btn lightbox-next" type="button" aria-label="Next image">›</button>
+    <img src="" alt="">
+    <div class="lightbox-bar">
+      <span class="lb-title"></span>
+      <span class="lb-project"></span>
+    </div>
+  </div>
+
   <script src="js/load-navbar.js"></script>
+  <script src="js/lightbox.js"></script>
 </body>
 </html>

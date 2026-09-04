@@ -17,28 +17,20 @@
   <link rel="icon" type="image/png" href="images/stockController.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/tokens.css">
   <style>
-    .gallery {
+    .case-gallery {
       max-width: var(--measure);
       margin: 0 auto 3rem;
       padding: 0 2rem;
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 0.75rem;
     }
-    .gallery img {
-      width: 100%;
-      aspect-ratio: 16 / 9;
-      object-fit: cover;
-      border-radius: 4px;
-      border: 1px solid var(--border);
+    .case-gallery .shot-grid { grid-template-columns: repeat(2, 1fr); }
+    .case-gallery .shot.is-contain img { object-fit: contain; background: var(--bg-card); }
+    @media (max-width: 700px) {
+      .case-gallery { padding: 0 1.25rem; }
+      .case-gallery .shot-grid { grid-template-columns: 1fr; }
     }
-    .gallery img.portrait {
-      aspect-ratio: 4 / 3;
-    }
-    @media (max-width: 700px) { .gallery { grid-template-columns: 1fr; padding: 0 1.25rem; } }
   </style>
 </head>
 <body data-nav="work">
@@ -60,10 +52,24 @@
     </div>
   </div>
 
-  <div class="gallery">
-    <img src="images/ImmersiveArchive/IA_0.png" alt="The Immersive Archive" loading="lazy">
-    <img src="images/ImmersiveArchive/IA_1.jpg" alt="The Immersive Archive" loading="lazy">
-    <img src="images/ImmersiveArchive/IALogo.jpg" alt="The Immersive Archive logo" loading="lazy" style="aspect-ratio: auto; object-fit: contain; background: var(--bg-card);">
+  <div class="case-gallery fade-up-2">
+    <div class="shot-grid">
+      <figure class="shot" tabindex="0" role="button" aria-label="Open image: the VR Retrospective exhibit"
+              data-label="The Immersive Archive" data-title="The VR Retrospective exhibit">
+        <img src="images/ImmersiveArchive/IA_0.jpg" alt="The VR Retrospective exhibit banner on a conference show floor" loading="lazy">
+        <figcaption class="shot-caption"><span class="sc-title">The VR Retrospective exhibit</span></figcaption>
+      </figure>
+      <figure class="shot" tabindex="0" role="button" aria-label="Open image: Sensorama on the show floor"
+              data-label="The Immersive Archive" data-title="Sensorama, on the show floor">
+        <img src="images/ImmersiveArchive/IA_1.jpg" alt="Visitors around a Sensorama cabinet and VR headsets at an exhibition" loading="lazy">
+        <figcaption class="shot-caption"><span class="sc-title">Sensorama, on the show floor</span></figcaption>
+      </figure>
+      <figure class="shot is-contain" tabindex="0" role="button" aria-label="Open image: project identity"
+              data-label="The Immersive Archive" data-title="Project identity">
+        <img src="images/ImmersiveArchive/IALogo.jpg" alt="The Immersive Archive logo" loading="lazy">
+        <figcaption class="shot-caption"><span class="sc-title">Project identity</span></figcaption>
+      </figure>
+    </div>
   </div>
 
   <div class="case-body">
@@ -123,6 +129,19 @@
     </div>
     <p>© <script>document.write(new Date().getFullYear());</script> Michael Wahba.</p>
   </footer>
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer">
+    <button class="lightbox-btn lightbox-close" type="button" aria-label="Close viewer">✕</button>
+    <button class="lightbox-btn lightbox-prev" type="button" aria-label="Previous image">‹</button>
+    <button class="lightbox-btn lightbox-next" type="button" aria-label="Next image">›</button>
+    <img src="" alt="">
+    <div class="lightbox-bar">
+      <span class="lb-title"></span>
+      <span class="lb-project"></span>
+    </div>
+  </div>
+
   <script src="js/load-navbar.js"></script>
+  <script src="js/lightbox.js"></script>
 </body>
 </html>

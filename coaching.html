@@ -17,7 +17,7 @@
   <link rel="icon" type="image/png" href="images/stockController.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/tokens.css">
 
   <style>
@@ -31,7 +31,7 @@
       align-items: center;
     }
     .hero-credentials { display: flex; flex-direction: column; gap: 1rem; }
-    .credential-item { padding: 1.25rem 1.5rem; border: 1px solid var(--border); border-radius: 4px; background: var(--bg-card); }
+    .credential-item { padding: 1.25rem 1.5rem; border: 1px solid var(--border); border-radius: 3px; background: var(--bg-card); }
     .credential-item strong { display: block; font-size: 13px; font-weight: 500; color: var(--text); margin-bottom: 0.2rem; }
     .credential-item span { font-size: 12px; color: var(--text-faint); }
 
@@ -41,12 +41,12 @@
       gap: 1px;
       background: var(--border);
       border: 1px solid var(--border);
-      border-radius: 4px;
+      border-radius: 3px;
       overflow: hidden;
     }
-    .topic-item { background: var(--bg); padding: 1.75rem 2rem; transition: background 0.2s; }
-    .topic-item:hover { background: var(--bg-card); }
-    .topic-num { font-family: var(--serif); font-size: 13px; font-style: italic; color: var(--accent); margin-bottom: 0.5rem; display: block; }
+    .topic-item { background: var(--bg-card); padding: 1.75rem 2rem; transition: background 0.2s; }
+    .topic-item:hover { background: var(--bg-raise); }
+    .topic-num { font-family: var(--serif); font-size: 13px; font-style: italic; color: var(--hilite); margin-bottom: 0.5rem; display: block; }
     .topic-title { font-size: 15px; font-weight: 500; color: var(--text); margin: 0 0 0.4rem; }
     .topic-desc { font-size: 13px; color: var(--text-muted); line-height: 1.6; margin: 0; }
 
@@ -57,8 +57,8 @@
       gap: 0 1.5rem;
       align-items: start;
     }
-    .session-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 4px; padding: 2rem 1.75rem; display: grid; grid-row: span 6; grid-template-rows: subgrid; row-gap: 0; transition: border-color 0.2s, box-shadow 0.2s; }
-    .session-card:hover { border-color: var(--border-strong); box-shadow: 0 4px 24px rgba(0,0,0,0.07); }
+    .session-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 3px; padding: 2rem 1.75rem; display: grid; grid-row: span 6; grid-template-rows: subgrid; row-gap: 0; transition: border-color 0.2s, box-shadow 0.2s; }
+    .session-card:hover { border-color: var(--border-strong); box-shadow: 0 12px 32px rgba(0,0,0,0.42); }
     .session-card.featured { border-color: var(--accent); border-width: 1.5px; }
     .session-badge { grid-row: 1; align-self: start; display: inline-block; font-size: 11px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; background: var(--accent-light); color: var(--accent); padding: 0.25rem 0.6rem; border-radius: 2px; margin-bottom: 1.25rem; justify-self: start; }
     .session-duration { grid-row: 2; font-size: 12px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-faint); margin-bottom: 0.5rem; }
@@ -67,15 +67,15 @@
     .session-currency { font-size: 1rem; font-weight: 400; color: var(--text-muted); align-self: flex-start; margin-top: 0.3rem; }
     .session-amount { font-size: 1.75rem; font-weight: 300; color: var(--text); line-height: 1; }
     .session-price-usd { font-size: 11px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-faint); align-self: flex-end; margin-left: 0.4rem; padding-bottom: 0.1em; }
-    .free-label { font-family: var(--serif); font-style: italic; font-size: 1.5rem; color: var(--accent); }
+    .free-label { font-family: var(--serif); font-style: italic; font-size: 1.5rem; color: var(--hilite); }
     .session-desc { grid-row: 5; font-size: 13px; color: var(--text-muted); line-height: 1.7; margin-bottom: 1.75rem; }
     .session-book { grid-row: 6; align-self: end; display: block; text-align: center; font-size: 13px; font-weight: 500; padding: 0.75rem 1rem; border-radius: 2px; transition: background 0.2s, color 0.2s; border: 1px solid var(--border-strong); color: var(--text); background: transparent; text-decoration: none; }
-    .session-book:hover { background: rgba(0,0,0,0.05); color: var(--text); }
-    .session-card.featured .session-book { background: var(--accent); color: #fff; border-color: var(--accent); }
-    .session-card.featured .session-book:hover { background: var(--accent-hover); border-color: var(--accent-hover); color: #fff; }
+    .session-book:hover { background: rgba(236,234,228,0.07); color: var(--text); }
+    .session-card.featured .session-book { background: var(--accent); color: var(--text-on-accent); border-color: var(--accent); }
+    .session-card.featured .session-book:hover { background: var(--accent-hover); border-color: var(--accent-hover); color: var(--text-on-accent); }
 
     .testimonials-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
-    .testimonial-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 4px; padding: 2rem 1.75rem; margin: 0; display: flex; flex-direction: column; gap: 1.5rem; }
+    .testimonial-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 3px; padding: 2rem 1.75rem; margin: 0; display: flex; flex-direction: column; gap: 1.5rem; }
     .testimonial-quote { font-family: var(--serif); font-size: 15px; font-style: italic; color: var(--text-muted); line-height: 1.8; flex-grow: 1; }
     .testimonial-quote::before { content: '\201C'; }
     .testimonial-quote::after { content: '\201D'; }
@@ -89,10 +89,10 @@
     .faq-a { font-size: 14px; color: var(--text-muted); line-height: 1.75; margin: 0; }
 
     .footer-cta { background: var(--bg-deep); padding: 5rem 2rem; text-align: center; }
-    .footer-cta-eyebrow { font-size: 12px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(247,244,238,0.5); margin-bottom: 1.25rem; }
+    .footer-cta-eyebrow { font-size: 12px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(236,234,228,0.5); margin-bottom: 1.25rem; }
     .footer-cta-title { font-family: var(--serif); font-size: clamp(1.8rem, 4vw, 2.6rem); font-weight: 600; color: var(--text-on-dark); margin-bottom: 1rem; line-height: 1.2; }
-    .footer-cta-title em { font-style: italic; color: var(--accent); }
-    .footer-cta-sub { font-size: 15px; color: rgba(247,244,238,0.6); margin: 0 auto 2.5rem; max-width: 480px; }
+    .footer-cta-title em { font-style: italic; color: var(--hilite); }
+    .footer-cta-sub { font-size: 15px; color: rgba(236,234,228,0.6); margin: 0 auto 2.5rem; max-width: 480px; }
 
     @media (max-width: 768px) {
       .coaching-hero { grid-template-columns: 1fr; gap: 3rem; padding: 3.5rem 1.25rem; }

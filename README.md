@@ -10,7 +10,7 @@ Drop-in replacement for the existing `mwahba13.github.io` repo, addressing the a
 - **"Creative Technologist" dropped** — replaced with "Software Engineer & Game Designer" so search and recruiters can map it to real roles.
 
 **Major**
-- **Editorial design system applied site-wide.** Cream `#f7f4ee` bg, Playfair Display + Poppins, single rust accent `#c4541a`. Extracted from the coaching page into `css/tokens.css` and shared.
+- **Design system applied site-wide** (`css/tokens.css`). Current identity: graphite `#101317` canvas, bone `#eceae4` type, single periwinkle accent `#a892ff` (`--accent` for links, `--hilite` for emphasis; both the same value, kept separate so the two roles can diverge later). Fraunces for headlines, Inter for body, JetBrains Mono for everything structured: nav, labels, tags, buttons, credential rows, the secondary project list, and case-study asides.
 - **Long tail trimmed.** Quidditch Swarm, Antymology, L, Limina dropped from the front page; Radio Exurbia and Virtual Garden moved to a compact secondary list. Extras live on the linked GitHub.
 - **Case studies rewritten** with explicit Problem · Approach · Outcome blocks (Maxis, Egregore, Atrio, Immersive Archive).
 
@@ -38,11 +38,36 @@ site/
 ├── css/tokens.css          ← single source of truth for the design system
 ├── js/
 │   ├── load-navbar.js
+│   ├── lightbox.js         ← fullscreen viewer for case-study image strips
+│   ├── card-preview.js     ← hover-scrub through project shots in home cards
 │   ├── accessibility.js
 │   └── analytics-tracking.js
 ├── images/
 └── docs/                   ← single resume PDF
 ```
+
+## Images
+
+Each case study carries a strip of `.shot` figures. Clicking one opens `js/lightbox.js`, a fullscreen viewer with Esc and arrow-key navigation. Any page works as long as it has `.shot` elements plus the `#lightbox` markup:
+
+```html
+<figure class="shot" tabindex="0" role="button" aria-label="Open image: ..."
+        data-title="Short caption">
+  <img src="images/..." alt="..." loading="lazy">
+  <figcaption class="shot-caption"><span class="sc-title">Short caption</span></figcaption>
+</figure>
+```
+
+On the home page, each featured card's media scrubs through that project's shots on hover (`js/card-preview.js`). Add images to a card by extending its pipe-separated `data-shots` list and bumping the `.card-shot-count` label:
+
+```html
+<div class="card-media" data-shots="images/a.png|images/b.jpg">
+  <img src="images/base.jpg" alt="...">
+  <span class="card-shot-count">3 shots</span>
+</div>
+```
+
+The base `<img>` is shot 1; `data-shots` holds the rest. Layers only load on first hover, and touch devices keep the static image.
 
 ## Open items
 
