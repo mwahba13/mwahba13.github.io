@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Michael Wahba — Resume</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    /* ── Screen defaults ─────────────────────────────────── */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Poppins', system-ui, sans-serif;
+      font-size: 10pt;
+      line-height: 1.55;
+      color: #1a1a1a;
+      background: #fff;
+      max-width: 8.5in;
+      margin: 0 auto;
+      padding: 0.75in 0.85in;
+    }
+
+    a { color: #c4541a; text-decoration: none; }
+
+    /* ── Header ──────────────────────────────────────────── */
+    .r-name {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 26pt;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      line-height: 1;
+      margin-bottom: 0.2rem;
+    }
+
+    .r-title {
+      font-size: 9.5pt;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #888;
+      margin-bottom: 0.45rem;
+    }
+
+    .r-contact {
+      font-size: 8.5pt;
+      color: #555;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0 1.25rem;
+    }
+
+    /* ── Section headings ────────────────────────────────── */
+    h2 {
+      font-family: 'Poppins', system-ui, sans-serif;
+      font-size: 7.5pt;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #c4541a;
+      border-bottom: 1px solid #e0dbd3;
+      padding-bottom: 0.2rem;
+      margin: 1.1rem 0 0.55rem;
+    }
+
+    /* ── Experience blocks ───────────────────────────────── */
+    .job { margin-bottom: 0.75rem; }
+
+    .job-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 1rem;
+    }
+
+    .job-title {
+      font-size: 10pt;
+      font-weight: 600;
+      color: #1a1a1a;
+    }
+
+    .job-org {
+      font-size: 9.5pt;
+      font-weight: 400;
+      color: #444;
+    }
+
+    .job-date {
+      font-size: 8.5pt;
+      color: #888;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    ul {
+      padding-left: 1rem;
+      margin-top: 0.3rem;
+    }
+
+    li {
+      margin-bottom: 0.2rem;
+      font-size: 9.5pt;
+      color: #333;
+      line-height: 1.5;
+    }
+
+    /* ── Education ───────────────────────────────────────── */
+    .edu { margin-bottom: 0.5rem; }
+
+    .edu-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+    }
+
+    .edu-degree {
+      font-size: 10pt;
+      font-weight: 600;
+    }
+
+    .edu-detail {
+      font-size: 9pt;
+      color: #555;
+      margin-top: 0.05rem;
+    }
+
+    /* ── Skills ──────────────────────────────────────────── */
+    .skills-table {
+      display: grid;
+      grid-template-columns: 8rem 1fr;
+      gap: 0.2rem 0.5rem;
+    }
+
+    .sk-cat {
+      font-size: 9pt;
+      font-weight: 600;
+      color: #444;
+      padding-top: 0.05rem;
+    }
+
+    .sk-list {
+      font-size: 9pt;
+      color: #333;
+    }
+
+    /* ── Awards / Publications ───────────────────────────── */
+    .award-row, .pub-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 1rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .award-name, .pub-title {
+      font-size: 9.5pt;
+      color: #1a1a1a;
+      flex: 1;
+    }
+
+    .award-ctx, .pub-venue {
+      font-size: 8.5pt;
+      color: #888;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    /* ── Print overrides ─────────────────────────────────── */
+    @media print {
+      @page { margin: 0.65in 0.75in; size: letter; }
+
+      body {
+        padding: 0;
+        max-width: none;
+        font-size: 9.5pt;
+      }
+
+      a { color: #1a1a1a; }
+
+      h2 { page-break-after: avoid; }
+      .job, .edu { page-break-inside: avoid; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── HEADER ─────────────────────────────────────────── -->
+  <header>
+    <p class="r-name">Michael Wahba</p>
+    <p class="r-title">Software Engineer &nbsp;·&nbsp; Game Designer &nbsp;·&nbsp; Educator</p>
+    <div class="r-contact">
+      <span>mrswahba13@gmail.com</span>
+      <a href="https://mwahba.ca">mwahba.ca</a>
+      <a href="https://linkedin.com/in/michael-wahba">linkedin.com/in/michael-wahba</a>
+      <a href="https://github.com/mwahba13">github.com/mwahba13</a>
+    </div>
+  </header>
+
+  <!-- ── SUMMARY ────────────────────────────────────────── -->
+  <h2>Summary</h2>
+  <p style="font-size:9.5pt;color:#333;line-height:1.6;">
+    Software engineer building production tooling at EA Maxis for The Sims content pipeline.
+    MFA in Interactive Media (USC) and BSc in Computer Science (UCalgary). Shipped titles as
+    Creative Director, Technical Lead, and Lead Writer. Led teams of up to 20 across engineering,
+    design, art, and audio. Research recognized with Best in Show at AWE 2024 and published in
+    IEEE proceedings. Experienced educator in game design and Unreal Engine at Circuit Stream.
+  </p>
+
+  <!-- ── EXPERIENCE ─────────────────────────────────────── -->
+  <h2>Experience</h2>
+
+  <div class="job">
+    <div class="job-header">
+      <span>
+        <span class="job-title">Software Engineer</span>
+        <span class="job-org"> &nbsp;·&nbsp; EA Maxis (Electronic Arts)</span>
+      </span>
+      <span class="job-date">2024 – Present</span>
+    </div>
+    <ul>
+      <li>Build WPF / C# desktop tools for The Sims content pipeline, used daily by the Maxis development team.</li>
+      <li>Develop Electron desktop applications in React / TypeScript released to community creators through the Sims Maker Suite and Creator Program.</li>
+      <li>Write Python scripts for asset migration, data pipeline automation, and shared validation primitives consumed by CLI tooling, applications, and CI.</li>
+      <li>Collaborate across engineering and design to ship toolchain improvements that reduce manual asset-verification overhead for internal authors.</li>
+    </ul>
+  </div>
+
+  <div class="job">
+    <div class="job-header">
+      <span>
+        <span class="job-title">Technical Lead</span>
+        <span class="job-org"> &nbsp;·&nbsp; The Immersive Archive — USC Mobile &amp; Environmental Media Lab</span>
+      </span>
+      <span class="job-date">2023 – 2024</span>
+    </div>
+    <ul>
+      <li>Led a 6-person engineering team recreating seminal XR works in Unity / OpenXR for a preservation research initiative supervised by XR pioneer Scott Fisher.</li>
+      <li>Architected the preservation framework: recreation module structure, scholarly documentation standards, and SDK-agnostic design patterns for long-term durability.</li>
+      <li>Prototyped and implemented multiple Unity modules recreating legacy experiences no longer runnable on modern hardware.</li>
+      <li>Co-authored paper published in IEEE conference proceedings documenting the methodology.</li>
+      <li><strong>Best in Show, AWE (Augmented World Expo) 2024.</strong> Exhibited at SIGGRAPH 2023.</li>
+    </ul>
+  </div>
+
+  <div class="job">
+    <div class="job-header">
+      <span>
+        <span class="job-title">Creative Director</span>
+        <span class="job-org"> &nbsp;·&nbsp; Egregore — USC Advanced Games Program</span>
+      </span>
+      <span class="job-date">2023 – 2024</span>
+    </div>
+    <ul>
+      <li>Directed a 20-person cross-discipline team through USC's Advanced Games Program; project selected from 50+ pitches by a panel of industry veterans.</li>
+      <li>Designed a graph-based perception mechanic in Unreal Engine 5 (C++ / Blueprints): players collect knowledge as nodes, reshape the graph, and alter world state — a deliberate subversion of classic adventure game logic.</li>
+      <li>Extended the NotYet Dialogue System plugin in C++ to script character behavior and dialogue directly through the knowledge graph rather than alongside it.</li>
+      <li>Shipped on Steam to Mostly Positive reviews. Featured at Game Devs of Color Expo 2024 and USC Games Expo 2024.</li>
+    </ul>
+  </div>
+
+  <div class="job">
+    <div class="job-header">
+      <span>
+        <span class="job-title">Lead Writer</span>
+        <span class="job-org"> &nbsp;·&nbsp; Atrio: The Dark Wild — IstoInc</span>
+      </span>
+      <span class="job-date">2019 – 2021</span>
+    </div>
+    <ul>
+      <li>Designed world lore, character dialogue, branching narrative systems, and environmental storytelling for a commercially shipped survival-automation game on Steam.</li>
+      <li>Prototyped narrative in Twine; implemented using Dialogue System for Unity, wired to automation progression milestones so story and mechanics move together.</li>
+      <li>Writing consistently praised in Mostly Positive Steam reviews, noted as a highlight even among players who disengaged from the core loop.</li>
+    </ul>
+  </div>
+
+  <div class="job">
+    <div class="job-header">
+      <span>
+        <span class="job-title">Instructor, Game Design &amp; Unreal Engine</span>
+        <span class="job-org"> &nbsp;·&nbsp; Circuit Stream</span>
+      </span>
+      <span class="job-date">Current</span>
+    </div>
+    <ul>
+      <li>Teach Unreal Engine, the MDA (Mechanics–Dynamics–Aesthetics) framework, and game design systems to students and career-changers entering the games industry.</li>
+      <li>Develop curriculum covering gameplay programming, systems design, Blueprints, and portfolio development.</li>
+    </ul>
+  </div>
+
+  <!-- ── EDUCATION ───────────────────────────────────────── -->
+  <h2>Education</h2>
+
+  <div class="edu">
+    <div class="edu-header">
+      <span class="edu-degree">MFA, Interactive Media &nbsp;·&nbsp; University of Southern California</span>
+      <span class="job-date">2024</span>
+    </div>
+    <p class="edu-detail">Advanced Games Program. MFA thesis: Egregore (shipped on Steam).</p>
+  </div>
+
+  <div class="edu">
+    <div class="edu-header">
+      <span class="edu-degree">BSc, Computer Science &nbsp;·&nbsp; University of Calgary</span>
+      <span class="job-date">2021</span>
+    </div>
+    <p class="edu-detail">Concentration: Game Development. Embedded Certificate in Creative Writing.</p>
+  </div>
+
+  <!-- ── SKILLS ──────────────────────────────────────────── -->
+  <h2>Skills</h2>
+  <div class="skills-table">
+    <span class="sk-cat">Languages</span>
+    <span class="sk-list">C#, C++, TypeScript, Python, JavaScript, GDScript</span>
+
+    <span class="sk-cat">Frameworks</span>
+    <span class="sk-list">.NET, WPF / XAML, React, Electron, Unity, Unreal Engine 5, OpenXR</span>
+
+    <span class="sk-cat">Tools</span>
+    <span class="sk-list">Git, Blueprints, Twine, Dialogue System for Unity, Godot</span>
+
+    <span class="sk-cat">Disciplines</span>
+    <span class="sk-list">Game Design, Narrative Design, XR Development, Technical Leadership, Curriculum Design</span>
+  </div>
+
+  <!-- ── AWARDS ─────────────────────────────────────────── -->
+  <h2>Awards &amp; Recognition</h2>
+
+  <div class="award-row">
+    <span class="award-name"><strong>Best in Show</strong> &nbsp;·&nbsp; AWE (Augmented World Expo) 2024</span>
+    <span class="award-ctx">The Immersive Archive</span>
+  </div>
+  <div class="award-row">
+    <span class="award-name"><strong>Gerald Lawson Scholar</strong> &nbsp;·&nbsp; USC &amp; Sony Interactive Entertainment</span>
+    <span class="award-ctx">2024</span>
+  </div>
+  <div class="award-row">
+    <span class="award-name"><strong>D.I.C.E. Scholar</strong> &nbsp;·&nbsp; Academy of Interactive Arts and Sciences</span>
+    <span class="award-ctx">2023</span>
+  </div>
+  <div class="award-row">
+    <span class="award-name"><strong>Cannon-Lachappelle Award</strong> in Entrepreneurial Thinking &nbsp;·&nbsp; University of Calgary</span>
+    <span class="award-ctx">2021</span>
+  </div>
+  <div class="award-row">
+    <span class="award-name"><strong>Top Prospects: Class of 2021</strong> &nbsp;·&nbsp; <em>The Logic</em></span>
+    <span class="award-ctx">2021</span>
+  </div>
+
+  <!-- ── PUBLICATIONS ────────────────────────────────────── -->
+  <h2>Publications</h2>
+
+  <div class="pub-row">
+    <span class="pub-title">
+      Co-authored paper on XR preservation methodology. <em>IEEE VR Workshop Proceedings</em>, 2025.
+      <a href="https://ieeexplore.ieee.org/document/10896116" style="font-size:8pt;">ieeexplore.ieee.org/document/10896116</a>
+    </span>
+  </div>
+  <div class="pub-row" style="margin-top:0.2rem;">
+    <span class="pub-title">
+      XR preservation research presentation. <em>SIGGRAPH 2023</em>, ACM Digital Library.
+      <a href="https://dl.acm.org/doi/10.1145/3587422.3595554" style="font-size:8pt;">dl.acm.org/doi/10.1145/3587422.3595554</a>
+    </span>
+  </div>
+
+</body>
+</html>

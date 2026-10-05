@@ -39,10 +39,10 @@
           + '<nav class="site-nav"><div class="site-nav-inner">'
           + '<a class="site-nav-brand" href="index.html">Michael <em>Wahba</em></a>'
           + '<div class="site-nav-menu"><ul class="site-nav-links">'
-          + '<li><a href="index.html#work" class="site-nav-link">Work</a></li>'
-          + '<li><a href="index.html#about" class="site-nav-link">About</a></li>'
-          + '<li><a href="coaching.html" class="site-nav-link is-coaching">Coaching</a></li>'
-          + '<li><a href="mailto:mrswahba13@gmail.com" class="site-nav-link">Contact</a></li>'
+          + '<li><a href="index.html#work" class="site-nav-link" data-nav="work">Work</a></li>'
+          + '<li><a href="index.html#about" class="site-nav-link" data-nav="about">About</a></li>'
+          + '<li><a href="index.html#press" class="site-nav-link" data-nav="press">Press</a></li>'
+          + '<li><a href="mailto:mrswahba13@gmail.com" class="site-nav-link" data-nav="contact">Contact</a></li>'
           + '</ul></div></div></nav>';
         init(slot);
       });
