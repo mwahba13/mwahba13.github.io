@@ -136,10 +136,22 @@
     }
     .featured-grid .card-media { aspect-ratio: 16 / 9; }
 
+    /* Secondary projects: same card language as the flagships, dialled down */
+    .secondary-cards {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+      margin-top: 3rem;
+    }
+    .secondary-cards .card-media { aspect-ratio: 16 / 9; }
+    .secondary-cards .card-body { padding: 1.25rem 1.25rem 1.4rem; gap: 0.5rem; }
+    .secondary-cards .card-title { font-size: 1.2rem; }
+    .secondary-cards .card-text { font-size: 13.5px; line-height: 1.65; }
+
     .secondary-grid {
       display: grid;
       grid-template-columns: 1fr;
-      margin-top: 3rem;
+      margin-top: 2.5rem;
       border-top: 1px solid var(--border);
     }
     .secondary-row {
@@ -317,6 +329,7 @@
     .work-scan a:hover { color: var(--hilite); }
 
     .featured-grid { grid-template-columns: 1fr; }
+      .secondary-cards { grid-template-columns: 1fr; }
       .press-grid { grid-template-columns: 1fr; }
       .about-block { grid-template-columns: 1fr; gap: 2rem; padding: 4rem 1.25rem; }
       .about-aside { position: static; }
@@ -467,20 +480,37 @@
       </a>
     </div>
 
-    <!-- Secondary projects: lower-tier, kept short to avoid diluting the flagship four -->
-    <div class="secondary-grid" aria-label="Other projects">
-      <a class="secondary-row" href="https://virtual-garden.netlify.app/" target="_blank" rel="noopener">
-        <span class="sr-year">2023</span>
-        <span><span class="sr-title">The Virtual Garden</span><span class="sr-desc">Gaussian splatting experiment in the browser.</span></span>
-        <span class="sr-tag">Three.js · Experimental</span>
-        <span class="sr-arrow">→</span>
+    <!-- Secondary projects: smaller cards, kept short to avoid diluting the flagship four -->
+    <div class="secondary-cards" aria-label="Other projects">
+      <a class="card" href="https://sprawlstudios.itch.io/radio-exurbia" target="_blank" rel="noopener">
+        <div class="card-media"><img src="images/radioExurbia.jpg" alt="Radio Exurbia"></div>
+        <div class="card-body">
+          <p class="card-eyebrow">Personal project · 2022</p>
+          <h3 class="card-title">Radio Exurbia</h3>
+          <p class="card-text">Driving game with a world-swapping radio. Built the core gameplay systems and narrative triggers from scratch in Unreal.</p>
+          <div class="card-meta">
+            <span class="tag">Unreal</span>
+            <span class="tag">C++ / Blueprints</span>
+          </div>
+        </div>
       </a>
-      <a class="secondary-row" href="https://sprawlstudios.itch.io/radio-exurbia" target="_blank" rel="noopener">
-        <span class="sr-year">2022</span>
-        <span><span class="sr-title">Radio Exurbia</span><span class="sr-desc">Driving game with a world-swapping radio. Core gameplay systems and narrative triggers built from scratch.</span></span>
-        <span class="sr-tag">Unreal · C++ / Blueprints</span>
-        <span class="sr-arrow">→</span>
+
+      <a class="card" href="https://virtual-garden.netlify.app/" target="_blank" rel="noopener">
+        <div class="card-media" data-shots="images/VirtualGarden/1.jpg|images/VirtualGarden/2.jpg"><img src="images/virtualGarden.jpg" alt="The Virtual Garden"><span class="card-shot-count">3 shots</span></div>
+        <div class="card-body">
+          <p class="card-eyebrow">Personal project · 2023</p>
+          <h3 class="card-title">The Virtual Garden</h3>
+          <p class="card-text">Gaussian splatting experiment running in the browser, built with Three.js. A look at rendering photoreal captured spaces on the web.</p>
+          <div class="card-meta">
+            <span class="tag">Three.js</span>
+            <span class="tag">WebGL</span>
+            <span class="tag">Experimental</span>
+          </div>
+        </div>
       </a>
+    </div>
+
+    <div class="secondary-grid" aria-label="More work">
       <a class="secondary-row" href="https://mwahba.itch.io/" target="_blank" rel="noopener">
         <span class="sr-year">·</span>
         <span><span class="sr-title">More on itch.io</span><span class="sr-desc">Experimental games and prototypes.</span></span>
